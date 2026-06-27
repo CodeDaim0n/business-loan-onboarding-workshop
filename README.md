@@ -4,11 +4,15 @@ Hands-on materials for an agentic business-loan onboarding process with **Camund
 
 > **Synthetic data only.** Learning demonstration — no real customer data or production credentials.
 
+**US audience?** See [US audience guide](./docs/us-audience.md) for what to use as-is and what to swap (Companies House → US alternative or mock).
+
 ## Repository layout
 
 ```text
 business-loan-onboarding-workshop/
 ├── README.md
+├── docs/
+│   └── us-audience.md          ← US participants & instructors
 ├── camunda/
 │   ├── docs/saas-setup-guide.md
 │   └── processes/              ← instructor-supplied BPMN

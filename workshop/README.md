@@ -12,3 +12,5 @@ End-to-end explanation of the **Business Loan Onboarding & Verification** proces
 2. Place instructor BPMN in [`../camunda/processes/`](../camunda/processes/)
 3. Complete any required [integration guides](../integrations/README.md)
 4. Optional local AI: [Langflow local setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) (separate repository)
+
+**US audience:** [what to use and what to swap](../docs/us-audience.md).
