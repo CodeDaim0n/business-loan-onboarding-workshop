@@ -41,11 +41,11 @@ You need:
 
 Complete the following only when the corresponding integration is part of your workshop environment:
 
-- [Langflow setup](./02-langflow-local-setup.md)
-- [Companies House API setup](./03-companies-house-api-setup.md)
-- [Salesforce and Camunda setup](./04-salesforce-camunda-setup.md)
-- [Personal Gmail SMTP App Password setup](./05-gmail-smtp-setup.md)
-- [Business Loan Onboarding & Verification flow guide](./06-business-loan-flow-guide.md)
+- [Langflow setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) (separate repository)
+- [Companies House API setup](../../integrations/companies-house/setup-guide.md)
+- [Salesforce and Camunda setup](../../integrations/salesforce/setup-guide.md)
+- [Personal Gmail SMTP App Password setup](../../integrations/email-gmail/smtp-app-password-setup.md)
+- [Business Loan Onboarding & Verification flow guide](../../workshop/business-loan-flow-guide.md)
 
 > **Important:** Never place an API key, password or client secret in a BPMN diagram, form field, process variable, screenshot, slide deck or Git repository.
 
@@ -97,7 +97,7 @@ Use **Web Modeler** if you want to work entirely in the browser.
 4. Choose the supplied BPMN file:
 
 ```text
-../camunda/business-loan-onboarding-verification.bpmn
+../processes/business-loan-onboarding-verification.bpmn
 ```
 
 5. Save the imported process.
@@ -112,7 +112,7 @@ Use **Desktop Modeler** if you want to save the BPMN files locally or work from 
 4. Choose:
 
 ```text
-../camunda/business-loan-onboarding-verification.bpmn
+../processes/business-loan-onboarding-verification.bpmn
 ```
 
 5. Use the environment selector at the top of the application.

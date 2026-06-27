@@ -16,7 +16,7 @@ business-loan-onboarding-verification
 This guide explains the complete business-loan onboarding process supplied in:
 
 ```text
-../camunda/business-loan-onboarding-verification.bpmn
+../camunda/processes/business-loan-onboarding-verification.bpmn
 ```
 
 By the end, you will understand how the process:
@@ -36,14 +36,14 @@ By the end, you will understand how the process:
 
 Complete the participant-facing Camunda setup guide first:
 
-- [Camunda 8 SaaS Setup — Participant Guide](./01-camunda-saas-setup.md)
+- [Camunda 8 SaaS Setup — Participant Guide](../camunda/docs/saas-setup-guide.md)
 
 You may also need:
 
-- [Companies House API setup](./03-companies-house-api-setup.md)
-- [Salesforce and Camunda setup](./04-salesforce-camunda-setup.md)
-- [Personal Gmail SMTP App Password setup](./05-gmail-smtp-setup.md)
-- [Langflow setup](./02-langflow-local-setup.md)
+- [Companies House API setup](../integrations/companies-house/setup-guide.md)
+- [Salesforce and Camunda setup](../integrations/salesforce/setup-guide.md)
+- [Personal Gmail SMTP App Password setup](../integrations/email-gmail/smtp-app-password-setup.md)
+- [Langflow setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) (separate repository)
 
 ---
 

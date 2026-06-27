@@ -1,23 +1,36 @@
-# Camunda process assets
+# Camunda assets and setup
 
-Your instructor will provide the Camunda resources for this workshop. Place them in this folder before you import or deploy.
+## Folder layout
 
-## Expected files
+```text
+camunda/
+├── docs/
+│   └── saas-setup-guide.md    ← Camunda 8 SaaS participant setup
+└── processes/                 ← place instructor-supplied BPMN here
+    └── business-loan-onboarding-verification.bpmn
+```
+
+## Instructor-provided files
+
+Copy into `processes/`:
 
 | File | Purpose |
 |---|---|
 | `business-loan-onboarding-verification.bpmn` | Main onboarding and verification process |
 | Additional forms, DMN, or connector assets | As supplied by the instructor |
 
-## What to do
+## Participant steps
 
-1. Copy the instructor-supplied files into this `camunda/` folder.
-2. Follow [Camunda 8 SaaS setup](../docs/01-camunda-saas-setup.md) to import `business-loan-onboarding-verification.bpmn`.
-3. Create the required [Connector Secrets](../docs/01-camunda-saas-setup.md#4-create-connector-secrets) in Camunda Console.
-4. Deploy the process to your workshop cluster.
-5. Use [Business Loan flow guide](../docs/06-business-loan-flow-guide.md) for test scenarios.
+1. Follow [Camunda 8 SaaS setup](./docs/saas-setup-guide.md).
+2. Import `processes/business-loan-onboarding-verification.bpmn` in Web Modeler or Desktop Modeler.
+3. Create [Connector Secrets](./docs/saas-setup-guide.md#4-create-connector-secrets) in Camunda Console.
+4. Deploy to your workshop cluster.
+5. Run test scenarios from the [workshop flow guide](../workshop/business-loan-flow-guide.md).
+
+## Optional: Langflow integration
+
+Local Langflow setup lives in a **separate repository**: [langflow-local-setup-workshop](https://github.com/CodeDaim0n/langflow-local-setup-workshop).
 
 ## Security
 
-- Never commit API keys, passwords, client secrets, or real customer data to Git.
-- Store credentials only in **Camunda Connector Secrets**, not in BPMN XML.
+Never commit API keys, passwords, or real customer data. Use Camunda Connector Secrets only.
