@@ -71,6 +71,7 @@
         <zeebe:taskHeaders>
           <zeebe:header key="resultVariable" value="companyHouseDetails" />
           <zeebe:header key="resultExpression" value="={&#10;      &#34;company_number&#34;: body.company_number,&#10;    &#34;company_name&#34;: body.company_name,&#10;    &#34;company_type&#34;: body.type,&#10;    &#34;previous_company_names&#34;: body.previous_company_names,&#10;    &#34;company_status&#34;: bosy.company_status,&#10;      &#34;date_of_creation&#34;: body.date_of_creation,&#10;      &#34;has_charges&#34;: body.has_charges,&#10;    &#34;sic_codes&#34;: body.sic_codes,&#10;  &#34;registered_office_address&#34;: body.registered_office_address&#10;}" />
+          <zeebe:header key="errorExpression" value="=if is defined(error) and error.code = &#34;404&#34; then&#10;    ignoreError({&#10;      verificationRoute: &#34;HARD_FAIL&#34;,&#10;      companyHouseResult: {&#10;        companyFound: false,&#10;        status: &#34;NOT_FOUND&#34;,&#10;        companyNumber: companyRegistrationNumber,&#10;        errorMessage: error.message&#10;      }&#10;    })&#10;  else&#10;    null" />
         </zeebe:taskHeaders>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1er4yqk</bpmn:incoming>
