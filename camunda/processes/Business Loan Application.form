@@ -1,0 +1,443 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "70fd62a"
+  },
+  "schemaVersion": 19,
+  "id": "start-onboarding-application-1tklzcw",
+  "components": [
+    {
+      "text": "### Business Loan Application",
+      "type": "text",
+      "id": "Form_Heading",
+      "layout": {
+        "row": "Row_0",
+        "col": 16
+      }
+    },
+    {
+      "text": "### Business Information",
+      "type": "text",
+      "id": "Heading_BusinessInfo",
+      "layout": {
+        "row": "Row_1",
+        "col": 16
+      }
+    },
+    {
+      "label": "Registered Business Name",
+      "type": "textfield",
+      "id": "Field_RegisteredBusinessName",
+      "key": "registeredBusinessName",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_2",
+        "col": 8
+      },
+      "defaultValue": "Darktrace Limited"
+    },
+    {
+      "label": "Company Registration Number",
+      "type": "textfield",
+      "id": "Field_CompanyRegistrationNumber",
+      "key": "companyRegistrationNumber",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_2",
+        "col": 8
+      },
+      "defaultValue": "13264637"
+    },
+    {
+      "label": "Business Type",
+      "values": [
+        {
+          "label": "Limited Company",
+          "value": "limitedCompany"
+        },
+        {
+          "label": "Limited Liability Partnership (LLP)",
+          "value": "llp"
+        },
+        {
+          "label": "Sole Trader",
+          "value": "soleTrader"
+        }
+      ],
+      "type": "select",
+      "id": "Field_BusinessType",
+      "key": "businessType",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_3",
+        "col": 8
+      },
+      "defaultValue": "limitedCompany"
+    },
+    {
+      "subtype": "date",
+      "type": "datetime",
+      "id": "Field_DateOfIncorporation",
+      "key": "dateOfIncorporation",
+      "dateLabel": "Date of Incorporation",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_3",
+        "col": 8
+      }
+    },
+    {
+      "label": "Registered Office Address",
+      "type": "textarea",
+      "id": "Field_RegisteredOfficeAddress",
+      "key": "registeredOfficeAddress",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_4",
+        "col": 16
+      },
+      "defaultValue": "Maurice Wilkes Building, St John's Innovation Park, Cowley Road, Cambridge, United Kingdom, CB4 0DS"
+    },
+    {
+      "label": "Trading Address (if different)",
+      "type": "textarea",
+      "id": "Field_TradingAddress",
+      "key": "tradingAddress",
+      "layout": {
+        "row": "Row_5",
+        "col": 16
+      }
+    },
+    {
+      "label": "Business Website",
+      "type": "textfield",
+      "id": "Field_BusinessWebsite",
+      "key": "businessWebsite",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_6",
+        "col": 8
+      },
+      "defaultValue": "none"
+    },
+    {
+      "label": "VAT Number (Optional)",
+      "type": "textfield",
+      "id": "Field_VatNumber",
+      "key": "vatNumber",
+      "layout": {
+        "row": "Row_6",
+        "col": 8
+      }
+    },
+    {
+      "label": "Industry",
+      "type": "textfield",
+      "id": "Field_Industry",
+      "key": "industry",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_7",
+        "col": 16
+      },
+      "defaultValue": "Technology"
+    },
+    {
+      "label": "Business Description",
+      "type": "textarea",
+      "id": "Field_BusinessDescription",
+      "key": "businessDescription",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_8",
+        "col": 16
+      },
+      "defaultValue": "Business and domestic software and hardware provider"
+    },
+    {
+      "text": "### Loan Details",
+      "type": "text",
+      "id": "Heading_LoanDetails",
+      "layout": {
+        "row": "Row_9",
+        "col": 16
+      }
+    },
+    {
+      "label": "Loan Amount",
+      "type": "number",
+      "id": "Field_LoanAmount",
+      "key": "loanAmount",
+      "appearance": {
+        "prefixAdorner": "$"
+      },
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_10",
+        "col": 6
+      },
+      "defaultValue": 300000
+    },
+    {
+      "label": "Loan Purpose",
+      "values": [
+        {
+          "label": "Working Capital",
+          "value": "workingCapital"
+        },
+        {
+          "label": "Equipment Purchase",
+          "value": "equipmentPurchase"
+        },
+        {
+          "label": "Expansion",
+          "value": "expansion"
+        }
+      ],
+      "type": "select",
+      "id": "Field_LoanPurpose",
+      "key": "loanPurpose",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_10",
+        "col": 6
+      },
+      "defaultValue": "workingCapital"
+    },
+    {
+      "label": "Loan Term",
+      "type": "number",
+      "id": "Field_LoanTerm",
+      "key": "loanTerm",
+      "appearance": {
+        "suffixAdorner": "months"
+      },
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_10",
+        "col": 4
+      },
+      "defaultValue": 12
+    },
+    {
+      "text": "### Applicant's Details",
+      "type": "text",
+      "id": "Heading_ApplicantDetails",
+      "layout": {
+        "row": "Row_11",
+        "col": 16
+      }
+    },
+    {
+      "label": "Applicant Full Name",
+      "type": "textfield",
+      "id": "Field_ApplicantFullName",
+      "key": "applicantFullName",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_12",
+        "col": 8
+      },
+      "defaultValue": "Philip Michael PEARSON"
+    },
+    {
+      "label": "Position in Business",
+      "type": "textfield",
+      "id": "Field_ApplicantPosition",
+      "key": "applicantPosition",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_12",
+        "col": 8
+      },
+      "defaultValue": "Director"
+    },
+    {
+      "label": "Applicant Email",
+      "type": "textfield",
+      "id": "Field_ApplicantEmail",
+      "key": "applicantEmail",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_13",
+        "col": 8
+      },
+      "defaultValue": "anjeely@gmail.com"
+    },
+    {
+      "label": "Applicant Phone",
+      "type": "textfield",
+      "id": "Field_ApplicantPhone",
+      "key": "applicantPhone",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_13",
+        "col": 8
+      },
+      "defaultValue": "07123456789"
+    },
+    {
+      "label": "Business proof",
+      "components": [
+        {
+          "text": "### Upload Business Evidence",
+          "type": "text",
+          "layout": {
+            "row": "Row_09t1a1m",
+            "columns": null
+          },
+          "id": "Field_1vu0kim"
+        },
+        {
+          "label": "Company proof type",
+          "values": [
+            {
+              "label": "Business bank statement",
+              "value": "businessBankStatement"
+            },
+            {
+              "label": "VAT registration certificate",
+              "value": "vatRegistrationCertificate"
+            },
+            {
+              "label": "Business utility bill",
+              "value": "businessUtilityBill"
+            },
+            {
+              "label": "Business insurance certificate",
+              "value": "businessInsuranceCertificate"
+            },
+            {
+              "label": "Certificate of incorporation",
+              "value": "certificateOfIncorporation"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_0cm5tuw",
+            "columns": null
+          },
+          "id": "Field_02y3x02",
+          "key": "companyProofType",
+          "defaultValue": "certificateOfIncorporation"
+        },
+        {
+          "label": "Upload company proof",
+          "type": "filepicker",
+          "layout": {
+            "row": "Row_1sm2fox",
+            "columns": null
+          },
+          "id": "Field_0vyxz8z",
+          "key": "companyProofDoc",
+          "accept": "jpg,png,jpeg,pdf"
+        },
+        {
+          "subtype": "date",
+          "dateLabel": "Document Date",
+          "type": "datetime",
+          "layout": {
+            "row": "Row_1sm2fox",
+            "columns": null
+          },
+          "id": "Field_0fzjjgl",
+          "key": "companyProofDocDate",
+          "conditional": {
+            "hide": "=companyProofType = \"certificateOfIncorporation\""
+          }
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_14",
+        "columns": null
+      },
+      "id": "Field_1plij3g"
+    },
+    {
+      "text": "### Consent & Declaration",
+      "type": "text",
+      "id": "Heading_Consent",
+      "layout": {
+        "row": "Row_08gk8zs",
+        "col": 16
+      }
+    },
+    {
+      "label": "I consent to a credit check being performed on the business and its directors.",
+      "type": "checkbox",
+      "id": "Field_CreditCheckConsent",
+      "key": "creditCheckConsent",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_15",
+        "col": 16
+      }
+    },
+    {
+      "label": "I declare that the information provided in this application is true and accurate to the best of my knowledge.",
+      "type": "checkbox",
+      "id": "Field_InformationAccuracyDeclaration",
+      "key": "informationAccuracyDeclaration",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_16",
+        "col": 16
+      }
+    },
+    {
+      "subtype": "date",
+      "type": "datetime",
+      "id": "Field_SignatureDate",
+      "key": "signatureDate",
+      "dateLabel": "Signature Date",
+      "description": "This date is recorded upon submission.",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_17",
+        "col": 16
+      }
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}

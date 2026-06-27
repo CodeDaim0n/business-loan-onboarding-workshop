@@ -1,0 +1,105 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "70fd62a"
+  },
+  "schemaVersion": 19,
+  "id": "Form_kvacyz4",
+  "components": [
+    {
+      "text": "### Specialist Review and Decision",
+      "type": "text",
+      "id": "SpecialistReviewHeading",
+      "layout": {
+        "row": "row_1",
+        "col": 16
+      }
+    },
+    {
+      "text": "=emailSent",
+      "type": "text",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      },
+      "id": "Field_196mdqz"
+    },
+    {
+      "text": "=customerResponse.plainTextBody",
+      "type": "text",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      },
+      "id": "Field_00g9eux"
+    },
+    {
+      "label": "Decision",
+      "values": [
+        {
+          "label": "Approve Provisional Offer",
+          "value": "PROVISIONAL_OFFER"
+        },
+        {
+          "label": "Reject Application",
+          "value": "REJECT"
+        },
+        {
+          "label": "Request Further Information",
+          "value": "REQUEST_INFORMATION"
+        }
+      ],
+      "type": "radio",
+      "id": "ApproveOrRejectRadio",
+      "key": "approveOrRejectApplication",
+      "description": "Select whether to approve or reject the application.",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "row_3",
+        "col": 16
+      }
+    },
+    {
+      "label": "Request for Additional Details (Optional)",
+      "type": "textarea",
+      "id": "SpecialistRequestDetailsTextarea",
+      "key": "specialistRequestDetails",
+      "description": "If more information is required to make a final decision, specify the details here.",
+      "layout": {
+        "row": "row_4",
+        "col": 16
+      }
+    },
+    {
+      "label": "Decision Rationale",
+      "type": "textarea",
+      "id": "SpecialistDecisionRationaleTextarea",
+      "key": "specialistDecisionRationale",
+      "description": "Provide a detailed explanation for your decision.",
+      "validate": {
+        "required": true,
+        "minLength": 20
+      },
+      "layout": {
+        "row": "row_4",
+        "col": 16
+      }
+    },
+    {
+      "label": "Submit",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "row_5",
+        "columns": null
+      },
+      "id": "Field_1cgi9ju"
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}

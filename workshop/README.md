@@ -9,9 +9,11 @@ The end-to-end explanation of the **Business Loan Onboarding & Verification** pr
 ## Before you start
 
 1. Complete the [Camunda 8 SaaS setup](../camunda/docs/saas-setup-guide.md).
-2. Add the provided BPMN file(s) to [`../camunda/processes/`](../camunda/processes/).
-3. Complete any required [integration guides](../integrations/README.md).
-4. Optional local AI track: [Langflow local setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) (separate repository).
+2. In Camunda, create a project and upload a BPMN variant plus the three forms from [`../camunda/processes/`](../camunda/processes/). Start with the **mocks** variant to run with no integrations.
+3. *(Full variant only)* Complete the required [integration guides](../integrations/README.md). With the mocks variant you can skip this.
+4. Companion track: [Langflow](https://github.com/CodeDaim0n/langflow-local-setup-workshop) — a no-code AI agent builder usable on its own (separate repository).
+
+> **Mocks vs full.** The flow guide below describes the live integrations. When you run the **mocks** variant, those same steps run as built-in simulations (labelled `[DEMO MOCK]`) — the journey and outcomes are identical, but no registry, CRM, or email is contacted.
 
 ## Adapting by region
 

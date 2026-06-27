@@ -4,20 +4,17 @@
 
 **Process name:** `Business Loan Onboarding & Verification`
 
-**Recommended BPMN filename and process ID:**
+**Provided BPMN files:**
 
 ```text
-business-loan-onboarding-verification
+../camunda/processes/business-loan-onboarding-verification_demo_mocks.bpmn   # Mocked — no integrations
+../camunda/processes/business-loan-onboarding-verification_demo.bpmn         # Full — live integrations
 ```
 
 
 ## What you will learn
 
-This guide explains the complete business-loan onboarding process supplied in:
-
-```text
-../camunda/processes/business-loan-onboarding-verification.bpmn
-```
+This guide explains the complete business-loan onboarding process supplied in [`../camunda/processes/`](../camunda/processes/). It describes the **full** variant with live integrations. The **mocks** variant follows the exact same journey, but the Companies House, CRM, and email steps run as built-in simulations labelled `[DEMO MOCK]`, so you can complete every scenario below with no external integrations.
 
 By the end, you will understand how the process:
 
@@ -38,12 +35,12 @@ Complete the participant-facing Camunda setup guide first:
 
 - [Camunda 8 SaaS Setup — Participant Guide](../camunda/docs/saas-setup-guide.md)
 
-You may also need:
+If you run the **full** variant, you will also need the integration guides below. With the **mocks** variant you can skip them — you only need an `OPENAI_API_KEY`.
 
 - [Companies House API setup](../integrations/companies-house/setup-guide.md)
 - [Salesforce and Camunda setup](../integrations/salesforce/setup-guide.md)
 - [Personal Gmail SMTP App Password setup](../integrations/email-gmail/smtp-app-password-setup.md)
-- [Langflow setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) (separate repository)
+- [Langflow](https://github.com/CodeDaim0n/langflow-local-setup-workshop) — standalone no-code AI agent builder (separate repository)
 
 ---
 

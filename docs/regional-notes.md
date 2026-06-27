@@ -28,6 +28,7 @@ This workshop uses a **UK company registry** ([Companies House](https://develope
 
 ### Options when running outside the UK
 
+0. **Use the mocks variant (simplest)** — Deploy `business-loan-onboarding-verification_demo_mocks.bpmn`. Its company registry step is already a built-in simulation, so it runs identically anywhere with no UK-specific setup and no external registry account.
 1. **Skip the registry connector** — Run the rest of the process with mock company variables and focus on orchestration, AI, CRM, and email.
 2. **Use a mock REST service** — Point the REST connector at a small fake "company lookup" API for consistent, repeatable results.
 3. **Use a regional data source** — Replace Companies House with an appropriate API, for example in the US:

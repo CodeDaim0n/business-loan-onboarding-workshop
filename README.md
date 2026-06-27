@@ -35,18 +35,24 @@ AI agents are transforming financial services, but building them in a regulated 
 
 ## Do I need the integrations?
 
-**No — not to learn.** Two skills in this workshop stand entirely on their own:
+**No.** A **mocked process variant is provided** so you can run the entire example end-to-end with **no external integrations** — no Companies House, Salesforce, or email accounts. The Companies House, CRM, and email steps are replaced by built-in simulations, so you only need a free Camunda account and an `OPENAI_API_KEY` for the AI Agent.
+
+Two skills in this workshop also stand entirely on their own:
 
 - **Build no-code AI agents in [Langflow](https://github.com/CodeDaim0n/langflow-local-setup-workshop)** — a no-code agent builder that works independently of any workflow engine.
 - **Design and run agentic process flows in Camunda** — workflow orchestration with an AI Agent inside auditable boundaries.
 
-The external integrations — **Companies House**, **Salesforce**, and **email** — are only required to run the **provided end-to-end example** exactly as shipped. Without them you can still follow every concept and build your own agents and flows; you simply will not exercise those specific integration steps.
+The external integrations — **Companies House**, **Salesforce**, and **email** — are only needed if you want to run the **full** variant against real systems instead of the mocks.
 
 | Goal | What you need |
 |---|---|
 | Learn a no-code AI agent builder | [Langflow](https://github.com/CodeDaim0n/langflow-local-setup-workshop) on its own — no workflow engine required |
-| Learn agentic process orchestration | A free Camunda account |
-| Run the full provided example | Camunda **plus** the integrations for your track |
+| Run the full example with **no integrations** | A free Camunda account **+ `OPENAI_API_KEY`** — use the **mocks** BPMN |
+| Run the example against **real** systems | Camunda **plus** Companies House, Salesforce, and email — use the **full** BPMN |
+
+> **Two BPMN variants are provided** in [`camunda/processes/`](./camunda/processes/):
+> `business-loan-onboarding-verification_demo_mocks.bpmn` (mocked, recommended starting point) and
+> `business-loan-onboarding-verification_demo.bpmn` (full, live integrations).
 
 ---
 
@@ -99,7 +105,7 @@ The external integrations — **Companies House**, **Salesforce**, and **email**
 The BPMN model controls the path at all times. The AI Agent can only recommend or trigger actions that are already defined in the process.
 
 **Process name:** `Business Loan Onboarding & Verification`
-**Process ID / BPMN file:** `business-loan-onboarding-verification.bpmn`
+**Provided BPMN files:** `business-loan-onboarding-verification_demo_mocks.bpmn` (mocked — no integrations) and `business-loan-onboarding-verification_demo.bpmn` (full — live integrations)
 
 ---
 
@@ -130,7 +136,7 @@ business-loan-onboarding-workshop/
 ├── camunda/
 │   ├── README.md
 │   ├── docs/saas-setup-guide.md  # Set up, deploy, and run on Camunda 8 SaaS
-│   └── processes/                # Place the provided BPMN file(s) here
+│   └── processes/                # Provided BPMN variants (mocks + full) and forms
 ├── integrations/
 │   ├── README.md
 │   ├── companies-house/setup-guide.md
@@ -152,13 +158,14 @@ A short summary is below. See **[docs/prerequisites.md](./docs/prerequisites.md)
 | Your own [Camunda 8 account](https://console.camunda.io/) | You sign up yourself — no account is provided. A free trial covers this workshop |
 | Your own Camunda 8 SaaS cluster | You create this yourself in Camunda Console |
 | Modern web browser | Use Console, Web Modeler, Operate, and Tasklist |
-| The provided BPMN and forms | Supplied with your workshop materials; imported and placed in `camunda/processes/` |
-| Integration accounts | Only those required by your chosen track (OpenAI, Companies House, Salesforce, Gmail) |
+| The provided BPMN and forms | Included in [`camunda/processes/`](./camunda/processes/) — you upload them into your own Camunda project |
+| An OpenAI API key | Required by the AI Agent in **both** variants |
+| Integration accounts | **Only for the full variant** (Companies House, Salesforce, Gmail) — not needed for the mocks variant |
 | Windows or macOS | Only if you run the optional local Langflow track |
 
 > **You create your own Camunda account and cluster.** A free trial (signup) cluster is sufficient.
 >
-> The Camunda process files (BPMN, forms, and any connector templates) are **provided with your workshop materials** and are not stored in this repository. Import them and add them to [`camunda/processes/`](./camunda/processes/) before deploying.
+> The Camunda process files (two BPMN variants and three forms) are **included in this repository** under [`camunda/processes/`](./camunda/processes/). You create your own Camunda project and upload them before deploying.
 
 ---
 
@@ -170,24 +177,24 @@ cd business-loan-onboarding-workshop
 ```
 
 1. Confirm you meet the [prerequisites](./docs/prerequisites.md), including your own Camunda account.
-2. Add the provided BPMN and forms to [`camunda/processes/`](./camunda/processes/).
-3. Follow the [Camunda 8 SaaS setup guide](./camunda/docs/saas-setup-guide.md) to create your own cluster, add secrets, and deploy.
-4. Complete the [integration guides](./integrations/README.md) required by your track.
-5. Work through the [business loan flow guide](./workshop/business-loan-flow-guide.md) and run the test scenarios.
+2. In Camunda Web Modeler, **create a project** and **upload** a BPMN variant from [`camunda/processes/`](./camunda/processes/) together with the three `.form` files. Start with `business-loan-onboarding-verification_demo_mocks.bpmn` to run with no integrations.
+3. Follow the [Camunda 8 SaaS setup guide](./camunda/docs/saas-setup-guide.md) to create your own cluster, add the `OPENAI_API_KEY` secret, and deploy.
+4. Work through the [business loan flow guide](./workshop/business-loan-flow-guide.md) and run the test scenarios — the mocks variant runs end-to-end on its own.
+5. *(Optional)* To use real systems, complete the [integration guides](./integrations/README.md) and deploy the full variant instead.
 6. Build no-code AI agents in the standalone [Langflow track](https://github.com/CodeDaim0n/langflow-local-setup-workshop) — usable on its own or connected to this process.
 
 ---
 
 ## Learning path
 
-Follow the steps in order. Skip integrations that are not part of your track.
+Follow the steps in order. With the **mocks** variant you can go straight from step 1 to step 5 — the integration steps (2–4) are only needed for the full variant.
 
 | Step | Topic | Guide |
 |---|---|---|
-| 1 | Platform setup | [Camunda 8 SaaS setup](./camunda/docs/saas-setup-guide.md) |
-| 2 | Company registry check | [Companies House setup](./integrations/companies-house/setup-guide.md) |
-| 3 | CRM | [Salesforce setup](./integrations/salesforce/setup-guide.md) |
-| 4 | Email channel | [Gmail SMTP setup](./integrations/email-gmail/smtp-app-password-setup.md) |
+| 1 | Platform setup, upload, and deploy | [Camunda 8 SaaS setup](./camunda/docs/saas-setup-guide.md) |
+| 2 | *(Full variant only)* Company registry check | [Companies House setup](./integrations/companies-house/setup-guide.md) |
+| 3 | *(Full variant only)* CRM | [Salesforce setup](./integrations/salesforce/setup-guide.md) |
+| 4 | *(Full variant only)* Email channel | [Gmail SMTP setup](./integrations/email-gmail/smtp-app-password-setup.md) |
 | 5 | Process walkthrough | [Business loan flow guide](./workshop/business-loan-flow-guide.md) |
 | — | No-code AI agent builder (standalone) | [Langflow track](https://github.com/CodeDaim0n/langflow-local-setup-workshop) |
 
@@ -195,15 +202,24 @@ Follow the steps in order. Skip integrations that are not part of your track.
 
 ## Camunda Connector Secrets
 
-Create only the secrets required by your track. Reference them in connector fields with `{{secrets.SECRET_NAME}}`.
+Reference secrets in connector fields with `{{secrets.SECRET_NAME}}`.
+
+**Mocks variant** — create just one secret:
 
 | Secret | Used for |
 |---|---|
 | `OPENAI_API_KEY` | AI document analysis and AI Agent tasks |
-| `LANGFLOW_API_KEY` | Local Langflow REST calls (optional local AI track) |
+
+**Full variant** — also create the integration secrets:
+
+| Secret | Used for |
+|---|---|
 | `COMPANY_HOUSE_KEY` | Companies House company and director checks |
 | `SFDC_DEMO_BASE_URL`, `SFDC_DEMO_CONSUMER_KEY`, `SFDC_DEMO_CONSUMER_SECRET` | Salesforce OAuth |
-| `INBOUND_MAIL_USER`, `INBOUND_MAIL_PASSWORD`, `INBOUND_MAIL_SERVER`, `INBOUND_MAIL_ADDRESS` | SMTP email |
+| `INBOUND_MAIL_USER`, `INBOUND_MAIL_PASSWORD`, `INBOUND_MAIL_SERVER`, `INBOUND_MAIL_ADDRESS` | Outgoing (SMTP) email |
+| `INBOUND_MAIL_IMAP_SERVER`, `INBOUND_MAIL_IMAP_PORT`, `INBOUND_MAIL_FOLDER` | Incoming (IMAP) applicant-response listener |
+
+> The provided process calls **OpenAI directly**; it does not use `LANGFLOW_API_KEY`. Add a Langflow secret only if you adapt the process to call a Langflow flow.
 
 Full details are in the [Camunda setup guide](./camunda/docs/saas-setup-guide.md#4-create-connector-secrets).
 

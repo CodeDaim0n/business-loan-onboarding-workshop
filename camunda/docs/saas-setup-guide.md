@@ -4,19 +4,21 @@
 
 **Process name:** `Business Loan Onboarding & Verification`
 
-**Recommended BPMN filename and process ID:**
+**Provided process files (in [`../processes/`](../processes)):**
 
 ```text
-business-loan-onboarding-verification
+business-loan-onboarding-verification_demo_mocks.bpmn   # Mocked — run with NO integrations (recommended)
+business-loan-onboarding-verification_demo.bpmn         # Full — uses the live integrations
 ```
 
+> **Run it with no integrations.** The mocks variant lets you create your process in Camunda, deploy it, and run the entire flow end-to-end using only an `OPENAI_API_KEY`. Companies House, Salesforce, and email are simulated. Start here, then move to the full variant if you want to wire up the real integrations.
 
 ## What you will do
 
 In this guide, you will prepare Camunda 8 SaaS so that you can:
 
 1. Access a Camunda cluster.
-2. Open the supplied BPMN process.
+2. Create your own project and **upload the provided BPMN process and forms**.
 3. Create the secure connection settings needed by the process.
 4. Deploy the process.
 5. Start and monitor a test instance.
@@ -33,15 +35,16 @@ You need:
 |---|---|
 | Your own Camunda account | You create this yourself — no account is provided for you |
 | Your own Camunda 8 SaaS cluster | You create this yourself (a free trial cluster is sufficient) |
-| The provided BPMN and forms | Supplied with your workshop materials, to import |
+| The provided BPMN and forms | Supplied in [`../processes/`](../processes) — you create a project and upload them |
+| An OpenAI API key | Required by the AI Agent in **both** variants |
 | A modern browser | To use Console, Web Modeler, Operate and Tasklist |
-| The companion setup guides | To create the keys used by the integrations |
+| The companion setup guides | Only if you run the **full** variant with live integrations |
 
 > You sign up for and create your **own** Camunda 8 SaaS account and cluster. A free trial (signup) cluster is enough for this workshop.
 
 ### Companion guides
 
-Complete the following only when the corresponding integration is part of your workshop environment:
+If you use the **mocks** variant, you can skip the integration guides below entirely. Complete them only when you run the **full** variant with that integration:
 
 - [Langflow setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) (separate repository)
 - [Companies House API setup](../../integrations/companies-house/setup-guide.md)
@@ -83,41 +86,52 @@ lending-onboarding-demo
 
 ---
 
-# 3. Choose how to edit the process
+# 3. Create your project and import the process
 
-You can use either route below.
+The process and forms are **provided in this repository** under [`../processes/`](../processes). You create your own Camunda project and **upload these files** — nothing is deployed for you.
+
+## Choose a process variant first
+
+| File | Use it when | What it needs |
+|---|---|---|
+| `business-loan-onboarding-verification_demo_mocks.bpmn` | **Recommended starting point.** Run the whole example with **no external integrations**. | Only the `OPENAI_API_KEY` secret. |
+| `business-loan-onboarding-verification_demo.bpmn` | You want the **live** Companies House, Salesforce, and email integrations. | All integration secrets (see [section 4](#4-create-connector-secrets)). |
+
+In the mocks variant, the Companies House, Salesforce (CRM), and email steps are Script Tasks labelled `[DEMO MOCK]` that return realistic local results. No registry lookup, CRM record, or email is real. The AI Agent is not mocked, so the `OPENAI_API_KEY` secret is still required.
+
+## Files to upload
+
+Whichever variant you choose, also import the three forms so the form references in the process resolve:
+
+```text
+../processes/business-loan-onboarding-verification_demo_mocks.bpmn   (or the _demo variant)
+../processes/Business Loan Application.form
+../processes/Email Review.form
+../processes/Loan Specialist decision.form
+```
 
 ## Option A — Web Modeler
 
 Use **Web Modeler** if you want to work entirely in the browser.
 
 1. In Camunda Console, open **Web Modeler**.
-2. Create or open the workshop project.
-3. Select **Import**.
-4. Choose the supplied BPMN file:
+2. **Create a project** for the workshop (for example, `Business Loan Onboarding`).
+3. Inside the project, select **Create new → Upload files** (or drag the files in).
+4. Upload **one BPMN variant and all three `.form` files** listed above.
+5. Open the imported BPMN process and save it.
 
-```text
-../processes/business-loan-onboarding-verification.bpmn
-```
-
-5. Save the imported process.
+> Import the forms into the **same project** as the BPMN. If the forms are missing, the user tasks and start form will not render.
 
 ## Option B — Desktop Modeler
 
-Use **Desktop Modeler** if you want to save the BPMN files locally or work from a Git folder.
+Use **Desktop Modeler** if you want to save the files locally or work from a Git folder.
 
 1. Download and install [Camunda Modeler](https://camunda.com/download/modeler/).
 2. Open Camunda Modeler.
-3. Select **File → Open File**.
-4. Choose:
-
-```text
-../processes/business-loan-onboarding-verification.bpmn
-```
-
-5. Use the environment selector at the top of the application.
-6. Select **Connect to Camunda 8**.
-7. Sign in and choose your workshop cluster.
+3. Select **File → Open File** and open your chosen BPMN variant plus the three `.form` files from [`../processes/`](../processes).
+4. Use the environment selector at the top of the application.
+5. Select **Connect to Camunda 8**.
+6. Sign in and choose your workshop cluster.
 
 > Confirm that Desktop Modeler is connected to the correct cluster before deploying.
 
@@ -135,22 +149,37 @@ Connector Secrets allow the process to use credentials without exposing them in 
 4. Enter the secret name and value.
 5. Save.
 
-## Secrets used by the supplied process
+## Secrets by variant
 
-Create only the secrets that your workshop environment requires.
+Create only the secrets that your chosen variant requires.
+
+### Mocks variant — `business-loan-onboarding-verification_demo_mocks.bpmn`
 
 | Secret name | What it is used for |
 |---|---|
 | `OPENAI_API_KEY` | AI document analysis and AI Agent tasks |
-| `LANGFLOW_API_KEY` | Langflow REST API calls when using a local Langflow flow |
+
+That is the only secret you need. The Companies House, Salesforce, and email steps are mocked, so **no other credentials are required** to run the full flow.
+
+### Full variant — `business-loan-onboarding-verification_demo.bpmn`
+
+Create everything in the mocks list above, plus the integration secrets:
+
+| Secret name | What it is used for |
+|---|---|
 | `COMPANY_HOUSE_KEY` | Companies House company and director checks |
 | `SFDC_DEMO_BASE_URL` | Salesforce base or My Domain URL |
 | `SFDC_DEMO_CONSUMER_KEY` | Salesforce OAuth client ID |
 | `SFDC_DEMO_CONSUMER_SECRET` | Salesforce OAuth client secret |
-| `INBOUND_MAIL_USER` | Email account username |
-| `INBOUND_MAIL_PASSWORD` | Email App Password or approved SMTP password |
-| `INBOUND_MAIL_SERVER` | Email server hostname |
+| `INBOUND_MAIL_USER` | Email account username (SMTP and IMAP) |
+| `INBOUND_MAIL_PASSWORD` | Email App Password or approved SMTP/IMAP password |
+| `INBOUND_MAIL_SERVER` | Outgoing (SMTP) server hostname |
 | `INBOUND_MAIL_ADDRESS` | Sender email address |
+| `INBOUND_MAIL_IMAP_SERVER` | Incoming (IMAP) server hostname, for the applicant-response listener |
+| `INBOUND_MAIL_IMAP_PORT` | Incoming (IMAP) server port |
+| `INBOUND_MAIL_FOLDER` | Mailbox folder the inbound listener watches |
+
+> The supplied process calls **OpenAI directly** for its AI Agent; it does not require `LANGFLOW_API_KEY`. Only add a Langflow secret if you adapt the process to call a Langflow flow (see the [Langflow companion repository](https://github.com/CodeDaim0n/langflow-local-setup-workshop)).
 
 The process refers to secrets in this format:
 
@@ -173,7 +202,9 @@ Use a **Google App Password**, not your normal Google password.
 
 # 5. Check that connector templates are available
 
-Open the imported BPMN process and select the service tasks. Confirm that the relevant connector templates appear in the properties panel.
+> **Mocks variant:** the integration steps are plain Script Tasks labelled `[DEMO MOCK]`, so you do **not** need the Companies House, Salesforce, or email connectors. Only the AI Agent template is used. You can skip the rest of this section.
+
+For the **full variant**, open the imported BPMN process and select the service tasks. Confirm that the relevant connector templates appear in the properties panel.
 
 | Process capability | Expected connector or template |
 |---|---|

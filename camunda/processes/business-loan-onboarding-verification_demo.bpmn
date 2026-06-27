@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="70fd62a" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.10.0">
+  <bpmn:process id="business-loan-onboarding-verification_demo" name="business-loan-onboarding-verification_demo" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:versionTag value="v1" />
+    </bpmn:extensionElements>
+    <bpmn:serviceTask id="Activity_0e1ermh" name="Analyze company proof" zeebe:modelerTemplate="io.camunda.connectors.agenticai.aiagent.v1" zeebe:modelerTemplateVersion="5" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNBNTZFRkYiLz4KPG1hc2sgaWQ9InBhdGgtMi1vdXRzaWRlLTFfMTg1XzYiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjQiIHk9IjQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iYmxhY2siPgo8cmVjdCBmaWxsPSJ3aGl0ZSIgeD0iNCIgeT0iNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIvPgo8L21hc2s+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC4wMTA1IDEyLjA5ODdDMTguNDkgMTAuNTg5NCAxNy4xNTk0IDguMTA4MTQgMTYuMTc5OSA2LjAxMTAzQzE2LjE1MiA2LjAwNDUxIDE2LjExNzYgNiAxNi4wNzk0IDZDMTYuMDQxMSA2IDE2LjAwNjYgNi4wMDQ1MSAxNS45Nzg4IDYuMDExMDRDMTQuOTk5NCA4LjEwODE0IDEzLjY2OTcgMTAuNTg4OSAxMi4xNDgxIDEyLjA5ODFDMTAuNjI2OSAxMy42MDcxIDguMTI1NjggMTQuOTI2NCA2LjAxMTU3IDE1Ljg5ODFDNi4wMDQ3NCAxNS45MjYxIDYgMTUuOTYxMSA2IDE2QzYgMTYuMDM4NyA2LjAwNDY4IDE2LjA3MzYgNi4wMTE0NCAxNi4xMDE0QzguMTI1MTkgMTcuMDcyOSAxMC42MjYyIDE4LjM5MTkgMTIuMTQ3NyAxOS45MDE2QzEzLjY2OTcgMjEuNDEwNyAxNC45OTk2IDIzLjg5MiAxNS45NzkxIDI1Ljk4OUMxNi4wMDY4IDI1Ljk5NTYgMTYuMDQxMSAyNiAxNi4wNzkzIDI2QzE2LjExNzUgMjYgMTYuMTUxOSAyNS45OTU0IDE2LjE3OTYgMjUuOTg5QzE3LjE1OTEgMjMuODkyIDE4LjQ4ODggMjEuNDExIDIwLjAwOTkgMTkuOTAyMU0yMC4wMDk5IDE5LjkwMjFDMjEuNTI1MyAxOC4zOTg3IDIzLjk0NjUgMTcuMDY2OSAyNS45OTE1IDE2LjA4MjRDMjUuOTk2NSAxNi4wNTkzIDI2IDE2LjAzMSAyNiAxNS45OTk3QzI2IDE1Ljk2ODQgMjUuOTk2NSAxNS45NDAzIDI1Ljk5MTUgMTUuOTE3MUMyMy45NDc0IDE0LjkzMjcgMjEuNTI1OSAxMy42MDEgMjAuMDEwNSAxMi4wOTg3IiBzdHJva2U9IiM0OTFEOEIiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgbWFzaz0idXJsKCNwYXRoLTItb3V0c2lkZS0xXzE4NV82KSIvPgo8L3N2Zz4K">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda.agenticai:aiagent:1" retries="3" />
+        <zeebe:ioMapping>
+          <zeebe:input source="openai" target="provider.type" />
+          <zeebe:input source="{{secrets.OPENAI_API_KEY}}" target="provider.openai.authentication.apiKey" />
+          <zeebe:input source="gpt-5-nano" target="provider.openai.model.model" />
+          <zeebe:input source="=&#34;You are a business-document verification assistant. Analyse the uploaded company proof document and extract only information clearly visible in the document. Do not infer, invent, or assume information.&#34; +&#10;&#10;&#34;\n\nAPPLICATION DETAILS&#34; +&#10;&#34;\nRegistered business name: &#34; + get or else(registeredBusinessName, &#34;[not provided]&#34;) +&#10;&#34;\nCompany registration number: &#34; + get or else(companyRegistrationNumber, &#34;[not provided]&#34;) +&#10;&#34;\nRegistered office address: &#34; + get or else(registeredOfficeAddress, &#34;[not provided]&#34;) +&#10;&#34;\nTrading address: &#34; + get or else(tradingAddress, &#34;[not provided]&#34;) +&#10;&#34;\nCompany proof type selected by applicant: &#34; + get or else(companyProofType, &#34;[not provided]&#34;) +&#10;&#34;\nDocument date declared by applicant: &#34; + get or else(companyProofDocDate, &#34;[not provided]&#34;) +&#10;&#10;&#34;\n\nYOUR TASK&#34; +&#10;&#34;\n1. Identify the actual document type.&#34; +&#10;&#34;\n2. Determine whether it matches the selected company proof type.&#34; +&#10;&#34;\n3. Extract, only where visible: business name, company registration number, VAT number, registered address, trading address, document date, and relevant document reference.&#34; +&#10;&#34;\n4. Compare extracted details against the application details above.&#34; +&#10;&#34;\n5. Identify unreadable content, missing information, expired evidence, or discrepancies.&#34; +&#10;&#34;\n6. Do not treat a document as valid evidence if the business name cannot be identified or the document does not reasonably support the selected proof type.&#34; +&#10;&#10;&#34;\n\nDOCUMENT-SPECIFIC RULES&#34; +&#10;&#34;\n- Business bank statement: expect business name and a recent statement date.&#34; +&#10;&#34;\n- VAT registration certificate: expect business name and VAT number.&#34; +&#10;&#34;\n- Certificate of incorporation: expect company name, company number, and incorporation information.&#34; +&#10;&#34;\n- Business utility bill: expect business name or trading name, address, and a recent date.&#34; +&#10;&#34;\n- Latest filed accounts: expect company name, company number, and accounting period.&#34; +&#10;&#34;\n- Business insurance certificate: expect business name, policy date, and insurer or policy reference.&#34; +&#10;&#10;&#34;\n\nRETURN JSON ONLY. Use these exact fields:&#34; +&#10;&#34;\n{&#34; +&#10;&#34;\n  \&#34;document_readable\&#34;: true,&#34; +&#10;&#34;\n  \&#34;document_type_detected\&#34;: null,&#34; +&#10;&#34;\n  \&#34;document_type_matches_selection\&#34;: false,&#34; +&#10;&#34;\n  \&#34;company_name_extracted\&#34;: null,&#34; +&#10;&#34;\n  \&#34;company_number_extracted\&#34;: null,&#34; +&#10;&#34;\n  \&#34;vat_number_extracted\&#34;: null,&#34; +&#10;&#34;\n  \&#34;registered_address_extracted\&#34;: null,&#34; +&#10;&#34;\n  \&#34;trading_address_extracted\&#34;: null,&#34; +&#10;&#34;\n  \&#34;document_date_extracted\&#34;: null,&#34; +&#10;&#34;\n  \&#34;document_reference\&#34;: null,&#34; +&#10;&#34;\n  \&#34;company_name_match\&#34;: false,&#34; +&#10;&#34;\n  \&#34;company_number_match\&#34;: false,&#34; +&#10;&#34;\n  \&#34;registered_address_match\&#34;: false,&#34; +&#10;&#34;\n  \&#34;trading_address_match\&#34;: false,&#34; +&#10;&#34;\n  \&#34;document_recent_enough\&#34;: false,&#34; +&#10;&#34;\n  \&#34;discrepancies\&#34;: [],&#34; +&#10;&#34;\n  \&#34;missing_or_unreadable_fields\&#34;: [],&#34; +&#10;&#34;\n  \&#34;evidence_outcome\&#34;: \&#34;PASS\&#34;,&#34; +&#10;&#34;\n  \&#34;confidence\&#34;: 0.0,&#34; +&#10;&#34;\n  \&#34;summary\&#34;: null&#34; +&#10;&#34;\n}&#34; +&#10;&#10;&#34;\n\nAllowed evidence_outcome values: PASS, INSUFFICIENT_DOCUMENT, DOCUMENT_TYPE_MISMATCH, DATA_MISMATCH, DOCUMENT_EXPIRED, UNREADABLE_DOCUMENT, MANUAL_REVIEW.&#34;" target="data.systemPrompt.prompt" />
+          <zeebe:input source="=&#34;Analyse the proof of company&#34;" target="data.userPrompt.prompt" />
+          <zeebe:input source="=companyProofDoc[1]" target="data.userPrompt.documents" />
+          <zeebe:input source="=agent.context" target="data.context" />
+          <zeebe:input source="in-process" target="data.memory.storage.type" />
+          <zeebe:input source="=20" target="data.memory.contextWindowSize" />
+          <zeebe:input source="=10" target="data.limits.maxModelCalls" />
+          <zeebe:input source="json" target="data.response.format.type" />
+          <zeebe:input source="={&#10;  &#34;type&#34;: &#34;object&#34;,&#10;  &#34;properties&#34;: {&#10;    &#34;document_readable&#34;: { &#34;type&#34;: &#34;boolean&#34; },&#10;    &#34;document_type_detected&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;document_type_matches_selection&#34;: { &#34;type&#34;: &#34;boolean&#34; },&#10;    &#34;company_name_extracted&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;company_number_extracted&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;vat_number_extracted&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;registered_address_extracted&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;trading_address_extracted&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;document_date_extracted&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;document_reference&#34;: { &#34;type&#34;: &#34;string&#34; },&#10;    &#34;company_name_match&#34;: { &#34;type&#34;: &#34;boolean&#34; },&#10;    &#34;company_number_match&#34;: { &#34;type&#34;: &#34;boolean&#34; },&#10;    &#34;registered_address_match&#34;: { &#34;type&#34;: &#34;boolean&#34; },&#10;    &#34;trading_address_match&#34;: { &#34;type&#34;: &#34;boolean&#34; },&#10;    &#34;document_recent_enough&#34;: { &#34;type&#34;: &#34;boolean&#34; },&#10;    &#34;discrepancies&#34;: {&#10;      &#34;type&#34;: &#34;array&#34;,&#10;      &#34;items&#34;: { &#34;type&#34;: &#34;string&#34; }&#10;    },&#10;    &#34;missing_or_unreadable_fields&#34;: {&#10;      &#34;type&#34;: &#34;array&#34;,&#10;      &#34;items&#34;: { &#34;type&#34;: &#34;string&#34; }&#10;    },&#10;    &#34;evidence_outcome&#34;: {&#10;      &#34;type&#34;: &#34;string&#34;,&#10;      &#34;enum&#34;: [&#10;        &#34;PASS&#34;,&#10;        &#34;INSUFFICIENT_DOCUMENT&#34;,&#10;        &#34;DOCUMENT_TYPE_MISMATCH&#34;,&#10;        &#34;DATA_MISMATCH&#34;,&#10;        &#34;DOCUMENT_EXPIRED&#34;,&#10;        &#34;UNREADABLE_DOCUMENT&#34;,&#10;        &#34;MANUAL_REVIEW&#34;&#10;      ]&#10;    },&#10;    &#34;confidence&#34;: { &#34;type&#34;: &#34;number&#34; },&#10;    &#34;summary&#34;: { &#34;type&#34;: &#34;string&#34; }&#10;  },&#10;  &#34;required&#34;: [&#10;    &#34;document_readable&#34;,&#10;    &#34;document_type_detected&#34;,&#10;    &#34;document_type_matches_selection&#34;,&#10;    &#34;company_name_extracted&#34;,&#10;    &#34;company_number_extracted&#34;,&#10;    &#34;vat_number_extracted&#34;,&#10;    &#34;registered_address_extracted&#34;,&#10;    &#34;trading_address_extracted&#34;,&#10;    &#34;document_date_extracted&#34;,&#10;    &#34;document_reference&#34;,&#10;    &#34;company_name_match&#34;,&#10;    &#34;company_number_match&#34;,&#10;    &#34;registered_address_match&#34;,&#10;    &#34;trading_address_match&#34;,&#10;    &#34;document_recent_enough&#34;,&#10;    &#34;discrepancies&#34;,&#10;    &#34;missing_or_unreadable_fields&#34;,&#10;    &#34;evidence_outcome&#34;,&#10;    &#34;confidence&#34;,&#10;    &#34;summary&#34;&#10;  ]&#10;}" target="data.response.format.schema" />
+          <zeebe:input source="Response" target="data.response.format.schemaName" />
+          <zeebe:input source="=false" target="data.response.includeAssistantMessage" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders>
+          <zeebe:header key="elementTemplateVersion" value="5" />
+          <zeebe:header key="elementTemplateId" value="io.camunda.connectors.agenticai.aiagent.v1" />
+          <zeebe:header key="resultVariable" value="resultImageAIAnalysis" />
+          <zeebe:header key="resultExpression" value="={&#10;  companyProofAnalyzedByAI: responseJson&#10;}" />
+          <zeebe:header key="retryBackoff" value="PT0S" />
+        </zeebe:taskHeaders>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ar89vw</bpmn:incoming>
+      <bpmn:outgoing>Flow_0xs7gqs</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1bggnel" name="No verification needed" sourceRef="gateway_verification_needed" targetRef="Event_1dszvoa">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=verificationRoute = "HARD_FAIL"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="gateway_verification_needed" name="Verification needed?">
+      <bpmn:incoming>Flow_1rpzhyv</bpmn:incoming>
+      <bpmn:incoming>Flow_1colao6</bpmn:incoming>
+      <bpmn:outgoing>Flow_10s5gwg</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1bggnel</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="Event_1dszvoa" name="Business  loan application completed">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:output source="=agent.context.metrics.tokenUsage.inputTokenCount" target="metrics_inputTokenCount" />
+          <zeebe:output source="=agent.context.metrics.tokenUsage.outputTokenCount" target="metrics_outputTokenCount" />
+          <zeebe:output source="=agent.context.metrics.modelCalls" target="metrics_modelCalls" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0gl7yh5</bpmn:incoming>
+      <bpmn:incoming>Flow_1bggnel</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_0b2aj8s" name="Validate Company details" zeebe:modelerTemplate="companies_house_http_manual_auth" zeebe:modelerTemplateVersion="1">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:http-json:1" retries="3" />
+        <zeebe:ioMapping>
+          <zeebe:input source="https://api.company-information.service.gov.uk" target="baseUrl" />
+          <zeebe:input source="{{secrets.COMPANY_HOUSE_KEY}}" target="apiKey" />
+          <zeebe:input source="getCompanyProfile" target="operationId" />
+          <zeebe:input source="=string(companyRegistrationNumber)" target="company_number" />
+          <zeebe:input source="GET" target="method" />
+          <zeebe:input source="= { Authorization: &#34;{{secrets.COMPANY_HOUSE_KEY}}&#34; }" target="headers" />
+          <zeebe:input source="={}" target="queryParameters" />
+          <zeebe:input source="= if operationId = &#34;getCompanyProfile&#34; then &#34;/company/&#34; + company_number else if operationId = &#34;searchCompanies&#34; then &#34;/search/companies&#34; else if operationId = &#34;searchAll&#34; then &#34;/search&#34; else if operationId = &#34;listCompanyOfficers&#34; then &#34;/company/&#34; + company_number + &#34;/officers&#34; else if operationId = &#34;listFilingHistory&#34; then &#34;/company/&#34; + company_number + &#34;/filing-history&#34; else if operationId = &#34;getFilingHistoryItem&#34; then &#34;/company/&#34; + company_number + &#34;/filing-history/&#34; + transaction_id else if operationId = &#34;listPSC&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control&#34; else if operationId = &#34;getIndividualPSC&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/individual/&#34; + psc_id else if operationId = &#34;getIndividualBeneficialOwner&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/individual-beneficial-owner/&#34; + psc_id else if operationId = &#34;getLegalPersonPSC&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/legal-person/&#34; + psc_id else if operationId = &#34;getLegalPersonBeneficialOwner&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/legal-person-beneficial-owner/&#34; + psc_id else if operationId = &#34;listPSCStatements&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control-statements&#34; else if operationId = &#34;getPSCStatement&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control-statements/&#34; + statement_id else if operationId = &#34;getDocumentMetadata&#34; then &#34;/document/&#34; + document_id else if operationId = &#34;getDocumentContent&#34; then &#34;/document/&#34; + document_id + &#34;/content&#34; else &#34;&#34;" target="operationPath" />
+          <zeebe:input source="= baseUrl + operationPath" target="url" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders>
+          <zeebe:header key="resultVariable" value="companyHouseDetails" />
+          <zeebe:header key="resultExpression" value="={&#10;      &#34;company_number&#34;: body.company_number,&#10;    &#34;company_name&#34;: body.company_name,&#10;    &#34;company_type&#34;: body.type,&#10;    &#34;previous_company_names&#34;: body.previous_company_names,&#10;    &#34;company_status&#34;: bosy.company_status,&#10;      &#34;date_of_creation&#34;: body.date_of_creation,&#10;      &#34;has_charges&#34;: body.has_charges,&#10;    &#34;sic_codes&#34;: body.sic_codes,&#10;  &#34;registered_office_address&#34;: body.registered_office_address&#10;}" />
+        </zeebe:taskHeaders>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1er4yqk</bpmn:incoming>
+      <bpmn:outgoing>Flow_129t9vo</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0gl7yh5" name="completed for now" sourceRef="gateway_post_verification_needed" targetRef="Event_1dszvoa">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=agent.responseJson.nextAction = "EXIT"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0o6w8jy" sourceRef="Event_1y97jvp" targetRef="Activity_11w2qbj" />
+    <bpmn:sequenceFlow id="Flow_0xs7gqs" sourceRef="Activity_0e1ermh" targetRef="gateway_initial_verification_outcome" />
+    <bpmn:sequenceFlow id="Flow_129t9vo" sourceRef="Activity_0b2aj8s" targetRef="gateway_initial_verification_outcome" />
+    <bpmn:sequenceFlow id="Flow_1ar89vw" sourceRef="gateway_begin_process_documents" targetRef="Activity_0e1ermh" />
+    <bpmn:sequenceFlow id="Flow_1er4yqk" sourceRef="gateway_begin_process_documents" targetRef="Activity_0b2aj8s" />
+    <bpmn:sequenceFlow id="Flow_1i0hqc6" sourceRef="gateway_initial_verification_outcome" targetRef="Activity_0tyru61" />
+    <bpmn:exclusiveGateway id="gateway_post_verification_needed" name="Further action required?">
+      <bpmn:incoming>Flow_11a0qag</bpmn:incoming>
+      <bpmn:outgoing>Flow_0gl7yh5</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1colao6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:parallelGateway id="gateway_initial_verification_outcome" name="Initial verification checks complete">
+      <bpmn:incoming>Flow_0xs7gqs</bpmn:incoming>
+      <bpmn:incoming>Flow_129t9vo</bpmn:incoming>
+      <bpmn:outgoing>Flow_1i0hqc6</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:parallelGateway id="gateway_begin_process_documents" name="Begin process documents received">
+      <bpmn:incoming>Flow_182sqt7</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ar89vw</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1er4yqk</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="Flow_10s5gwg" name="Need&#10;Verification" sourceRef="gateway_verification_needed" targetRef="Agentic_loan_verification">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=verificationRoute in ["EXCEPTION", "PASSED"]</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:startEvent id="Event_1y97jvp" name="Start business loan application">
+      <bpmn:extensionElements>
+        <zeebe:properties>
+          <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#34;formFullName&#34;:&#34;Virgile Ygorra&#34;,&#34;formEmail&#34;:&#34;virgile.ygorra@camunda.com&#34;,&#34;formPhoneNumber&#34;:&#34;+33110101010&#34;,&#34;formVehicleVIN&#34;:&#34;WVWRA7CD1RW226165&#34;,&#34;formFuelEnergyType&#34;:&#34;gasoline&#34;,&#34;formRequestedLoanAmount&#34;:35000,&#34;quote&#34;:&#34;files::7kxjfqnxnq59f6pbnmn9otgtv&#34;,&#34;picture&#34;:&#34;files::4ymhzlfd8hs6urq0oxobxtrba&#34;}" />
+        </zeebe:properties>
+        <zeebe:formDefinition formId="start-onboarding-application-1tklzcw" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0o6w8jy</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:adHocSubProcess id="Agentic_loan_verification" name="AI AGENT - Handle Loan Application Verification" zeebe:modelerTemplate="io.camunda.connectors.agenticai.aiagent.jobworker.v1" zeebe:modelerTemplateVersion="10" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNBNTZFRkYiLz4KPG1hc2sgaWQ9InBhdGgtMi1vdXRzaWRlLTFfMTg1XzYiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjQiIHk9IjQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iYmxhY2siPgo8cmVjdCBmaWxsPSJ3aGl0ZSIgeD0iNCIgeT0iNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIvPgo8L21hc2s+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC4wMTA1IDEyLjA5ODdDMTguNDkgMTAuNTg5NCAxNy4xNTk0IDguMTA4MTQgMTYuMTc5OSA2LjAxMTAzQzE2LjE1MiA2LjAwNDUxIDE2LjExNzYgNiAxNi4wNzk0IDZDMTYuMDQxMSA2IDE2LjAwNjYgNi4wMDQ1MSAxNS45Nzg4IDYuMDExMDRDMTQuOTk5NCA4LjEwODE0IDEzLjY2OTcgMTAuNTg4OSAxMi4xNDgxIDEyLjA5ODFDMTAuNjI2OSAxMy42MDcxIDguMTI1NjggMTQuOTI2NCA2LjAxMTU3IDE1Ljg5ODFDNi4wMDQ3NCAxNS45MjYxIDYgMTUuOTYxMSA2IDE2QzYgMTYuMDM4NyA2LjAwNDY4IDE2LjA3MzYgNi4wMTE0NCAxNi4xMDE0QzguMTI1MTkgMTcuMDcyOSAxMC42MjYyIDE4LjM5MTkgMTIuMTQ3NyAxOS45MDE2QzEzLjY2OTcgMjEuNDEwNyAxNC45OTk2IDIzLjg5MiAxNS45NzkxIDI1Ljk4OUMxNi4wMDY4IDI1Ljk5NTYgMTYuMDQxMSAyNiAxNi4wNzkzIDI2QzE2LjExNzUgMjYgMTYuMTUxOSAyNS45OTU0IDE2LjE3OTYgMjUuOTg5QzE3LjE1OTEgMjMuODkyIDE4LjQ4ODggMjEuNDExIDIwLjAwOTkgMTkuOTAyMU0yMC4wMDk5IDE5LjkwMjFDMjEuNTI1MyAxOC4zOTg3IDIzLjk0NjUgMTcuMDY2OSAyNS45OTE1IDE2LjA4MjRDMjUuOTk2NSAxNi4wNTkzIDI2IDE2LjAzMSAyNiAxNS45OTk3QzI2IDE1Ljk2ODQgMjUuOTk2NSAxNS45NDAzIDI1Ljk5MTUgMTUuOTE3MUMyMy45NDc0IDE0LjkzMjcgMjEuNTI1OSAxMy42MDEgMjAuMDEwNSAxMi4wOTg3IiBzdHJva2U9IiM0OTFEOEIiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgbWFzaz0idXJsKCNwYXRoLTItb3V0c2lkZS0xXzE4NV82KSIvPgo8L3N2Zz4K">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda.agenticai:aiagent-job-worker:1" retries="0" />
+        <zeebe:ioMapping>
+          <zeebe:input source="openai" target="provider.type" />
+          <zeebe:input source="{{secrets.OPENAI_API_KEY}}" target="provider.openai.authentication.apiKey" />
+          <zeebe:input source="gpt-5-nano" target="provider.openai.model.model" />
+          <zeebe:input source="=&#34;You are BusinessLoanSupportAgent, the dedicated business-loan onboarding assistant for the bank named &#34; + string(companyName) + &#34;. Always check&#34; +approveOrRejectApplication + &#34; and&#34; +decisionRationale + &#34; before you call any tool to understand the next action and tool call You should call atleast one tool each iteration and appropriate tool and each tool only once if the email response recieved from user is unclear or incomplete and user has not provided consent and documents in response then go for manual review to the Loan specialist i.e. next agent action is ESCALATE_TO_LOAN_SPECIALIST &#34; +&#10;&#34;\n\n# 0. CONTEXT&#34; +&#10;&#34;\nThe user is a business-loan applicant whose application is under review.&#34; +&#10;&#34;\nA Salesforce Lead has already been created before this subprocess.&#34; +&#10;&#34;\nThe Lead ID is available as salesforceLeadId.&#34; +&#10;&#34;\nYour role is to assess the application, update this existing Lead, and send or request the correct next communication.&#34; +&#10;&#10;&#34;\n\n# 1. SCOPE&#34; +&#10;&#34;\nUse only the business-loan form, Companies House verification, company-proof analysis, applicant declarations, verificationRoute, and tool results supplied to you.&#34; +&#10;&#34;\nDetermine whether the applicant should receive a provisional offer, a request for more information, Loan Specialist review, or rejection.&#34; +&#10;&#34;\nThis is an onboarding and pre-decision workflow.&#34; +&#10;&#34;\nNever state that final legally binding loan approval has been granted.&#34; +&#10;&#34;\nAny offer must be described as provisional and subject to final bank approval.&#34; +&#10;&#34;\nDo not invent, infer, or assume missing information.&#34; +&#10;&#34;\nAll applicant-facing communication must be written in &#34; + string(language) + &#34;.&#34; +&#10;&#10;&#34;\n\n# 2. VERIFICATION ROUTE&#34; +&#10;&#34;\nverificationRoute is a deterministic pre-check result set before this agent runs.&#34; +&#10;&#34;\nPASSED means company status, company number, proof, consent, and declaration checks passed.&#34; +&#10;&#34;\nEXCEPTION means the case may be remediable, for example missing consent, missing declaration, unreadable proof, wrong proof type, insufficient proof, or unclear authority.&#34; +&#10;&#34;\nHARD_FAIL means Companies House status is not active or the Companies House company number does not match the submitted company registration number.&#34; +&#10;&#10;&#34;\n\n# 3. MANDATORY TOOL WORKFLOW&#34; +&#10;&#34;\n1. Inspect every available tool and assess its relevance.&#34; +&#10;&#34;\n2. Use only tools necessary to resolve the case safely.&#34; +&#10;&#34;\n3. Do not call a tool merely because it exists.&#34; +&#10;&#34;\n4. Before any applicant email or Loan Specialist escalation, update the existing Salesforce Lead using salesforceLeadId.&#34; +&#10;&#34;\n5. After each relevant tool result, reassess whether another tool is needed.&#34; +&#10;&#34;\n6. If a material issue cannot be safely resolved, use the Loan Specialist decision tool. Do not guess.&#34; +&#10;&#34;\n7. In thinking.reflection, list every available tool exactly once as USED, NOT USED, or WAITING with a concise operational reason.&#34; +&#10;&#34;\n8. thinking.reflection is an audit trail only. Do not reveal hidden reasoning or private deliberation.&#34; +&#10;&#10;&#34;\n\n# 3A. EXECUTION CONTRACT&#34; +&#10;&#34;\nDo not return a final JSON response while a mandatory operational action remains outstanding.&#34; +&#10;&#10;&#34;\nFor EXCEPTION where the applicant can correct the issue:&#34; +&#10;&#34;\n1. First call Update Business Loan Lead in Salesforce with Status Contacted.&#34; +&#10;&#34;\n2. After its result, set the action as ASK_FOR_PROOFS_OR_QUESTIONS call Ask applicant via email to clarify or perform id check.&#34; +&#10;&#34;\n3. After that email is sent, do not return a final JSON response. The process must wait at Applicant response received.&#34; +&#10;&#34;\n4. When Applicant response received supplies a tool result, reassess the application using the new evidence and set next action to ESCALATE_TO_LOAN_SPECIALIST to call loan specialist to review the decision.&#34; +&#10;&#10;&#34;\nFor HARD_FAIL:&#34; +&#10;&#34;\n1. First call Update Business Loan Lead in Salesforce with Status Unqualified.&#34; +&#10;&#34;\n2. After its result, call Send final email to applicant with the rejection decision.&#34; +&#10;&#34;\n3. Return final JSON only after the rejection email has been sent.&#34; +&#10;&#10;&#34;\nFor PASSED:&#34; +&#10;&#34;\n1. First call Get Credit Score.&#34; +&#10;&#34;\n2. If score is 600 or above with no authority issue, call Update Business Loan Lead in Salesforce with Status Qualified, then call Send final email to applicant.&#34; +&#10;&#34;\n3. If score is below 600 or authority is unresolved, call Update Business Loan Lead in Salesforce with Status Nurturing, then call Loan Specialist decision.&#34; +&#10;&#34;\n4. Return final JSON only after the required tool sequence is complete or the process is waiting at Loan Specialist decision.&#34; +&#10;&#10;&#34;\nA narrative JSON decision alone is not an action. For any actionable case, make the required tool call before returning JSON.&#10;\n\n# 4. SALESFORCE LEAD RULES&#34; +&#10;&#34;\nUse Update Business Loan Lead in Salesforce for every outcome.&#34; +&#10;&#34;\nAlways update the existing Lead identified by salesforceLeadId.&#34; +&#10;&#34;\nNever create a second Lead in this subprocess.&#34; +&#10;&#34;\nThe Lead update tool can update only Status and Description.&#34; +&#10;&#34;\nUse these Salesforce Lead Status values exactly:&#34; +&#10;&#34;\nNew means verification in progress.&#34; +&#10;&#34;\nContacted means waiting for applicant consent, declaration, clarification, or replacement evidence.&#34; +&#10;&#34;\nNurturing means Loan Specialist or manual review.&#34; +&#10;&#34;\nQualified means provisional offer sent.&#34; +&#10;&#34;\nUnqualified means rejected.&#34; +&#10;&#34;\nDescription must contain a concise audit note with verification decision, reason, next action, Companies House outcome, proof outcome, credit score and risk band if available, and applicant actions required.&#34; +&#10;&#10;&#34;\n\n# 5. TOOL RULES&#34; +&#10;&#10;&#34;\n\nTOOL: Update Business Loan Lead in Salesforce&#34; +&#10;&#34;\nUse before sending an offer, requesting information, rejecting, or escalating.&#34; +&#10;&#34;\nUpdate Status to Contacted before asking the applicant for evidence or clarification.&#34; +&#10;&#34;\nUpdate Status to Nurturing before Loan Specialist escalation.&#34; +&#10;&#34;\nUpdate Status to Qualified before sending a provisional offer.&#34; +&#10;&#34;\nUpdate Status to Unqualified before sending a rejection email.&#34; +&#10;&#10;&#34;\n\nTOOL: Get Credit Score&#34; +&#10;&#34;\nUse only when verificationRoute is PASSED and creditCheckConsent is true.&#34; +&#10;&#34;\nThis is a simulated demonstration score, not a real credit-bureau result.&#34; +&#10;&#34;\nScore 700 or above means LOW risk.&#34; +&#10;&#34;\nScore from 600 to 699 means STANDARD risk.&#34; +&#10;&#34;\nScore below 600 means ELEVATED risk and normally requires Loan Specialist review.&#34; +&#10;&#34;\nDo not reject solely because of the simulated score.&#34; +&#10;&#34;\nRecord the score and risk band in the Lead Description.&#34; +&#10;&#10;&#34;\n\nTOOL: Get Company directors details&#34; +&#10;&#34;\nUse only when applicant authority is relevant and unclear.&#34; +&#10;&#34;\nFor example, use it when the applicant claims to be a Director but authority cannot be established from the supplied evidence.&#34; +&#10;&#34;\nDo not use it when authority is already clear or irrelevant.&#34; +&#10;&#10;&#34;\n\nTOOL: Ask applicant via email to clarify or perform id check&#34; +&#10;&#34;\nUse when the applicant can resolve the issue by providing consent, confirming a declaration, answering a question, replacing a document, uploading more proof, or clarifying their role.&#34; +&#10;&#34;\nAsk for the exact missing information or evidence. Do not send vague requests.&#34; +&#10;&#34;\nUpdate the Lead Status to Contacted before using this tool.&#34; +&#10;&#34;\nDo not ask the applicant to reconfirm information already verified by Companies House.&#34; +&#10;&#10;&#34;\n\nTOOL: Applicant response received&#34; +&#10;&#34;\nThis is an event and not a tool you actively call.&#34; +&#10;&#34;\nWhen a response or new evidence arrives, reassess the full case.&#34; +&#10;&#34;\nUpdate the Lead Status to New before the renewed assessment.&#34; +&#10;&#10;&#34;\n\nTOOL: Loan Specialist decision&#34; +&#10;&#34;\nUse this tool for unresolved material inconsistencies, unclear applicant authority, conflicting authoritative evidence, a simulated score below 600, or any issue requiring human banking judgement.&#34; +&#10;&#34;\nBefore escalation, update the existing Lead Status to Nurturing.&#34; +&#10;&#34;\nProvide a concise factual handover covering verification route, Companies House outcome, company-proof outcome, actions taken, outstanding issue, credit-risk band, and recommended outcome.&#34; +&#10;&#34;\nThe Loan Specialist response is authoritative.&#34; +&#10;&#34;\nThe returned response contains a decision, rationale, and optional information or evidence required.&#34; +&#10;&#34;\nAfter the Loan Specialist response:&#34; +&#10;&#34;\n- If decision is PROVISIONAL_OFFER, update the Lead Status to Qualified, add the rationale to Description, then send the provisional offer email.&#34; +&#10;&#34;\n- If decision is REQUEST_INFORMATION, update the Lead Status to Contacted, add the rationale and requested evidence to Description, then use Ask applicant via email to clarify or perform id check.&#34; +&#10;&#34;\n- If decision is REJECT, update the Lead Status to Unqualified, add the rationale to Description, then send the rejection email.&#34; +&#10;&#34;\nDo not override or reinterpret the Loan Specialist decision.&#34; +&#10;&#10;&#34;\n\nTOOL: Send final email to applicant&#34; +&#10;&#34;\nUse only after the relevant Lead update is complete.&#34; +&#10;&#34;\nFor a satisfactory case, send a provisional offer email including requested loan amount, term, purpose, next steps, and the statement that final bank approval is still required.&#34; +&#10;&#34;\nFor a clarification case, do not use this tool. Use Ask applicant via email to clarify or perform id check.&#34; +&#10;&#34;\nFor rejection, send a concise respectful email without disclosing internal scores or hidden reasoning.&#34; +&#10;&#34;\nFor Manual Review, send only an acknowledgement that the application is under specialist review unless a final specialist decision is available.&#34; +&#10;&#10;&#34;\n\n# 6. DECISION RULES&#34; +&#10;&#10;&#34;\n\nHARD_FAIL&#34; +&#10;&#34;\nWhen verificationRoute is HARD_FAIL, do not call Get Credit Score.&#34; +&#10;&#34;\nUpdate the Lead Status to Unqualified.&#34; +&#10;&#34;\nSend the final rejection email.&#34; +&#10;&#34;\nUse verificationDecision REJECT.&#34; +&#10;&#34;\nUse nextAction SEND_REJECTION.&#34; +&#10;&#10;&#34;\n\nPASSED&#34; +&#10;&#34;\nWhen verificationRoute is PASSED, call Get Credit Score.&#34; +&#10;&#34;\nIf the simulated score is 600 or above and there is no unresolved authority issue, update the Lead Status to Qualified and send the provisional offer email.&#34; +&#10;&#34;\nUse verificationDecision PROVISIONAL_OFFER.&#34; +&#10;&#34;\nUse nextAction SEND_PROVISIONAL_OFFER.&#34; +&#10;&#34;\nIf the simulated score is below 600 or authority remains unclear, update the Lead Status to Nurturing and use the Loan Specialist decision tool.&#34; +&#10;&#34;\nFollow the returned specialist decision.&#34; +&#10;&#34;\nUse verificationDecision MANUAL_REVIEW while the specialist decision is pending.&#34; +&#10;&#34;\nUse nextAction ESCALATE_TO_LOAN_SPECIALIST while pending.&#34; +&#10;&#10;&#34;\n\nEXCEPTION&#34; +&#10;&#34;\nWhen verificationRoute is EXCEPTION, do not call Get Credit Score unless the verification issue is resolved and creditCheckConsent is true.&#34; +&#10;&#34;\nIf the applicant can reasonably correct the issue, update the Lead Status to Contacted and ask for the exact proof, declaration, consent, or clarification needed.&#34; +&#10;&#34;\nUse verificationDecision REQUEST_INFORMATION.&#34; +&#10;&#34;\nUse nextAction ASK_FOR_PROOFS_OR_QUESTIONS.&#34; +&#10;&#34;\nIf the issue is material and cannot safely be resolved automatically, update the Lead Status to Nurturing and use the Loan Specialist decision tool.&#34; +&#10;&#34;\nFollow the returned specialist decision.&#10;\nUse verificationDecision MANUAL_REVIEW while the specialist decision is pending.&#10;\nUse nextAction ESCALATE_TO_LOAN_SPECIALIST while pending.&#10;\nUse nextAction EXIT when no firther action is needed.\n\n# 7. OUTPUT FORMAT\nReturn valid JSON only. Do not return markdown or text outside the JSON object.\nReturn exactly these top-level fields:\nthinking \nverificationDecision \nnextAction \nloanApplicationStatus \ncreditScore \ncreditRiskBand \nreasonCodes \nverificationSummary \nrequiredActions \nconfidence \nthinking must contain context and reflection.\nverificationDecision must be PROVISIONAL_OFFER, REQUEST_INFORMATION, MANUAL_REVIEW, REJECT, or ERROR.\nnextAction must be GET_CREDIT_SCORE, CHECK_DIRECTORS, ASK_FOR_PROOFS_OR_QUESTIONS, ESCALATE_TO_LOAN_SPECIALIST, SEND_PROVISIONAL_OFFER, SEND_REJECTION, or WAIT_FOR_APPLICANT_RESPONSE.&#10;\nloanApplicationStatus must be one of New, Contacted, Nurturing, Qualified, or Unqualified.&#34; +&#10;&#34;\ncreditRiskBand must be NOT_CHECKED, LOW, STANDARD, or ELEVATED.&#34; +&#10;&#34;\nreasonCodes and requiredActions must be JSON arrays.&#34; +&#10;&#34;\ncreditScore must be 0 when Get Credit Score was not called.&#34; +&#10;&#34;\nconfidence must be a number from 0 to 1.&#10;\nNever describe a simulated credit score as a real credit-bureau result.&#34; +&#10;&#34;\nIf a technical blocker prevents resolution, use verificationDecision ERROR and state the factual blocker inside verificationSummary.&#34; +&#10;&#34;\nIf the case is unresolved without a technical failure, choose MANUAL_REVIEW rather than ERROR. Based on the next action use appropriate tool for example send email using Activity_115vchg if nextaction is ASK_FOR_PROOFS_OR_QUESTIONS&#34;" target="data.systemPrompt.prompt" />
+          <zeebe:input source="=&#34;Analyze this business-loan application using the information below.Always check&#34; +string(get or else(loanSpecialistDecision, &#34;&#34;)) + &#34; and&#34; +string(get or else(decisionRationale, &#34;&#34;)) + &#34; before you call any tool to understand the next action if analyst is happy dont send request for more tools isntead call final offer. After final offer or decline email no more tool calls next action is exit and tool call You should call atleast one tool each iteration and appropriate tool and each tool only once if the email response recieved from user is unclear or incomplete and user has not provided consent and documents in response then go for manual review to the Loan specialist i.e. next agent action is ESCALATE_TO_LOAN_SPECIALIST &#34; + &#34;\n\n# 0. CONTEXT&#34; + &#34;\nThe user is a business-loan applicant whose application is under review.&#34; + &#34;\nA Salesforce Lead has already been created before this subprocess.&#34; + &#34;\nThe Lead ID is available as salesforceLeadId.&#34; + &#34;\nYour role is to assess the application, update this existing Lead, and send or request the correct next communication.&#34;+&#10;&#10;&#34;\n\nEXISTING SALESFORCE LEAD&#34; +&#10;&#34;\nSalesforce Lead ID: &#34; + string(get or else(salesforceLeadId, &#34;&#34;)) +&#10;&#34;\nA Salesforce Lead already exists for this application.&#34; +&#10;&#34;\nUpdate this exact Lead only. Do not create another Lead.&#34; +&#10;&#10;&#34;\n\nPRE-CHECK ROUTE&#34; +&#10;&#34;\nVerification route: &#34; + string(get or else(verificationRoute, &#34;&#34;)) +&#10;&#34;\nPASSED means all deterministic company, proof, consent, and declaration checks passed.&#34; +&#10;&#34;\nEXCEPTION means the applicant may be able to correct missing, unclear, unreadable, incomplete, or mismatched evidence.&#34; +&#10;&#34;\nHARD_FAIL means the company is inactive or the Companies House company number does not match the submitted company registration number.&#34; +&#10;&#10;&#34;\n\nAPPLICATION DETAILS&#34; +&#10;&#34;\nRegistered business name: &#34; + string(get or else(registeredBusinessName, &#34;&#34;)) +&#10;&#34;\nCompany registration number: &#34; + string(get or else(companyRegistrationNumber, &#34;&#34;)) +&#10;&#34;\nBusiness type: &#34; + string(get or else(businessType, &#34;&#34;)) +&#10;&#34;\nRegistered office address: &#34; + string(get or else(registeredOfficeAddress, &#34;&#34;)) +&#10;&#34;\nTrading address: &#34; + string(get or else(tradingAddress, &#34;&#34;)) +&#10;&#34;\nBusiness website: &#34; + string(get or else(businessWebsite, &#34;&#34;)) +&#10;&#34;\nIndustry: &#34; + string(get or else(industry, &#34;&#34;)) +&#10;&#34;\nBusiness description: &#34; + string(get or else(businessDescription, &#34;&#34;)) +&#10;&#34;\nVAT number: &#34; + string(get or else(vatNumber, &#34;&#34;)) +&#10;&#10;&#34;\n\nLOAN REQUEST&#34; +&#10;&#34;\nRequested loan amount: &#34; + string(get or else(loanAmount, &#34;&#34;)) +&#10;&#34;\nLoan purpose: &#34; + string(get or else(loanPurpose, &#34;&#34;)) +&#10;&#34;\nLoan term in months: &#34; + string(get or else(loanTerm, &#34;&#34;)) +&#10;&#10;&#34;\n\nAPPLICANT DETAILS&#34; +&#10;&#34;\nApplicant full name: &#34; + string(get or else(applicantFullName, &#34;&#34;)) +&#10;&#34;\nApplicant position in business: &#34; + string(get or else(applicantPosition, &#34;&#34;)) +&#10;&#34;\nApplicant email: &#34; + string(get or else(applicantEmail, &#34;&#34;)) +&#10;&#34;\nApplicant phone: &#34; + string(get or else(applicantPhone, &#34;&#34;)) +&#10;&#34;\nCredit-check consent: &#34; + string(get or else(creditCheckConsent, false)) +&#10;&#34;\nInformation accuracy declaration: &#34; + string(get or else(informationAccuracyDeclaration, false)) +&#10;&#10;&#34;\n\nCOMPANIES HOUSE VERIFICATION&#34; +&#10;&#34;\nCompanies House company name: &#34; + string(get or else(companyHouseDetails.body.company_name, &#34;&#34;)) +&#10;&#34;\nCompanies House company number: &#34; + string(get or else(companyHouseDetails.body.company_number, &#34;&#34;)) +&#10;&#34;\nCompanies House company status: &#34; + string(get or else(companyHouseDetails.body.company_status, &#34;&#34;)) +&#10;&#34;\nDate of incorporation: &#34; + string(get or else(companyHouseDetails.body.date_of_creation, &#34;&#34;)) +&#10;&#34;\nCompany type: &#34; + string(get or else(companyHouseDetails.body.type, &#34;&#34;)) +&#10;&#34;\nCompanies House registered office: &#34; +&#10;string join([&#10;string(get or else(companyHouseDetails.body.registered_office_address.address_line_1, &#34;&#34;)),&#10;string(get or else(companyHouseDetails.body.registered_office_address.address_line_2, &#34;&#34;)),&#10;string(get or else(companyHouseDetails.body.registered_office_address.locality, &#34;&#34;)),&#10;string(get or else(companyHouseDetails.body.registered_office_address.region, &#34;&#34;)),&#10;string(get or else(companyHouseDetails.body.registered_office_address.postal_code, &#34;&#34;)),&#10;string(get or else(companyHouseDetails.body.registered_office_address.country, &#34;&#34;))&#10;], &#34;, &#34;) +&#10;&#34;\nPrevious company-name records found: &#34; +&#10;string(count(get or else(companyHouseDetails.body.previous_company_names, []))) +&#10;&#34;\nCompanies House result reason: &#34; + string(get or else(companyHouseDetails.reason, &#34;&#34;)) +&#10;&#10;&#34;\n\nCOMPANY-PROOF VERIFICATION&#34; +&#10;&#34;\nApplicant-selected proof type: &#34; + string(get or else(companyProofType, &#34;&#34;)) +&#10;&#34;\nDocument readable: &#34; + string(get or else(companyProofAnalyzedByAI.document_readable, false)) +&#10;&#34;\nDetected document type: &#34; + string(get or else(companyProofAnalyzedByAI.document_type_detected, &#34;&#34;)) +&#10;&#34;\nDocument type matches selected type: &#34; + string(get or else(companyProofAnalyzedByAI.document_type_matches_selection, false)) +&#10;&#34;\nExtracted company name: &#34; + string(get or else(companyProofAnalyzedByAI.company_name_extracted, &#34;&#34;)) +&#10;&#34;\nExtracted company number: &#34; + string(get or else(companyProofAnalyzedByAI.company_number_extracted, &#34;&#34;)) +&#10;&#34;\nExtracted document date: &#34; + string(get or else(companyProofAnalyzedByAI.document_date_extracted, &#34;&#34;)) +&#10;&#34;\nCompany name match: &#34; + string(get or else(companyProofAnalyzedByAI.company_name_match, false)) +&#10;&#34;\nCompany number match: &#34; + string(get or else(companyProofAnalyzedByAI.company_number_match, false)) +&#10;&#34;\nRegistered address match: &#34; + string(get or else(companyProofAnalyzedByAI.registered_address_match, false)) +&#10;&#34;\nTrading address match: &#34; + string(get or else(companyProofAnalyzedByAI.trading_address_match, false)) +&#10;&#34;\nDocument recent enough: &#34; + string(get or else(companyProofAnalyzedByAI.document_recent_enough, false)) +&#10;&#34;\nEvidence outcome: &#34; + string(get or else(companyProofAnalyzedByAI.evidence_outcome, &#34;&#34;)) +&#10;&#34;\nEvidence discrepancies supplied: &#34; +&#10;(if companyProofAnalyzedByAI.discrepancies = null then &#34;No&#34; else &#34;Yes&#34;) +&#10;&#34;\nMissing or unreadable fields supplied: &#34; +&#10;(if companyProofAnalyzedByAI.missing_or_unreadable_fields = null then &#34;No&#34; else &#34;Yes&#34;) +&#10;&#34;\nEvidence summary: &#34; + string(get or else(companyProofAnalyzedByAI.summary, &#34;&#34;)) +&#10;&#10;&#34;\n\nPROCESS INSTRUCTIONS&#34; +&#10;&#34;\nUse verificationRoute together with the Companies House and company-proof results.&#34; +&#10;&#10;&#34;\n\nFor HARD_FAIL:&#34; +&#10;&#34;\nDo not call Get Credit Score.&#34; +&#10;&#34;\nUpdate the existing Lead to Unqualified.&#34; +&#10;&#34;\nSend the rejection email.&#34; +&#10;&#10;&#34;\n\nFor PASSED:&#34; +&#10;&#34;\nCall Get Credit Score because credit-check consent is confirmed.&#34; +&#10;&#34;\nIf score is 600 or above and there is no unresolved authority issue, update the Lead to Qualified and send a provisional offer.&#34; +&#10;&#34;\nIf score is below 600 or authority remains unclear, update the Lead to Nurturing and use Loan Specialist decision.&#34; +&#10;&#10;&#34;\n\nFor EXCEPTION:&#34; +&#10;&#34;\nDo not call Get Credit Score unless the verification issue is resolved and consent is true.&#34; +&#10;&#34;\nIdentify the exact missing proof, consent, declaration, clarification, or authority check required.&#34; +&#10;&#34;\nUpdate the Lead to Contacted before asking the applicant for information.&#34; +&#10;&#34;\nUse Nurturing and Loan Specialist decision only where the issue cannot safely be resolved automatically.&#34; +&#10;&#10;&#34;\nUse the existing Salesforce Lead ID above for every Lead update.&#34;&#10;" target="data.userPrompt.prompt" />
+          <zeebe:input target="agentContext" />
+          <zeebe:input source="in-process" target="data.memory.storage.type" />
+          <zeebe:input source="=20" target="data.memory.contextWindowSize" />
+          <zeebe:input source="=20" target="data.limits.maxModelCalls" />
+          <zeebe:input source="WAIT_FOR_TOOL_CALL_RESULTS" target="data.events.behavior" />
+          <zeebe:input source="json" target="data.response.format.type" />
+          <zeebe:input source="={&#10;  &#34;type&#34;: &#34;object&#34;,&#10;  &#34;properties&#34;: {&#10;    &#34;thinking&#34;: {&#10;      &#34;type&#34;: &#34;object&#34;,&#10;      &#34;properties&#34;: {&#10;        &#34;context&#34;: {&#10;          &#34;type&#34;: &#34;string&#34;&#10;        },&#10;        &#34;reflection&#34;: {&#10;          &#34;type&#34;: &#34;string&#34;&#10;        }&#10;      },&#10;      &#34;required&#34;: [&#10;        &#34;context&#34;,&#10;        &#34;reflection&#34;&#10;      ]&#10;    },&#10;    &#34;verificationDecision&#34;: {&#10;      &#34;type&#34;: &#34;string&#34;,&#10;      &#34;enum&#34;: [&#10;        &#34;PROVISIONAL_OFFER&#34;,&#10;        &#34;REQUEST_INFORMATION&#34;,&#10;        &#34;MANUAL_REVIEW&#34;,&#10;        &#34;REJECT&#34;,&#10;        &#34;ERROR&#34;&#10;      ]&#10;    },&#10;    &#34;nextAction&#34;: {&#10;&#34;type&#34;: &#34;string&#34;,&#10;&#34;enum&#34;: [&#10;&#34;GET_CREDIT_SCORE&#34;,&#10;&#34;CHECK_DIRECTORS&#34;,&#10;&#34;ASK_FOR_PROOFS_OR_QUESTIONS&#34;,&#10;&#34;ESCALATE_TO_LOAN_SPECIALIST&#34;,&#10;&#34;SEND_PROVISIONAL_OFFER&#34;,&#10;&#34;SEND_REJECTION&#34;,&#10;&#34;WAIT_FOR_APPLICANT_RESPONSE&#34;,&#10;  &#34;EXIT&#34;&#10;]&#10;}&#10;,&#10;    &#34;loanApplicationStatus&#34;: {&#10;      &#34;type&#34;: &#34;string&#34;,&#10;      &#34;enum&#34;: [&#10;        &#34;New&#34;,&#10;&#34;Contacted&#34;,&#10;&#34;Nurturing&#34;,&#10;&#34;Qualified&#34;,&#10;&#34;Unqualifide&#34;&#10;      ]&#10;    },&#10;    &#34;creditScore&#34;: {&#10;      &#34;type&#34;: &#34;number&#34;&#10;    },&#10;    &#34;creditRiskBand&#34;: {&#10;      &#34;type&#34;: &#34;string&#34;,&#10;      &#34;enum&#34;: [&#10;        &#34;NOT_CHECKED&#34;,&#10;        &#34;LOW&#34;,&#10;        &#34;STANDARD&#34;,&#10;        &#34;ELEVATED&#34;&#10;      ]&#10;    },&#10;    &#34;reasonCodes&#34;: {&#10;      &#34;type&#34;: &#34;array&#34;,&#10;      &#34;items&#34;: {&#10;        &#34;type&#34;: &#34;string&#34;&#10;      }&#10;    },&#10;    &#34;verificationSummary&#34;: {&#10;      &#34;type&#34;: &#34;string&#34;&#10;    },&#10;    &#34;requiredActions&#34;: {&#10;      &#34;type&#34;: &#34;array&#34;,&#10;      &#34;items&#34;: {&#10;        &#34;type&#34;: &#34;string&#34;&#10;      }&#10;    },&#10;    &#34;confidence&#34;: {&#10;      &#34;type&#34;: &#34;number&#34;&#10;    }&#10;  },&#10;  &#34;required&#34;: [&#10;    &#34;thinking&#34;,&#10;    &#34;verificationDecision&#34;,&#10;    &#34;nextAction&#34;,&#10;    &#34;loanApplicationStatus&#34;,&#10;    &#34;creditScore&#34;,&#10;    &#34;creditRiskBand&#34;,&#10;    &#34;reasonCodes&#34;,&#10;    &#34;verificationSummary&#34;,&#10;    &#34;requiredActions&#34;,&#10;    &#34;confidence&#34;&#10;  ]&#10;}" target="data.response.format.schema" />
+          <zeebe:input source="BusinessLoanDecision" target="data.response.format.schemaName" />
+          <zeebe:input source="=false" target="data.response.includeAssistantMessage" />
+          <zeebe:input source="=true" target="data.response.includeAgentContext" />
+          <zeebe:input target="agent" />
+          <zeebe:output source="=agent" target="agent" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders>
+          <zeebe:header key="elementTemplateVersion" value="10" />
+          <zeebe:header key="elementTemplateId" value="io.camunda.connectors.agenticai.aiagent.jobworker.v1" />
+          <zeebe:header key="retryBackoff" value="PT0S" />
+        </zeebe:taskHeaders>
+        <zeebe:adHoc outputCollection="toolCallResults" outputElement="={&#10;  id: toolCall._meta.id,&#10;  name: toolCall._meta.name,&#10;  content: toolCallResult&#10;}" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_10s5gwg</bpmn:incoming>
+      <bpmn:outgoing>Flow_11a0qag</bpmn:outgoing>
+      <bpmn:sequenceFlow id="Flow_0wd4cc5" sourceRef="ASK_FOR_PROOFS_OR_QUESTIONS" targetRef="Event_Applicant_Response_Received" />
+      <bpmn:intermediateCatchEvent id="Event_Applicant_Response_Received" name="Applicant response received" zeebe:modelerTemplate="io.camunda.connectors.inbound.EmailIntermediate.v1" zeebe:modelerTemplateVersion="2" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzkwXzI0MjApIj4KPHBhdGggZD0iTTguMzM4MzUgOS45NTM2NUwxMC4zODk0IDEyLjAxMDRMOC4zMzI2MiAxNC4wNjcyTDkuMTQ2MTYgMTQuODc1TDEyLjAxMDcgMTIuMDEwNEw5LjE0NjE2IDkuMTQ1ODNMOC4zMzgzNSA5Ljk1MzY1WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTEyLjM0ODggOS45NTM2NUwxNC4zOTk4IDEyLjAxMDRMMTIuMzQzIDE0LjA2NzJMMTMuMTU2NiAxNC44NzVMMTYuMDIxMiAxMi4wMTA0TDEzLjE1NjYgOS4xNDU4M0wxMi4zNDg4IDkuOTUzNjVaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMy45NzIgMTEuNDM3NUgxLjEyNTMzVjIuNzkyMTlMNy42NzM3NiA3LjMyMzk2QzcuNzY5NjcgNy4zOTA0OSA3Ljg4MzYgNy40MjYxNCA4LjAwMDMyIDcuNDI2MTRDOC4xMTcwNSA3LjQyNjE0IDguMjMwOTggNy4zOTA0OSA4LjMyNjg5IDcuMzIzOTZMMTQuODc1MyAyLjc5MjE5VjhIMTYuMDIxMlYyLjI3MDgzQzE2LjAyMTIgMS45NjY5NCAxNS45MDA0IDEuNjc1NDkgMTUuNjg1NiAxLjQ2MDYxQzE1LjQ3MDcgMS4yNDU3MiAxNS4xNzkyIDEuMTI1IDE0Ljg3NTMgMS4xMjVIMS4xMjUzM0MwLjgyMTQzMiAxLjEyNSAwLjUyOTk4NCAxLjI0NTcyIDAuMzE1MDk5IDEuNDYwNjFDMC4xMDAyMTQgMS42NzU0OSAtMC4wMjA1MDc4IDEuOTY2OTQgLTAuMDIwNTA3OCAyLjI3MDgzVjExLjQzNzVDLTAuMDIwNTA3OCAxMS43NDE0IDAuMTAwMjE0IDEyLjAzMjggMC4zMTUwOTkgMTIuMjQ3N0MwLjUyOTk4NCAxMi40NjI2IDAuODIxNDMyIDEyLjU4MzMgMS4xMjUzMyAxMi41ODMzSDMuOTcyVjExLjQzNzVaTTEzLjYxNDkgMi4yNzA4M0w4LjAwMDMyIDYuMTU1MjFMMi4zODU3NCAyLjI3MDgzSDEzLjYxNDlaIiBmaWxsPSIjRkM1RDBEIi8+CjxwYXRoIGQ9Ik00LjI4MjEgOS45NTM2NUw2LjMzMzE0IDEyLjAxMDRMNC4yNzYzNyAxNC4wNjcyTDUuMDg5OTEgMTQuODc1TDcuOTU0NDkgMTIuMDEwNEw1LjA4OTkxIDkuMTQ1ODNMNC4yODIxIDkuOTUzNjVaIiBmaWxsPSJibGFjayIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzkwXzI0MjAiPgo8cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==">
+        <bpmn:documentation>This is a waiting event, not a tool the AI actively calls.WAIT_FOR_APPLICANT_RESPONSE
+
+It represents the applicant replying to the clarification email or providing further evidence.
+
+When the event occurs, reassess the updated application evidence. Update the existing Salesforce Lead Status to New before starting the renewed assessment.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:properties>
+            <zeebe:property name="inbound.type" value="io.camunda:connector-email-inbound:1" />
+            <zeebe:property name="authentication.type" value="simple" />
+            <zeebe:property name="authentication.username" value="{{secrets.INBOUND_MAIL_USER}}" />
+            <zeebe:property name="authentication.password" value="{{secrets.INBOUND_MAIL_PASSWORD}}" />
+            <zeebe:property name="data.imapConfig.imapHost" value="{{secrets.INBOUND_MAIL_IMAP_SERVER}}" />
+            <zeebe:property name="data.imapConfig.imapPort" value="{{secrets.INBOUND_MAIL_IMAP_PORT}}" />
+            <zeebe:property name="data.imapConfig.imapCryptographicProtocol" value="TLS" />
+            <zeebe:property name="data.folderToListen" value="{{secrets.INBOUND_MAIL_FOLDER}}" />
+            <zeebe:property name="data.pollingWaitTime" value="PT10S" />
+            <zeebe:property name="data.pollingConfigDiscriminator" value="unseenPollingConfig" />
+            <zeebe:property name="data.pollingConfig.handlingStrategy" value="DELETE" />
+            <zeebe:property name="activationCondition" value="=not(is empty(headers[key = &#34;In-Reply-To&#34;]))" />
+            <zeebe:property name="consumeUnmatchedEvents" value="true" />
+            <zeebe:property name="correlationKeyExpression" value="=headers[key = &#34;In-Reply-To&#34;][1].value" />
+            <zeebe:property name="deduplicationModeManualFlag" value="false" />
+            <zeebe:property name="deduplicationMode" value="AUTO" />
+            <zeebe:property name="resultVariable" value="responseEmail" />
+            <zeebe:property name="resultExpression" />
+          </zeebe:properties>
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_0wd4cc5</bpmn:incoming>
+        <bpmn:outgoing>Flow_04ncd1z</bpmn:outgoing>
+        <bpmn:messageEventDefinition id="MessageEventDefinition_1dyvhnf" messageRef="Message_0cjabkv" />
+      </bpmn:intermediateCatchEvent>
+      <bpmn:serviceTask id="ASK_FOR_PROOFS_OR_QUESTIONS" name="Ask applicant via email to clarify or perform id check" zeebe:modelerTemplate="io.camunda.connectors.email.v1" zeebe:modelerTemplateVersion="5" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzkwXzI0MjApIj4KPHBhdGggZD0iTTguMzM4MzUgOS45NTM2NUwxMC4zODk0IDEyLjAxMDRMOC4zMzI2MiAxNC4wNjcyTDkuMTQ2MTYgMTQuODc1TDEyLjAxMDcgMTIuMDEwNEw5LjE0NjE2IDkuMTQ1ODNMOC4zMzgzNSA5Ljk1MzY1WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTEyLjM0ODggOS45NTM2NUwxNC4zOTk4IDEyLjAxMDRMMTIuMzQzIDE0LjA2NzJMMTMuMTU2NiAxNC44NzVMMTYuMDIxMiAxMi4wMTA0TDEzLjE1NjYgOS4xNDU4M0wxMi4zNDg4IDkuOTUzNjVaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMy45NzIgMTEuNDM3NUgxLjEyNTMzVjIuNzkyMTlMNy42NzM3NiA3LjMyMzk2QzcuNzY5NjcgNy4zOTA0OSA3Ljg4MzYgNy40MjYxNCA4LjAwMDMyIDcuNDI2MTRDOC4xMTcwNSA3LjQyNjE0IDguMjMwOTggNy4zOTA0OSA4LjMyNjg5IDcuMzIzOTZMMTQuODc1MyAyLjc5MjE5VjhIMTYuMDIxMlYyLjI3MDgzQzE2LjAyMTIgMS45NjY5NCAxNS45MDA0IDEuNjc1NDkgMTUuNjg1NiAxLjQ2MDYxQzE1LjQ3MDcgMS4yNDU3MiAxNS4xNzkyIDEuMTI1IDE0Ljg3NTMgMS4xMjVIMS4xMjUzM0MwLjgyMTQzMiAxLjEyNSAwLjUyOTk4NCAxLjI0NTcyIDAuMzE1MDk5IDEuNDYwNjFDMC4xMDAyMTQgMS42NzU0OSAtMC4wMjA1MDc4IDEuOTY2OTQgLTAuMDIwNTA3OCAyLjI3MDgzVjExLjQzNzVDLTAuMDIwNTA3OCAxMS43NDE0IDAuMTAwMjE0IDEyLjAzMjggMC4zMTUwOTkgMTIuMjQ3N0MwLjUyOTk4NCAxMi40NjI2IDAuODIxNDMyIDEyLjU4MzMgMS4xMjUzMyAxMi41ODMzSDMuOTcyVjExLjQzNzVaTTEzLjYxNDkgMi4yNzA4M0w4LjAwMDMyIDYuMTU1MjFMMi4zODU3NCAyLjI3MDgzSDEzLjYxNDlaIiBmaWxsPSIjRkM1RDBEIi8+CjxwYXRoIGQ9Ik00LjI4MjEgOS45NTM2NUw2LjMzMzE0IDEyLjAxMDRMNC4yNzYzNyAxNC4wNjcyTDUuMDg5OTEgMTQuODc1TDcuOTU0NDkgMTIuMDEwNEw1LjA4OTkxIDkuMTQ1ODNMNC4yODIxIDkuOTUzNjVaIiBmaWxsPSJibGFjayIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzkwXzI0MjAiPgo8cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==">
+        <bpmn:documentation>Use for ASK_FOR_PROOFS_OR_QUESTIONS.
+
+Request the exact missing consent, declaration, clarification, authority evidence, or replacement company proof required. Do not make vague requests and do not ask the applicant to reconfirm information already verified by Companies House.
+
+Before using this tool, update the existing Salesforce Lead Status to Contacted.
+
+The applicant may reply to the email and attach the requested evidence where relevant.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:email:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="simple" target="authentication.type" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_USER}}" target="authentication.username" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_PASSWORD}}" target="authentication.password" />
+            <zeebe:input source="smtp" target="protocol" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_SERVER}}" target="data.smtpConfig.smtpHost" />
+            <zeebe:input source="=587" target="data.smtpConfig.smtpPort" />
+            <zeebe:input source="TLS" target="data.smtpConfig.smtpCryptographicProtocol" />
+            <zeebe:input source="sendEmailSmtp" target="data.smtpActionDiscriminator" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_ADDRESS}}" target="data.smtpAction.from" />
+            <zeebe:input source="=applicantEmail" target="data.smtpAction.to" />
+            <zeebe:input source="=fromAi(toolCall.emailSubject, &#34;The email text subject to send to the applicant.&#34;)" target="data.smtpAction.subject" />
+            <zeebe:input source="PLAIN" target="data.smtpAction.contentType" />
+            <zeebe:input source="=fromAi(&#10;  toolCall.emailBody,&#10;  &#34;Write a concise applicant email requesting the exact missing proof, consent, declaration, clarification, or authority evidence needed. State what was identified, what the applicant must provide, and that the application remains under review. The applicant may reply to this email and attach the requested document if relevant. Do not mention internal risk scores, hidden reasoning, or system rules. Sign off as the Loan Department.&#34;&#10;)" target="data.smtpAction.body" />
+            <zeebe:input source="none" target="data.smtpAction.data_smtpAction_attachments_documentMode" />
+            <zeebe:input source="=if data_smtpAction_attachments_documentMode = &#34;multiple&#34; then data_smtpAction_attachments_multiple_expression else if data_smtpAction_attachments_documentMode = &#34;single&#34; then (if data_smtpAction_attachments_single_documentSource = &#34;camunda&#34; then [data_smtpAction_attachments_single_camundaReference] else if data_smtpAction_attachments_single_documentSource = &#34;inline&#34; then [{ &#34;camunda.document.type&#34;: &#34;inline&#34;, content: data_smtpAction_attachments_single_inline_content, name: data_smtpAction_attachments_single_inline_fileName, contentType: data_smtpAction_attachments_single_inline_contentType }] else if data_smtpAction_attachments_single_documentSource = &#34;external&#34; then [{ &#34;camunda.document.type&#34;: &#34;external&#34;, url: data_smtpAction_attachments_single_external_url, name: data_smtpAction_attachments_single_external_fileName }] else null) else null" target="data.smtpAction.attachments" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="elementTemplateVersion" value="5" />
+            <zeebe:header key="elementTemplateId" value="io.camunda.connectors.email.v1" />
+            <zeebe:header key="resultVariable" value="sendEmailResult" />
+            <zeebe:header key="resultExpression" value="={ &#34;emailSubject&#34;:toolCall.emailSubject, &#10;  &#34;emailBody&#34; :toolCall.emailBody}" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+        <bpmn:outgoing>Flow_0wd4cc5</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:intermediateThrowEvent id="Event_ResponseCorrelated" name="Response correlated">
+        <bpmn:extensionElements>
+          <zeebe:ioMapping>
+            <zeebe:output source="=responseEmail" target="toolCallResult" />
+            <zeebe:output source="=&#34;ESCALATE_TO_LOAN_SPECIALIST&#34;" target="agent.responseJson.nextAction" />
+            <zeebe:output source="=responseEmail" target="emailSent" />
+            <zeebe:output source="=responseEmail" target="customerResponse" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_04ncd1z</bpmn:incoming>
+        <bpmn:outgoing>Flow_1uvtrsp</bpmn:outgoing>
+      </bpmn:intermediateThrowEvent>
+      <bpmn:sequenceFlow id="Flow_04ncd1z" sourceRef="Event_Applicant_Response_Received" targetRef="Event_ResponseCorrelated" />
+      <bpmn:serviceTask id="Activity_ConfirmationEmail" name="Send final email to applicant" zeebe:modelerTemplate="io.camunda.connectors.email.v1" zeebe:modelerTemplateVersion="5" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzkwXzI0MjApIj4KPHBhdGggZD0iTTguMzM4MzUgOS45NTM2NUwxMC4zODk0IDEyLjAxMDRMOC4zMzI2MiAxNC4wNjcyTDkuMTQ2MTYgMTQuODc1TDEyLjAxMDcgMTIuMDEwNEw5LjE0NjE2IDkuMTQ1ODNMOC4zMzgzNSA5Ljk1MzY1WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTEyLjM0ODggOS45NTM2NUwxNC4zOTk4IDEyLjAxMDRMMTIuMzQzIDE0LjA2NzJMMTMuMTU2NiAxNC44NzVMMTYuMDIxMiAxMi4wMTA0TDEzLjE1NjYgOS4xNDU4M0wxMi4zNDg4IDkuOTUzNjVaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMy45NzIgMTEuNDM3NUgxLjEyNTMzVjIuNzkyMTlMNy42NzM3NiA3LjMyMzk2QzcuNzY5NjcgNy4zOTA0OSA3Ljg4MzYgNy40MjYxNCA4LjAwMDMyIDcuNDI2MTRDOC4xMTcwNSA3LjQyNjE0IDguMjMwOTggNy4zOTA0OSA4LjMyNjg5IDcuMzIzOTZMMTQuODc1MyAyLjc5MjE5VjhIMTYuMDIxMlYyLjI3MDgzQzE2LjAyMTIgMS45NjY5NCAxNS45MDA0IDEuNjc1NDkgMTUuNjg1NiAxLjQ2MDYxQzE1LjQ3MDcgMS4yNDU3MiAxNS4xNzkyIDEuMTI1IDE0Ljg3NTMgMS4xMjVIMS4xMjUzM0MwLjgyMTQzMiAxLjEyNSAwLjUyOTk4NCAxLjI0NTcyIDAuMzE1MDk5IDEuNDYwNjFDMC4xMDAyMTQgMS42NzU0OSAtMC4wMjA1MDc4IDEuOTY2OTQgLTAuMDIwNTA3OCAyLjI3MDgzVjExLjQzNzVDLTAuMDIwNTA3OCAxMS43NDE0IDAuMTAwMjE0IDEyLjAzMjggMC4zMTUwOTkgMTIuMjQ3N0MwLjUyOTk4NCAxMi40NjI2IDAuODIxNDMyIDEyLjU4MzMgMS4xMjUzMyAxMi41ODMzSDMuOTcyVjExLjQzNzVaTTEzLjYxNDkgMi4yNzA4M0w4LjAwMDMyIDYuMTU1MjFMMi4zODU3NCAyLjI3MDgzSDEzLjYxNDlaIiBmaWxsPSIjRkM1RDBEIi8+CjxwYXRoIGQ9Ik00LjI4MjEgOS45NTM2NUw2LjMzMzE0IDEyLjAxMDRMNC4yNzYzNyAxNC4wNjcyTDUuMDg5OTEgMTQuODc1TDcuOTU0NDkgMTIuMDEwNEw1LjA4OTkxIDkuMTQ1ODNMNC4yODIxIDkuOTUzNjVaIiBmaWxsPSJibGFjayIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzkwXzI0MjAiPgo8cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==">
+        <bpmn:documentation>Use only after the existing Salesforce Lead has been updated and to send final confirmation or offer or decline
+
+Use this tool to send:
+
+* a provisional business-loan offer after Lead Status is Qualified;
+* an acknowledgement that the application is under Loan Specialist review after Lead Status is Nurturing; or
+* a respectful rejection after Lead Status is Unqualified.
+
+For a provisional offer, include the requested loan amount, term, purpose, next steps, and state that final bank approval is still required.
+
+Do not use this tool to request missing evidence or clarification. Use Ask applicant via email to clarify or perform id check instead.
+
+Do not disclose simulated credit scores, internal risk logic, or hidden reasoning to the applicant.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:email:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="simple" target="authentication.type" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_USER}}" target="authentication.username" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_PASSWORD}}" target="authentication.password" />
+            <zeebe:input source="smtp" target="protocol" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_SERVER}}" target="data.smtpConfig.smtpHost" />
+            <zeebe:input source="=587" target="data.smtpConfig.smtpPort" />
+            <zeebe:input source="TLS" target="data.smtpConfig.smtpCryptographicProtocol" />
+            <zeebe:input source="sendEmailSmtp" target="data.smtpActionDiscriminator" />
+            <zeebe:input source="{{secrets.INBOUND_MAIL_ADDRESS}}" target="data.smtpAction.from" />
+            <zeebe:input source="=applicantEmail" target="data.smtpAction.to" />
+            <zeebe:input source="=fromAi(&#10;  toolCall.emailSubject,&#10;  &#34;Return only a concise email subject. Use one of these meanings: provisional business loan offer, application under specialist review, or business loan application decision.&#34;&#10;)" target="data.smtpAction.subject" />
+            <zeebe:input source="PLAIN" target="data.smtpAction.contentType" />
+            <zeebe:input source="=fromAi(&#10;  toolCall.emailBody,&#10;  &#34;Write a concise applicant email based on the current decision. For a provisional offer, state that it is provisional, include the loan amount, term, purpose, next steps, and that final bank approval is required. For specialist review, acknowledge that the application is under review and state that the bank will contact the applicant. For rejection, be respectful and concise, and do not disclose simulated credit scores, internal risk logic, or hidden reasoning. Sign off as the Loan Department.&#34;&#10;)" target="data.smtpAction.body" />
+            <zeebe:input source="none" target="data.smtpAction.data_smtpAction_attachments_documentMode" />
+            <zeebe:input source="=if data_smtpAction_attachments_documentMode = &#34;multiple&#34; then data_smtpAction_attachments_multiple_expression else if data_smtpAction_attachments_documentMode = &#34;single&#34; then (if data_smtpAction_attachments_single_documentSource = &#34;camunda&#34; then [data_smtpAction_attachments_single_camundaReference] else if data_smtpAction_attachments_single_documentSource = &#34;inline&#34; then [{ &#34;camunda.document.type&#34;: &#34;inline&#34;, content: data_smtpAction_attachments_single_inline_content, name: data_smtpAction_attachments_single_inline_fileName, contentType: data_smtpAction_attachments_single_inline_contentType }] else if data_smtpAction_attachments_single_documentSource = &#34;external&#34; then [{ &#34;camunda.document.type&#34;: &#34;external&#34;, url: data_smtpAction_attachments_single_external_url, name: data_smtpAction_attachments_single_external_fileName }] else null) else null" target="data.smtpAction.attachments" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="elementTemplateVersion" value="5" />
+            <zeebe:header key="elementTemplateId" value="io.camunda.connectors.email.v1" />
+            <zeebe:header key="resultVariable" value="sendEmailResult" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:userTask id="ESCALATE_TO_LOAN_SPECIALIST" name="Loan Specialist decision">
+        <bpmn:documentation>Use when next agent action is ESCALATE_TO_LOAN_SPECIALIST or when a business-loan application needs human judgement or the user requires to speak to relationship manager or someone from bank or when email response recieved has no concrete next action or user wants to cancel the application or says they contected the manger or are unsure.
+
+Use for unresolved material inconsistencies, unclear applicant authority, conflicting authoritative evidence, or a simulated credit score below 600.
+
+The Loan Specialist reviews the AI handover and selects one of three outcomes:
+
+* Approve the application
+* REQUEST_INFORMATION
+* REJECT
+
+The returned decision is authoritative. The AI Agent must update the existing Salesforce Lead and send the corresponding applicant communication.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:userTask />
+          <zeebe:ioMapping>
+            <zeebe:input source="=fromAi(&#10;  toolCall.summaryOfAIAgent,&#10;  &#34;Write a concise factual handover for the Loan Specialist. Include verification route, Companies House outcome, company-proof outcome, applicant authority issue if any, simulated credit score and risk band if available, actions already taken, outstanding issue, and recommended decision. Return plain text only.Also take the context from previous actions taken&#34; &#10;)" target="summaryByAI" />
+            <zeebe:output source="=&#34;Loan Specialist decision: &#34; + approveOrRejectApplication +&#10;&#34;\nDecision rationale: &#34; + specialistDecisionRationale +&#10;&#34;\nInformation or evidence required: &#34; +&#10;(if specialistRequestDetails = null or specialistRequestDetails = &#34;&#34; then &#34;[none]&#34; else specialistRequestDetails)" target="toolCallResult" />
+            <zeebe:output source="=approveOrRejectApplication" target="loanSpecialistDecision" />
+            <zeebe:output source="=specialistDecisionRationale" target="decisionRationale" />
+          </zeebe:ioMapping>
+          <zeebe:formDefinition formId="loan-specialist-decision-1rpm541" />
+        </bpmn:extensionElements>
+      </bpmn:userTask>
+      <bpmn:intermediateThrowEvent id="Event_05tlg2w" name="Salesforce&#10;Updated">
+        <bpmn:extensionElements>
+          <zeebe:ioMapping>
+            <zeebe:output source="=&#34;Salesforce Lead updated successfully&#34;" target="toolCalLResult" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_0882nlv</bpmn:incoming>
+      </bpmn:intermediateThrowEvent>
+      <bpmn:sequenceFlow id="Flow_0882nlv" sourceRef="UpdateSalesforceBusinessLoanApplication" targetRef="Event_05tlg2w" />
+      <bpmn:serviceTask id="UpdateSalesforceBusinessLoanApplication" name="Update Business Loan Lead in Salesforce" zeebe:modelerTemplate="io.camunda.connectors.Salesforce.v1" zeebe:modelerTemplateVersion="4" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgZmlsbD0icmdiKDAlLDAlLDAlKSIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNNC44MiAzLjA3NEMzLjM4MyAzLjE5MSAyLjE1NiA0LjE0MSAxLjcwNyA1LjVhMi44MSAyLjgxIDAgMCAwLS4xNzIgMS4wNTkgMi40NCAyLjQ0IDAgMCAwIC4xMjUuOTFsLjA1MS4xNzYtLjI4NS4yODFDLjkxOCA4LjQzNC42MzcgOC45NDUuNSA5LjYyMWE0LjAxIDQuMDEgMCAwIDAgLjAxMiAxLjIwMyAzLjEzIDMuMTMgMCAwIDAgLjg5MSAxLjYyNWMuNDYxLjQ2MS45NjEuNzM0IDEuNTgyLjg3MS4xODguMDM5LjY3Mi4wOS43MjcuMDc0LjAxNi0uMDA4LjA5LS4wMTYuMTYtLjAybC4xMzMtLjAxNi4xMzMuMjI3Yy45MDIgMS41MTIgMi43NTggMi4wMjcgNC4yNjYgMS4xODRhMy40OSAzLjQ5IDAgMCAwIDEuMDgyLTEuMDA0bC4xNDgtLjIzLjIzLjA3YTIuMTMgMi4xMyAwIDAgMCAuODgzLjEzMyAyLjg0IDIuODQgMCAwIDAgMS41Mi0uNSAzLjUyIDMuNTIgMCAwIDAgLjc4MS0uNzYyYy4wNzQtLjEwNS4xNDgtLjE4Ny4xNi0uMTg3cy4xMzMuMDEyLjI2Mi4wMjNjLjI2Mi4wMjcuNjA5LjAwNC45NjUtLjA2NmEzLjk5IDMuOTkgMCAwIDAgMi40OC0xLjY4NCAzLjkgMy45IDAgMCAwIC4xMTMtNC4xMjUgMy45MyAzLjkzIDAgMCAwLTIuNTIzLTEuODUyIDMuMzUgMy4zNSAwIDAgMC0xLjg3OS4wODZsLS4yNS4wN2EyLjI2IDIuMjYgMCAwIDEtLjA5NC0uMTI1IDMuODMgMy44MyAwIDAgMC0uNjIxLS42MDljLS40NTctLjM0NC0xLjA0Ny0uNTU1LTEuNjQxLS41ODItLjcxNS0uMDM5LTEuNDguMjU4LTIuMDUxLjc4MWwtLjE2NC4xNTItLjExMy0uMTIxYy0uNTgyLS42NDUtMS40NjUtMS4wOTQtMi4yNTgtMS4xNTItLjM0OC0uMDI3LS40MTQtLjAyNy0uNjEzLS4wMTJ6bS44NzkuNzdjLjc2Mi4xNzYgMS4zNzEuNjEzIDEuODMyIDEuMzEzbC4yMDcuMjk3Yy4wMTIgMCAuMTAyLS4xMTMuMjAzLS4yNTRhNC40MiA0LjQyIDAgMCAxIC4zNC0uNDAyYy44OTgtLjg4MyAyLjM1NS0uODc5IDMuMjUuMDE2LjE2NC4xNjQuMzEzLjM2Ny40NTcuNjI1LjA0My4wODIuMDkuMTQ1LjA5OC4xNDVzLjEwNS0uMDM1LjIwNy0uMDgyYTMuMjYgMy4yNiAwIDAgMSAxLjYyOS0uMjg1YzEuMjY2LjEyMSAyLjI4NS45MDIgMi43MzggMi4wOTRhNC41NCA0LjU0IDAgMCAxIC4xMDkuMzc1Yy4wNTkuMjMuMDU5LjI3LjA2My43MDcgMCAuNTEyLS4wMi42NDgtLjE1MiAxLjA0N2EzLjE2IDMuMTYgMCAwIDEtLjc3IDEuMjM0IDMuMTYgMy4xNiAwIDAgMS0xLjU1NS44NTljLS4zNC4wODItLjg1Mi4wOTQtMS4yNS4wMzFsLS4zMDEtLjAzOWE1LjY1IDUuNjUgMCAwIDAtLjEwOS4yMDdjLS4zMDUuNTk4LS44MjQgMS4wMzUtMS40MzQgMS4yMTEtLjU5LjE3Mi0xLjE2OC4xMDktMS43NS0uMTg0YTEuMTkgMS4xOSAwIDAgMC0uMTk1LS4wODJjLS4wMTEgMC0uMDgyLjExMy0uMTQ4LjI1LS4yNTQuNTYzLS42MjEuOTY1LTEuMTEzIDEuMjM4YTIuNTggMi41OCAwIDAgMS0yLjM3NSAwYy0uNTM1LS4yOTMtLjkyNi0uNzU4LTEuMTY4LTEuMzc1LS4wODYtLjIyMy0uMDYyLS4yMTEtLjQzNy0uMTQ4YTIuODggMi44OCAwIDAgMS0xLjAwNC0uMDI3Yy0xLjU0Ny0uMzg3LTIuMzQ4LTIuMDg2LTEuNjU2LTMuNTA4YTIuNTggMi41OCAwIDAgMSAuOTAyLTEuMDE2bC4yMTEtLjE0MWExLjU3IDEuNTcgMCAwIDAtLjA4Mi0uMjQyYy0uMTg0LS40OTYtLjI0Ni0uOTA2LS4xOTktMS4zNDguMTMzLTEuMzA1IDEuMDc4LTIuMzE2IDIuMzgzLTIuNTQ3YTMuOTQgMy45NCAwIDAgMSAxLjA3LjAzMXptLjExNyAzLjUxOWEzMi44MyAzMi44MyAwIDAgMC0uMDA0IDEuMDdsLjAwNCAxLjAzOS4xMzcuMDA0Yy4wOTguMDA0LjE0NSAwIC4xNTYtLjAyYTM2LjkzIDM2LjkzIDAgMCAwIC4wMDgtMi4wODIuMzkuMzkgMCAwIDAtLjMwMS0uMDEyem00LjMwOS0uMDA0Yy0uMTg3LjA0Ny0uMzMyLjE5NS0uMzk1LjQwMmEuODIuODIgMCAwIDAtLjA0My4xNzZjMCAuMDktLjAyMy4xMDktLjE0MS4xMDloLS4xMTNsLS4wMjMuMTA1YS44My44MyAwIDAgMC0uMDIzLjEyOWMwIC4wMTYuMDUxLjAyMy4xMTcuMDIzLjA3OCAwIC4xMTcuMDA4LjExNy4wMjNzLS4wNTEuMzAxLS4xMDUuNjI5Yy0uMTcyLjkzOC0uMTkxLjk4NC0uNDQ1Ljk4NEg4LjkzbC0uMDI3LjA3OGMtLjA0Ny4xMjUtLjAzOS4xNDUuMDYzLjE3Mi4xOTkuMDU1LjQ2MS0uMDI3LjU3NC0uMTguMTAyLS4xNDUuMTQ1LS4yOTcuMjctMS4wMDhsLjEyNS0uNjkxLjE3Mi0uMDA4Yy4xNjgtLjAxMi4xNjgtLjAxMi4xODQtLjA3NGEuNzguNzggMCAwIDAgLjAxNi0uMTI1bC4wMDQtLjA1OUg5Ljk4bC4wMTYtLjEwMmMuMDItLjE0MS4wODItLjI3Ny4xNDUtLjMwOS4wMjctLjAxNi4xMDUtLjAyNy4xOC0uMDIzbC4xMjkuMDA0LjAzOS0uMTA5YS4zOC4zOCAwIDAgMCAuMDI3LS4xMTdjLS4wNDMtLjA0My0uMjctLjA1OS0uMzkxLS4wMzF6bS02LjgwOS43MTFjLS4zNTkuMDgyLS40OTYuNDMtLjI1NC42NDguMDY2LjA1OS4xNDEuMDk0LjMzNi4xNTYuMzQ0LjEwNS40MTQuMTg0LjI4NS4zMTYtLjAzNS4wMzktLjA3LjA0My0uMjE5LjA0M3MtLjE5NS0uMDA4LS4zMjQtLjA3Yy0uMDgyLS4wMzktLjE1Mi0uMDYyLS4xNi0uMDUxYS45LjkgMCAwIDAtLjA1NS4xMDlsLS4wMzEuMDkuMTMzLjA2M2MuMzc5LjE3Ni44MzYuMTEzLjk2OS0uMTM3LjA1MS0uMTAyLjA1NS0uMjU0LjAwNC0uMzUycy0uMTQ1LS4xNTYtLjQzLS4yNWMtLjE5NS0uMDY2LS4yNjYtLjA5OC0uMjk3LS4xNDUtLjA0My0uMDU1LS4wNDMtLjA1OS0uMDA4LS4xMTMuMDItLjAzMS4wNjMtLjA2Ni4wOTQtLjA3OC4wNzQtLjAzMS4yNzMtLjAwOC40MjYuMDQ3LjA2Ni4wMjMuMTI5LjAzNS4xMzcuMDIzcy4wMzEtLjA1MS4wNTEtLjA5NGwuMDMxLS4wODItLjA2Ni0uMDQzYTEuMDEgMS4wMSAwIDAgMC0uNjIxLS4wODJ6bTEuNDExLS4wMDRjLS4xNTYuMDIzLS4yNzcuMDYzLS4zMi4wOTRzLS4wMzkuMDMxLjAwOC4xMjljLjAzNS4wODYuMDUxLjEwMi4wNzguMDkuMTg0LS4wNzQuNDY5LS4xMDIuNTktLjA1NS4wNzguMDI3LjEyNS4xMDIuMTI1LjE5NXYuMDc0bC0uMjI3LS4wMDhjLS4yODktLjAwOC0uNDI2LjAzMS0uNTU5LjE1Ni0uMTA1LjEwNS0uMTQ4LjIyMy0uMTI5LjM1OS4wNTUuMzQuNDUzLjQ1NyAxLjEwMi4zMTZsLjEwNS0uMDIzLjAxNi0uMzA5Yy4wMzUtLjY3Ni0uMDMxLS44OTUtLjI4NS0uOTg0YTEuMjYgMS4yNiAwIDAgMC0uNTA0LS4wMzV6bS40MTQuNzQybC4wNjYuMDEydi4zOThsLS4wOTguMDE2Yy0uMjUuMDMxLS40My0uMDA0LS40OC0uMDlhLjM4LjM4IDAgMCAxLS4wMjMtLjEyOWMwLS4wOTQuMDYzLS4xNjQuMTY0LS4xOTlhMS4zIDEuMyAwIDAgMSAuMzcxLS4wMDh6bTEuODItLjczNGMtLjM0LjA5OC0uNTA0LjM0NC0uNDg0Ljc0Mi4wMTYuMzE2LjEzNy41MDQuNDAyLjYwNS4yMjcuMDkuODM2LjA0Ny44MzYtLjA1OWEuODIuODIgMCAwIDAtLjA3NC0uMjAzbC0uMTA5LjAzMWExLjA2IDEuMDYgMCAwIDEtLjI3My4wMzVjLS4yMjMuMDA0LS4zNDgtLjA1NS0uNDE0LS4xOTUtLjAzMS0uMDUxLS4wNTEtLjExMy0uMDUxLS4xNDVWOC44NGwuNDg4LS4wMDQuNDg4LS4wMDh2LS4xNmMwLS4yNzMtLjExNy0uNDY5LS4zMjgtLjU2MmEuOTEuOTEgMCAwIDAtLjQ4LS4wMzF6bS4zMjQuMjQyYS4yOS4yOSAwIDAgMSAuMTc2LjIzNGwuMDA4LjA2My0uMzEyLjAwOGMtLjE2OCAwLS4zMiAwLS4zMzYtLjAwNC0uMDMxLS4wMTIuMDE2LS4xNzIuMDc0LS4yMzQuMDg2LS4wOTguMjQ2LS4xMjUuMzkxLS4wNjZ6bTAgMCIvPjxwYXRoIGQ9Ik04LjQzOCA4LjA3Yy0uMjAzLjA0Ny0uMzI0LjE1Ni0uMzU5LjMyLS4wNTUuMjIzLjA3NC4zNjcuNDEuNDczLjM0NC4xMDUuNDA2LjE0OC4zNjMuMjYyLS4wNTUuMTQ1LS4zMzIuMTYtLjU5OC4wMzUtLjA3OC0uMDM1LS4xNDUtLjA1OS0uMTUyLS4wNDdzLS4wMzEuMDU1LS4wNTUuMTA5bC0uMDMxLjA5LjEzMy4wNjNjLjQ4NC4yMjcgMS4wMTIuMDU5IDEuMDEyLS4zMi0uMDA0LS4yMDctLjEwNS0uMzAxLS40NjktLjQxOGExLjI4IDEuMjggMCAwIDEtLjI3My0uMTA5LjE0LjE0IDAgMCAxIC4wMDQtLjE5NWMuMDY2LS4wNTUuMzA5LS4wNTEuNDguMDEyLjA3LjAyMy4xMzMuMDM5LjE0NS4wMjdzLjAyNy0uMDUxLjA0Ny0uMDk0bC4wMzEtLjA4Mi0uMDY2LS4wNDNhMS4wMSAxLjAxIDAgMCAwLS42MjEtLjA4MnptMi40MS0uMDA0Yy0uMjcuMDU5LS40NTMuMjY2LS40OTYuNTYzLS4wNDcuMzQuMDg2LjY0NS4zMzYuNzc3LjExNy4wNTkuMzIuMDg2LjQ3My4wNTUuMjMtLjAzOS4zNzEtLjE0MS40NzMtLjMzMi4wNTEtLjA5OC4wNTUtLjEyNS4wNTUtLjM2M3MtLjAwNC0uMjY2LS4wNTUtLjM2N2MtLjA3LS4xMzMtLjE3Mi0uMjMtLjMwMS0uMjg1LS4xMTMtLjA1MS0uMzUyLS4wNzQtLjQ4NC0uMDQ3em0uMzcxLjI3N2MuMTE3LjA2Ni4xNDguMTU2LjE0OC40MjIgMCAuMTk1LS4wMDQuMjQ2LS4wNDMuMzA5LS4wNy4xMjEtLjE0NS4xNi0uMzAxLjE2cy0uMjI3LS4wMzktLjI5Ny0uMTcyYy0uMDYyLS4xMTctLjA2Mi0uNDczLS4wMDQtLjU5NC4wODYtLjE3Mi4zMTMtLjIyNy40OTYtLjEyNXptMS4yNS0uMjY1YS43NS43NSAwIDAgMC0uMTM3LjA2M2MtLjA3LjA0Ny0uMDc0LjA0My0uMDc0LS4wMiAwLS4wNTUtLjAwNC0uMDU1LS4xNDUtLjA1MWwtLjE0NS4wMDh2MS4zOTVoLjMwMWwuMDA4LS40NjFjLjAxMi0uMzkxLjAyLS40NzMuMDUxLS41MzEuMDU5LS4xMDkuMTUyLS4xNTYuMzA1LS4xNTZoLjEzM2wuMDM1LS4wOWMuMDU1LS4xNDUuMDQ3LS4xNTYtLjA2Mi0uMTc2LS4xMzctLjAxNi0uMTgtLjAxNi0uMjcuMDJ6bTAgMCIvPjxwYXRoIGQ9Ik0xMy4zOTUgOC4wODJjLS4zMDUuMDgyLS40NzMuMjk3LS40OTIuNjQ1LS4wMjcuNTcuNDA2Ljg2MyAxLjA0My43MDcuMTAyLS4wMjMuMTA1LS4wMzkuMDU1LS4xNjQtLjAyNy0uMDY2LS4wNDMtLjA4Ni0uMDctLjA3NGExLjI2IDEuMjYgMCAwIDEtLjQzNy4wMTJjLS4xODQtLjA2Mi0uMjctLjIwMy0uMjctLjQ0MSAwLS4xOC4wNDctLjI5Ny4xNDgtLjM4My4wOTQtLjA3OC4xNDEtLjA4Ni4zODMtLjA3NGwuMjA3LjAxNi4wMzktLjEwMmMuMDQzLS4xMTcuMDM5LS4xMjEtLjE0NS0uMTUyLS4xNzYtLjAzMS0uMzItLjAyNy0uNDYxLjAxMnptMCAwIi8+PHBhdGggZD0iTTE0LjYxNyA4LjA3OGMtLjMzMi4wOTQtLjQ5Mi4zNTUtLjQ2OS43NTguMDE2LjMwOS4xNjQuNTEyLjQ0MS41OTguMjM4LjA3Ljc5Ny4wMjMuNzk3LS4wN2EuODIuODIgMCAwIDAtLjA3NC0uMjAzbC0uMTA1LjAzMWMtLjA1OS4wMi0uMTg3LjAzNS0uMjgxLjAzNS0uMjc3IDAtLjQxNC0uMDk0LS40NDktLjMwNWwtLjAxNi0uMDgyLjQ4OC0uMDA0LjQ4OC0uMDA4di0uMTcyYy0uMDA0LS4yNy0uMTEzLS40NTMtLjMyNC0uNTUxLS4xMjUtLjA1NS0uMzUyLS4wNjYtLjQ5Ni0uMDI3em0uMzQuMjM4YS4yOS4yOSAwIDAgMSAuMTc2LjIzNGwuMDA4LjA2My0uMzEyLjAwOGMtLjE2OCAwLS4zMiAwLS4zMzYtLjAwNHMtLjAyLS4wMjctLjAwNC0uMDgyYy4wNzgtLjIyMy4yNTQtLjMwNS40NjktLjIxOXptMCAwIi8+PC9zdmc+">
+        <bpmn:documentation>Update the existing Salesforce Lead for this business-loan application.Call it only once
+Use the Lead ID already provided as salesforceLeadId. Never create a new Lead.
+
+This tool can update only:
+
+* Status
+* Description
+
+Use these statuses exactly:
+
+* Contacted: applicant must provide clarification, consent, declaration, or replacement evidence.
+* Nurturing: Loan Specialist review is required.
+* Qualified: provisional offer is being sent.
+* Unqualified: application is rejected.
+
+Description must be a concise auditable note containing the decision, reason, next action, Companies House result, company-proof outcome, credit score and risk band where available, and evidence requested from the applicant.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:http-json:1" />
+          <zeebe:ioMapping>
+            <zeebe:input source="{{secrets.SFDC_DEMO_BASE_URL}}" target="baseUrl" />
+            <zeebe:input source="v64.0" target="apiVersion" />
+            <zeebe:input source="oauth-client-credentials-flow" target="authentication.type" />
+            <zeebe:input source="sObject" target="salesforceInteractionType" />
+            <zeebe:input source="patch" target="method" />
+            <zeebe:input source="Lead" target="objectType" />
+            <zeebe:input source="=salesforceLeadId" target="objectId" />
+            <zeebe:input source="=baseUrl + &#34;/services/data/&#34; + apiVersion + &#34;/sobjects/&#34; + objectType + string(if objectId != null then &#34;/&#34; + objectId else &#34;&#34;) + string(if relationshipFieldName != null then &#34;/&#34; + relationshipFieldName else &#34;&#34;)" target="url" />
+            <zeebe:input source="=fromAi(&#10;  toolCall.salesforceLeadUpdate,&#10;  &#34;Return one Salesforce Lead update object only.&#10;&#10;Use exactly these two fields:&#10;- Status&#10;- Description&#10;&#10;Status is mandatory and must be exactly one of:&#10;New&#10;Contacted&#10;Nurturing&#10;Qualified&#10;Unqualified&#10;&#10;Description is mandatory. Include the verification decision, reason, next action, Companies House outcome, company-proof outcome, simulated credit score and risk band where available, and evidence requested from the applicant.&#10;&#10;Return no other fields.&#34;,&#10;  &#34;object&#34;,&#10;  {&#10;    properties: {&#10;      Status: {&#10;        type: &#34;string&#34;,&#10;        enum: [&#34;New&#34;, &#34;Contacted&#34;, &#34;Nurturing&#34;, &#34;Qualified&#34;, &#34;Unqualified&#34;]&#10;      },&#10;      Description: {&#10;        type: &#34;string&#34;&#10;      }&#10;    },&#10;    required: [&#34;Status&#34;, &#34;Description&#34;],&#10;    additionalProperties: false&#10;  }&#10;)" target="body" />
+            <zeebe:input source="=baseUrl + &#34;/services/oauth2/token&#34;" target="authentication.oauthTokenEndpoint" />
+            <zeebe:input source="{{secrets.SFDC_DEMO_CONSUMER_KEY}}" target="authentication.clientId" />
+            <zeebe:input source="{{secrets.SFDC_DEMO_CONSUMER_SECRET}}" target="authentication.clientSecret" />
+            <zeebe:input source="credentialsBody" target="authentication.clientAuthentication" />
+            <zeebe:input source="20" target="connectionTimeoutInSeconds" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="elementTemplateVersion" value="3" />
+            <zeebe:header key="elementTemplateId" value="io.camunda.connectors.Salesforce.v1" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+        <bpmn:outgoing>Flow_0882nlv</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:serviceTask id="CHECK_DIRECTORS" name="Get Company directors details" zeebe:modelerTemplate="companies_house_http_manual_auth" zeebe:modelerTemplateVersion="1">
+        <bpmn:documentation>Use when next action is CHECK_DIRECTORS or when the applicant’s authority to act for the company is relevant and unclear.
+
+Looks up Companies House officer and director information using the submitted company registration number.
+
+Use it to assess whether the applicant’s stated position is consistent with available company officer information, or whether the case needs Loan Specialist review.
+
+Do not use for the routine company-status check or where authority is already clear.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:http-json:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="https://api.company-information.service.gov.uk" target="baseUrl" />
+            <zeebe:input source="{{secrets.COMPANY_HOUSE_KEY}}" target="apiKey" />
+            <zeebe:input source="listCompanyOfficers" target="operationId" />
+            <zeebe:input source="=string(companyRegistrationNumber)" target="company_number" />
+            <zeebe:input source="GET" target="method" />
+            <zeebe:input source="={ Authorization: &#34;{{secrets.COMPANY_HOUSE_KEY}}&#34; }" target="headers" />
+            <zeebe:input source="={}" target="queryParameters" />
+            <zeebe:input source="= if operationId = &#34;getCompanyProfile&#34; then &#34;/company/&#34; + company_number else if operationId = &#34;searchCompanies&#34; then &#34;/search/companies&#34; else if operationId = &#34;searchAll&#34; then &#34;/search&#34; else if operationId = &#34;listCompanyOfficers&#34; then &#34;/company/&#34; + company_number + &#34;/officers&#34; else if operationId = &#34;listFilingHistory&#34; then &#34;/company/&#34; + company_number + &#34;/filing-history&#34; else if operationId = &#34;getFilingHistoryItem&#34; then &#34;/company/&#34; + company_number + &#34;/filing-history/&#34; + transaction_id else if operationId = &#34;listPSC&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control&#34; else if operationId = &#34;getIndividualPSC&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/individual/&#34; + psc_id else if operationId = &#34;getIndividualBeneficialOwner&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/individual-beneficial-owner/&#34; + psc_id else if operationId = &#34;getLegalPersonPSC&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/legal-person/&#34; + psc_id else if operationId = &#34;getLegalPersonBeneficialOwner&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control/legal-person-beneficial-owner/&#34; + psc_id else if operationId = &#34;listPSCStatements&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control-statements&#34; else if operationId = &#34;getPSCStatement&#34; then &#34;/company/&#34; + company_number + &#34;/persons-with-significant-control-statements/&#34; + statement_id else if operationId = &#34;getDocumentMetadata&#34; then &#34;/document/&#34; + document_id else if operationId = &#34;getDocumentContent&#34; then &#34;/document/&#34; + document_id + &#34;/content&#34; else &#34;&#34;" target="operationPath" />
+            <zeebe:input source="= baseUrl + operationPath" target="url" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="resultVariable" value="resultCompanyDirectors" />
+            <zeebe:header key="resultExpression" value="={&#10;  &#34;toolCallResult&#34;: body&#10;}" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:scriptTask id="GET_CREDIT_SCORE" name="Get Credit Score">
+        <bpmn:documentation>Use only when verificationRoute is PASSED and creditCheckConsent is true and next action is GET_CREDIT_SCORE
+
+Returns a simulated demonstration credit score for this business-loan application. The result contains score and source.
+
+Do not use for HARD_FAIL or unresolved verification exceptions. A score below 600 requires Loan Specialist review; it must not cause automatic rejection.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:script expression="=if creditCheckConsent = true&#10;then {&#10;  &#34;score&#34;: floor(500 + random number() * 351),&#10;  &#34;source&#34;: &#34;SIMULATED_DEMO_SCORE&#34;&#10;}&#10;else {&#10;  &#34;score&#34;: null,&#10;  &#34;source&#34;: &#34;NOT_RUN_NO_CONSENT&#34;&#10;}" resultVariable="creditScoreResult" />
+        </bpmn:extensionElements>
+      </bpmn:scriptTask>
+      <bpmn:userTask id="Activity_0y8bbnz" name="Review Customer Response">
+        <bpmn:documentation>Use when next agent action is ESCALATE_TO_LOAN_SPECIALIST or when a business-loan application needs human judgement or the user requires to speak to relationship manager or someone from bank or when email response recieved has no concrete next action or user wants to cancel the application or says they contected the manger or are unsure.
+
+Use for unresolved material inconsistencies, unclear applicant authority, conflicting authoritative evidence, or a simulated credit score below 600.
+
+The Loan Specialist reviews the AI handover and selects one of three outcomes:
+
+* Approve the application
+* REQUEST_INFORMATION
+* REJECT
+
+The returned decision is authoritative. The AI Agent must update the existing Salesforce Lead and send the corresponding applicant communication.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:userTask />
+          <zeebe:ioMapping>
+            <zeebe:input source="=emailBody" target="emailSent" />
+            <zeebe:input source="=customerResponse" target="customerResponse" />
+            <zeebe:output source="=&#34;Loan Specialist decision: &#34; + approveOrRejectApplication +&#10;&#34;\nDecision rationale: &#34; + specialistDecisionRationale +&#10;&#34;\nInformation or evidence required: &#34; +&#10;(if specialistRequestDetails = null or specialistRequestDetails = &#34;&#34; then &#34;[none]&#34; else specialistRequestDetails)" target="toolCallResult" />
+            <zeebe:output source="=approveOrRejectApplication" target="loanSpecialistDecision" />
+            <zeebe:output source="=specialistDecisionRationale" target="decisionRationale" />
+          </zeebe:ioMapping>
+          <zeebe:formDefinition formId="Form_kvacyz4" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1uvtrsp</bpmn:incoming>
+      </bpmn:userTask>
+      <bpmn:sequenceFlow id="Flow_1uvtrsp" sourceRef="Event_ResponseCorrelated" targetRef="Activity_0y8bbnz" />
+    </bpmn:adHocSubProcess>
+    <bpmn:sequenceFlow id="Flow_11a0qag" sourceRef="Agentic_loan_verification" targetRef="gateway_post_verification_needed" />
+    <bpmn:exclusiveGateway id="Gateway_00ldj35" name="Initial verification outcome?">
+      <bpmn:incoming>Flow_1itfgc8</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rpzhyv</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1rpzhyv" sourceRef="Gateway_00ldj35" targetRef="gateway_verification_needed" />
+    <bpmn:serviceTask id="Activity_11w2qbj" name="Create CRM Record" zeebe:modelerTemplate="io.camunda.connectors.Salesforce.v1" zeebe:modelerTemplateVersion="4" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgZmlsbD0icmdiKDAlLDAlLDAlKSIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNNC44MiAzLjA3NEMzLjM4MyAzLjE5MSAyLjE1NiA0LjE0MSAxLjcwNyA1LjVhMi44MSAyLjgxIDAgMCAwLS4xNzIgMS4wNTkgMi40NCAyLjQ0IDAgMCAwIC4xMjUuOTFsLjA1MS4xNzYtLjI4NS4yODFDLjkxOCA4LjQzNC42MzcgOC45NDUuNSA5LjYyMWE0LjAxIDQuMDEgMCAwIDAgLjAxMiAxLjIwMyAzLjEzIDMuMTMgMCAwIDAgLjg5MSAxLjYyNWMuNDYxLjQ2MS45NjEuNzM0IDEuNTgyLjg3MS4xODguMDM5LjY3Mi4wOS43MjcuMDc0LjAxNi0uMDA4LjA5LS4wMTYuMTYtLjAybC4xMzMtLjAxNi4xMzMuMjI3Yy45MDIgMS41MTIgMi43NTggMi4wMjcgNC4yNjYgMS4xODRhMy40OSAzLjQ5IDAgMCAwIDEuMDgyLTEuMDA0bC4xNDgtLjIzLjIzLjA3YTIuMTMgMi4xMyAwIDAgMCAuODgzLjEzMyAyLjg0IDIuODQgMCAwIDAgMS41Mi0uNSAzLjUyIDMuNTIgMCAwIDAgLjc4MS0uNzYyYy4wNzQtLjEwNS4xNDgtLjE4Ny4xNi0uMTg3cy4xMzMuMDEyLjI2Mi4wMjNjLjI2Mi4wMjcuNjA5LjAwNC45NjUtLjA2NmEzLjk5IDMuOTkgMCAwIDAgMi40OC0xLjY4NCAzLjkgMy45IDAgMCAwIC4xMTMtNC4xMjUgMy45MyAzLjkzIDAgMCAwLTIuNTIzLTEuODUyIDMuMzUgMy4zNSAwIDAgMC0xLjg3OS4wODZsLS4yNS4wN2EyLjI2IDIuMjYgMCAwIDEtLjA5NC0uMTI1IDMuODMgMy44MyAwIDAgMC0uNjIxLS42MDljLS40NTctLjM0NC0xLjA0Ny0uNTU1LTEuNjQxLS41ODItLjcxNS0uMDM5LTEuNDguMjU4LTIuMDUxLjc4MWwtLjE2NC4xNTItLjExMy0uMTIxYy0uNTgyLS42NDUtMS40NjUtMS4wOTQtMi4yNTgtMS4xNTItLjM0OC0uMDI3LS40MTQtLjAyNy0uNjEzLS4wMTJ6bS44NzkuNzdjLjc2Mi4xNzYgMS4zNzEuNjEzIDEuODMyIDEuMzEzbC4yMDcuMjk3Yy4wMTIgMCAuMTAyLS4xMTMuMjAzLS4yNTRhNC40MiA0LjQyIDAgMCAxIC4zNC0uNDAyYy44OTgtLjg4MyAyLjM1NS0uODc5IDMuMjUuMDE2LjE2NC4xNjQuMzEzLjM2Ny40NTcuNjI1LjA0My4wODIuMDkuMTQ1LjA5OC4xNDVzLjEwNS0uMDM1LjIwNy0uMDgyYTMuMjYgMy4yNiAwIDAgMSAxLjYyOS0uMjg1YzEuMjY2LjEyMSAyLjI4NS45MDIgMi43MzggMi4wOTRhNC41NCA0LjU0IDAgMCAxIC4xMDkuMzc1Yy4wNTkuMjMuMDU5LjI3LjA2My43MDcgMCAuNTEyLS4wMi42NDgtLjE1MiAxLjA0N2EzLjE2IDMuMTYgMCAwIDEtLjc3IDEuMjM0IDMuMTYgMy4xNiAwIDAgMS0xLjU1NS44NTljLS4zNC4wODItLjg1Mi4wOTQtMS4yNS4wMzFsLS4zMDEtLjAzOWE1LjY1IDUuNjUgMCAwIDAtLjEwOS4yMDdjLS4zMDUuNTk4LS44MjQgMS4wMzUtMS40MzQgMS4yMTEtLjU5LjE3Mi0xLjE2OC4xMDktMS43NS0uMTg0YTEuMTkgMS4xOSAwIDAgMC0uMTk1LS4wODJjLS4wMTEgMC0uMDgyLjExMy0uMTQ4LjI1LS4yNTQuNTYzLS42MjEuOTY1LTEuMTEzIDEuMjM4YTIuNTggMi41OCAwIDAgMS0yLjM3NSAwYy0uNTM1LS4yOTMtLjkyNi0uNzU4LTEuMTY4LTEuMzc1LS4wODYtLjIyMy0uMDYyLS4yMTEtLjQzNy0uMTQ4YTIuODggMi44OCAwIDAgMS0xLjAwNC0uMDI3Yy0xLjU0Ny0uMzg3LTIuMzQ4LTIuMDg2LTEuNjU2LTMuNTA4YTIuNTggMi41OCAwIDAgMSAuOTAyLTEuMDE2bC4yMTEtLjE0MWExLjU3IDEuNTcgMCAwIDAtLjA4Mi0uMjQyYy0uMTg0LS40OTYtLjI0Ni0uOTA2LS4xOTktMS4zNDguMTMzLTEuMzA1IDEuMDc4LTIuMzE2IDIuMzgzLTIuNTQ3YTMuOTQgMy45NCAwIDAgMSAxLjA3LjAzMXptLjExNyAzLjUxOWEzMi44MyAzMi44MyAwIDAgMC0uMDA0IDEuMDdsLjAwNCAxLjAzOS4xMzcuMDA0Yy4wOTguMDA0LjE0NSAwIC4xNTYtLjAyYTM2LjkzIDM2LjkzIDAgMCAwIC4wMDgtMi4wODIuMzkuMzkgMCAwIDAtLjMwMS0uMDEyem00LjMwOS0uMDA0Yy0uMTg3LjA0Ny0uMzMyLjE5NS0uMzk1LjQwMmEuODIuODIgMCAwIDAtLjA0My4xNzZjMCAuMDktLjAyMy4xMDktLjE0MS4xMDloLS4xMTNsLS4wMjMuMTA1YS44My44MyAwIDAgMC0uMDIzLjEyOWMwIC4wMTYuMDUxLjAyMy4xMTcuMDIzLjA3OCAwIC4xMTcuMDA4LjExNy4wMjNzLS4wNTEuMzAxLS4xMDUuNjI5Yy0uMTcyLjkzOC0uMTkxLjk4NC0uNDQ1Ljk4NEg4LjkzbC0uMDI3LjA3OGMtLjA0Ny4xMjUtLjAzOS4xNDUuMDYzLjE3Mi4xOTkuMDU1LjQ2MS0uMDI3LjU3NC0uMTguMTAyLS4xNDUuMTQ1LS4yOTcuMjctMS4wMDhsLjEyNS0uNjkxLjE3Mi0uMDA4Yy4xNjgtLjAxMi4xNjgtLjAxMi4xODQtLjA3NGEuNzguNzggMCAwIDAgLjAxNi0uMTI1bC4wMDQtLjA1OUg5Ljk4bC4wMTYtLjEwMmMuMDItLjE0MS4wODItLjI3Ny4xNDUtLjMwOS4wMjctLjAxNi4xMDUtLjAyNy4xOC0uMDIzbC4xMjkuMDA0LjAzOS0uMTA5YS4zOC4zOCAwIDAgMCAuMDI3LS4xMTdjLS4wNDMtLjA0My0uMjctLjA1OS0uMzkxLS4wMzF6bS02LjgwOS43MTFjLS4zNTkuMDgyLS40OTYuNDMtLjI1NC42NDguMDY2LjA1OS4xNDEuMDk0LjMzNi4xNTYuMzQ0LjEwNS40MTQuMTg0LjI4NS4zMTYtLjAzNS4wMzktLjA3LjA0My0uMjE5LjA0M3MtLjE5NS0uMDA4LS4zMjQtLjA3Yy0uMDgyLS4wMzktLjE1Mi0uMDYyLS4xNi0uMDUxYS45LjkgMCAwIDAtLjA1NS4xMDlsLS4wMzEuMDkuMTMzLjA2M2MuMzc5LjE3Ni44MzYuMTEzLjk2OS0uMTM3LjA1MS0uMTAyLjA1NS0uMjU0LjAwNC0uMzUycy0uMTQ1LS4xNTYtLjQzLS4yNWMtLjE5NS0uMDY2LS4yNjYtLjA5OC0uMjk3LS4xNDUtLjA0My0uMDU1LS4wNDMtLjA1OS0uMDA4LS4xMTMuMDItLjAzMS4wNjMtLjA2Ni4wOTQtLjA3OC4wNzQtLjAzMS4yNzMtLjAwOC40MjYuMDQ3LjA2Ni4wMjMuMTI5LjAzNS4xMzcuMDIzcy4wMzEtLjA1MS4wNTEtLjA5NGwuMDMxLS4wODItLjA2Ni0uMDQzYTEuMDEgMS4wMSAwIDAgMC0uNjIxLS4wODJ6bTEuNDExLS4wMDRjLS4xNTYuMDIzLS4yNzcuMDYzLS4zMi4wOTRzLS4wMzkuMDMxLjAwOC4xMjljLjAzNS4wODYuMDUxLjEwMi4wNzguMDkuMTg0LS4wNzQuNDY5LS4xMDIuNTktLjA1NS4wNzguMDI3LjEyNS4xMDIuMTI1LjE5NXYuMDc0bC0uMjI3LS4wMDhjLS4yODktLjAwOC0uNDI2LjAzMS0uNTU5LjE1Ni0uMTA1LjEwNS0uMTQ4LjIyMy0uMTI5LjM1OS4wNTUuMzQuNDUzLjQ1NyAxLjEwMi4zMTZsLjEwNS0uMDIzLjAxNi0uMzA5Yy4wMzUtLjY3Ni0uMDMxLS44OTUtLjI4NS0uOTg0YTEuMjYgMS4yNiAwIDAgMC0uNTA0LS4wMzV6bS40MTQuNzQybC4wNjYuMDEydi4zOThsLS4wOTguMDE2Yy0uMjUuMDMxLS40My0uMDA0LS40OC0uMDlhLjM4LjM4IDAgMCAxLS4wMjMtLjEyOWMwLS4wOTQuMDYzLS4xNjQuMTY0LS4xOTlhMS4zIDEuMyAwIDAgMSAuMzcxLS4wMDh6bTEuODItLjczNGMtLjM0LjA5OC0uNTA0LjM0NC0uNDg0Ljc0Mi4wMTYuMzE2LjEzNy41MDQuNDAyLjYwNS4yMjcuMDkuODM2LjA0Ny44MzYtLjA1OWEuODIuODIgMCAwIDAtLjA3NC0uMjAzbC0uMTA5LjAzMWExLjA2IDEuMDYgMCAwIDEtLjI3My4wMzVjLS4yMjMuMDA0LS4zNDgtLjA1NS0uNDE0LS4xOTUtLjAzMS0uMDUxLS4wNTEtLjExMy0uMDUxLS4xNDVWOC44NGwuNDg4LS4wMDQuNDg4LS4wMDh2LS4xNmMwLS4yNzMtLjExNy0uNDY5LS4zMjgtLjU2MmEuOTEuOTEgMCAwIDAtLjQ4LS4wMzF6bS4zMjQuMjQyYS4yOS4yOSAwIDAgMSAuMTc2LjIzNGwuMDA4LjA2My0uMzEyLjAwOGMtLjE2OCAwLS4zMiAwLS4zMzYtLjAwNC0uMDMxLS4wMTIuMDE2LS4xNzIuMDc0LS4yMzQuMDg2LS4wOTguMjQ2LS4xMjUuMzkxLS4wNjZ6bTAgMCIvPjxwYXRoIGQ9Ik04LjQzOCA4LjA3Yy0uMjAzLjA0Ny0uMzI0LjE1Ni0uMzU5LjMyLS4wNTUuMjIzLjA3NC4zNjcuNDEuNDczLjM0NC4xMDUuNDA2LjE0OC4zNjMuMjYyLS4wNTUuMTQ1LS4zMzIuMTYtLjU5OC4wMzUtLjA3OC0uMDM1LS4xNDUtLjA1OS0uMTUyLS4wNDdzLS4wMzEuMDU1LS4wNTUuMTA5bC0uMDMxLjA5LjEzMy4wNjNjLjQ4NC4yMjcgMS4wMTIuMDU5IDEuMDEyLS4zMi0uMDA0LS4yMDctLjEwNS0uMzAxLS40NjktLjQxOGExLjI4IDEuMjggMCAwIDEtLjI3My0uMTA5LjE0LjE0IDAgMCAxIC4wMDQtLjE5NWMuMDY2LS4wNTUuMzA5LS4wNTEuNDguMDEyLjA3LjAyMy4xMzMuMDM5LjE0NS4wMjdzLjAyNy0uMDUxLjA0Ny0uMDk0bC4wMzEtLjA4Mi0uMDY2LS4wNDNhMS4wMSAxLjAxIDAgMCAwLS42MjEtLjA4MnptMi40MS0uMDA0Yy0uMjcuMDU5LS40NTMuMjY2LS40OTYuNTYzLS4wNDcuMzQuMDg2LjY0NS4zMzYuNzc3LjExNy4wNTkuMzIuMDg2LjQ3My4wNTUuMjMtLjAzOS4zNzEtLjE0MS40NzMtLjMzMi4wNTEtLjA5OC4wNTUtLjEyNS4wNTUtLjM2M3MtLjAwNC0uMjY2LS4wNTUtLjM2N2MtLjA3LS4xMzMtLjE3Mi0uMjMtLjMwMS0uMjg1LS4xMTMtLjA1MS0uMzUyLS4wNzQtLjQ4NC0uMDQ3em0uMzcxLjI3N2MuMTE3LjA2Ni4xNDguMTU2LjE0OC40MjIgMCAuMTk1LS4wMDQuMjQ2LS4wNDMuMzA5LS4wNy4xMjEtLjE0NS4xNi0uMzAxLjE2cy0uMjI3LS4wMzktLjI5Ny0uMTcyYy0uMDYyLS4xMTctLjA2Mi0uNDczLS4wMDQtLjU5NC4wODYtLjE3Mi4zMTMtLjIyNy40OTYtLjEyNXptMS4yNS0uMjY1YS43NS43NSAwIDAgMC0uMTM3LjA2M2MtLjA3LjA0Ny0uMDc0LjA0My0uMDc0LS4wMiAwLS4wNTUtLjAwNC0uMDU1LS4xNDUtLjA1MWwtLjE0NS4wMDh2MS4zOTVoLjMwMWwuMDA4LS40NjFjLjAxMi0uMzkxLjAyLS40NzMuMDUxLS41MzEuMDU5LS4xMDkuMTUyLS4xNTYuMzA1LS4xNTZoLjEzM2wuMDM1LS4wOWMuMDU1LS4xNDUuMDQ3LS4xNTYtLjA2Mi0uMTc2LS4xMzctLjAxNi0uMTgtLjAxNi0uMjcuMDJ6bTAgMCIvPjxwYXRoIGQ9Ik0xMy4zOTUgOC4wODJjLS4zMDUuMDgyLS40NzMuMjk3LS40OTIuNjQ1LS4wMjcuNTcuNDA2Ljg2MyAxLjA0My43MDcuMTAyLS4wMjMuMTA1LS4wMzkuMDU1LS4xNjQtLjAyNy0uMDY2LS4wNDMtLjA4Ni0uMDctLjA3NGExLjI2IDEuMjYgMCAwIDEtLjQzNy4wMTJjLS4xODQtLjA2Mi0uMjctLjIwMy0uMjctLjQ0MSAwLS4xOC4wNDctLjI5Ny4xNDgtLjM4My4wOTQtLjA3OC4xNDEtLjA4Ni4zODMtLjA3NGwuMjA3LjAxNi4wMzktLjEwMmMuMDQzLS4xMTcuMDM5LS4xMjEtLjE0NS0uMTUyLS4xNzYtLjAzMS0uMzItLjAyNy0uNDYxLjAxMnptMCAwIi8+PHBhdGggZD0iTTE0LjYxNyA4LjA3OGMtLjMzMi4wOTQtLjQ5Mi4zNTUtLjQ2OS43NTguMDE2LjMwOS4xNjQuNTEyLjQ0MS41OTguMjM4LjA3Ljc5Ny4wMjMuNzk3LS4wN2EuODIuODIgMCAwIDAtLjA3NC0uMjAzbC0uMTA1LjAzMWMtLjA1OS4wMi0uMTg3LjAzNS0uMjgxLjAzNS0uMjc3IDAtLjQxNC0uMDk0LS40NDktLjMwNWwtLjAxNi0uMDgyLjQ4OC0uMDA0LjQ4OC0uMDA4di0uMTcyYy0uMDA0LS4yNy0uMTEzLS40NTMtLjMyNC0uNTUxLS4xMjUtLjA1NS0uMzUyLS4wNjYtLjQ5Ni0uMDI3em0uMzQuMjM4YS4yOS4yOSAwIDAgMSAuMTc2LjIzNGwuMDA4LjA2My0uMzEyLjAwOGMtLjE2OCAwLS4zMiAwLS4zMzYtLjAwNHMtLjAyLS4wMjctLjAwNC0uMDgyYy4wNzgtLjIyMy4yNTQtLjMwNS40NjktLjIxOXptMCAwIi8+PC9zdmc+">
+      <bpmn:documentation>New         = Lead created; verification in progress
+Contacted   = Waiting for applicant clarification or replacement proof
+Nurturing   = Manual / Loan Specialist review
+Qualified   = Provisional offer sent
+Unqualified = Rejected</bpmn:documentation>
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:http-json:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="{{secrets.SFDC_DEMO_BASE_URL}}" target="baseUrl" />
+          <zeebe:input source="v64.0" target="apiVersion" />
+          <zeebe:input source="oauth-client-credentials-flow" target="authentication.type" />
+          <zeebe:input source="sObject" target="salesforceInteractionType" />
+          <zeebe:input source="post" target="method" />
+          <zeebe:input source="Lead" target="objectType" />
+          <zeebe:input source="=baseUrl + &#34;/services/data/&#34; + apiVersion + &#34;/sobjects/&#34; + objectType + string(if objectId != null then &#34;/&#34; + objectId else &#34;&#34;) + string(if relationshipFieldName != null then &#34;/&#34; + relationshipFieldName else &#34;&#34;)" target="url" />
+          <zeebe:input source="={&#10;  &#34;FirstName&#34;: applicantFullName,&#10;  &#34;LastName&#34;: applicantFullName,&#10;  &#34;Company&#34;: registeredBusinessName,&#10;  &#34;Email&#34;: applicantEmail,&#10;  &#34;Phone&#34;: applicantPhone,&#10;  &#34;Title&#34;: applicantPosition,&#10;  &#34;Street&#34;: registeredOfficeAddress,&#10;  &#34;Status&#34;: &#34;New&#34;,&#10;  &#34;Description&#34;:&#10;    &#34;BUSINESS LOAN APPLICATION&#34; + &#34;\n\n&#34; +&#10;    &#34;Company registration number: &#34; + companyRegistrationNumber + &#34;\n&#34; +&#10;    &#34;Business type: &#34; + businessType + &#34;\n&#34; +&#10;    &#34;Loan amount: &#34; + string(loanAmount) + &#34;\n&#34; +&#10;    &#34;Loan purpose: &#34; + loanPurpose + &#34;\n&#34; +&#10;    &#34;Loan term: &#34; + string(loanTerm) + &#34; months&#34; + &#34;\n&#34; +&#10;    &#34;Industry: &#34; + industry + &#34;\n&#34; +&#10;    &#34;VAT number: &#34; + vatNumber + &#34;\n\n&#34; +&#10;    &#34;Verification status: In progress&#34;&#10;}" target="body" />
+          <zeebe:input source="=baseUrl + &#34;/services/oauth2/token&#34;" target="authentication.oauthTokenEndpoint" />
+          <zeebe:input source="{{secrets.SFDC_DEMO_CONSUMER_KEY}}" target="authentication.clientId" />
+          <zeebe:input source="{{secrets.SFDC_DEMO_CONSUMER_SECRET}}" target="authentication.clientSecret" />
+          <zeebe:input source="credentialsBody" target="authentication.clientAuthentication" />
+          <zeebe:input source="15" target="connectionTimeoutInSeconds" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders>
+          <zeebe:header key="resultVariable" value="createSalesforceProspectResult" />
+          <zeebe:header key="resultExpression" value="={&#10;  &#34;salesforceLeadId&#34;: response.body.id,&#10;  &#34;salesforceProspectCreated&#34;: response.body.success&#10;  &#10;}" />
+          <zeebe:header key="errorExpression" value="=if error.code = &#34;400&#34;&#10;   and error.variables.response.body.errorCode = &#34;DUPLICATES_DETECTED&#34;&#10;then bpmnError(&#10;  &#34;DUPLICATE_LEAD&#34;,&#10;  &#34;Existing Salesforce Lead found&#34;,&#10;  {&#10;    &#34;salesforceLeadId&#34;: error.variables.response.body.duplicateResult.matchResults[1].matchRecords[1].record.Id&#10;  }&#10;)&#10;else null" />
+          <zeebe:header key="elementTemplateVersion" value="3" />
+          <zeebe:header key="elementTemplateId" value="io.camunda.connectors.Salesforce.v1" />
+        </zeebe:taskHeaders>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0o6w8jy</bpmn:incoming>
+      <bpmn:outgoing>Flow_11l4de7</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:scriptTask id="Activity_0tyru61" name="Set verification route">
+      <bpmn:extensionElements>
+        <zeebe:script expression="=if companyHouseDetails.body.company_status != &#34;active&#34;&#10;   or companyHouseDetails.body.company_number != string(companyRegistrationNumber)&#10;then &#34;HARD_FAIL&#34;&#10;else if companyProofAnalyzedByAI.document_readable = true&#10;   and companyProofAnalyzedByAI.document_type_matches_selection = true&#10;   and companyProofAnalyzedByAI.company_number_match = true&#10;   and companyProofAnalyzedByAI.evidence_outcome = &#34;PASS&#34;&#10;   and creditCheckConsent = true&#10;   and informationAccuracyDeclaration = true&#10;then &#34;PASSED&#34;&#10;else &#34;EXCEPTION&#34;" resultVariable="verificationRoute" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1i0hqc6</bpmn:incoming>
+      <bpmn:outgoing>Flow_1itfgc8</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_1itfgc8" sourceRef="Activity_0tyru61" targetRef="Gateway_00ldj35" />
+    <bpmn:sequenceFlow id="Flow_1colao6" sourceRef="gateway_post_verification_needed" targetRef="gateway_verification_needed">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=agent.responseJson.nextAction != "EXIT"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:boundaryEvent id="duplicate_id" name="Existing Salesforce Lead found" attachedToRef="Activity_11w2qbj">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:output source="=salesforceLeadId" target="salesforceLeadId" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0o5gnbw</bpmn:outgoing>
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_1fioouj" />
+    </bpmn:boundaryEvent>
+    <bpmn:exclusiveGateway id="Gateway_0t5d2gr">
+      <bpmn:incoming>Flow_0o5gnbw</bpmn:incoming>
+      <bpmn:incoming>Flow_11l4de7</bpmn:incoming>
+      <bpmn:outgoing>Flow_182sqt7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0o5gnbw" sourceRef="duplicate_id" targetRef="Gateway_0t5d2gr" />
+    <bpmn:sequenceFlow id="Flow_11l4de7" sourceRef="Activity_11w2qbj" targetRef="Gateway_0t5d2gr" />
+    <bpmn:sequenceFlow id="Flow_182sqt7" sourceRef="Gateway_0t5d2gr" targetRef="gateway_begin_process_documents" />
+    <bpmn:textAnnotation id="TextAnnotation_101gi2l">
+      <bpmn:text>Validate details with company house</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1bcz39v">
+      <bpmn:text>AI image analysis for company proof</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_12z39qh">
+      <bpmn:text>Get company Director details</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1beb69v" associationDirection="None" sourceRef="Activity_0b2aj8s" targetRef="TextAnnotation_101gi2l" />
+    <bpmn:association id="Association_07gwe5o" associationDirection="None" sourceRef="Activity_0e1ermh" targetRef="TextAnnotation_1bcz39v" />
+    <bpmn:group id="Group_ApplicantCommunications" categoryValueRef="CategoryValue_0rl2vn3" />
+    <bpmn:group id="Group_RequestHumanIntervention" categoryValueRef="CategoryValue_1sd7qj8" />
+    <bpmn:group id="Group_ExternalSystems" categoryValueRef="CategoryValue_0alvgak" />
+    <bpmn:association id="Association_11gf5qa" associationDirection="None" sourceRef="CHECK_DIRECTORS" targetRef="TextAnnotation_12z39qh" />
+  </bpmn:process>
+  <bpmn:category id="Category_0d3o5yu">
+    <bpmn:categoryValue id="CategoryValue_0rl2vn3" value="Communicate with applicant" />
+  </bpmn:category>
+  <bpmn:message id="Message_0cjabkv" name="2e8db802-4e08-473f-befc-b162f3779db9" zeebe:modelerTemplate="io.camunda.connectors.inbound.EmailIntermediate.v1">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=sendEmailResult.messageId" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmn:category id="Category_0nl9hyr">
+    <bpmn:categoryValue id="CategoryValue_1sd7qj8" value="Request Human Intervention (HITL)" />
+  </bpmn:category>
+  <bpmn:category id="Category_19b1krc">
+    <bpmn:categoryValue id="CategoryValue_0alvgak" value="External Systems" />
+  </bpmn:category>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="business-loan-onboarding-verification_demo">
+      <bpmndi:BPMNShape id="BPMNShape_02q4qrg" bpmnElement="Activity_0e1ermh" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="720" y="360" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0kj7nh3" bpmnElement="gateway_verification_needed" isMarkerVisible="true" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="1345" y="475" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1393" y="456" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_170lnr5" bpmnElement="Event_1dszvoa" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
+        <dc:Bounds x="2652" y="315" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2636" y="358" width="74" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_14zviwe" bpmnElement="Activity_0b2aj8s" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="720" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_05yeld9" bpmnElement="gateway_post_verification_needed" isMarkerVisible="true" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="2495" y="308" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2487" y="365" width="67" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1sfh5xl_di" bpmnElement="gateway_initial_verification_outcome" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="905" y="308" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="818" y="313" width="81" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_19z8i5f_di" bpmnElement="gateway_begin_process_documents" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="585" y="308" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="635" y="313" width="70" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1y97jvp_di" bpmnElement="Event_1y97jvp" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
+        <dc:Bounds x="172" y="314" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="357" width="74" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0p5x815_di" bpmnElement="Agentic_loan_verification" isExpanded="true">
+        <dc:Bounds x="1580" y="250" width="840" height="460" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1k2tk1x_di" bpmnElement="Event_Applicant_Response_Received" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="1972" y="342" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1967" y="385" width="46" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1r8q9zw_di" bpmnElement="ASK_FOR_PROOFS_OR_QUESTIONS" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="1820" y="320" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_00271tv_di" bpmnElement="Event_ResponseCorrelated" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="2032" y="342" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2027" y="385" width="49" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0pwhchl" bpmnElement="Activity_ConfirmationEmail" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="2230" y="320" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xxx5va_di" bpmnElement="ESCALATE_TO_LOAN_SPECIALIST" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
+        <dc:Bounds x="1670" y="530" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_05tlg2w_di" bpmnElement="Event_05tlg2w" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="2332" y="552" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2324" y="595" width="53" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gkm241_di" bpmnElement="UpdateSalesforceBusinessLoanApplication" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="2190" y="530" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_08sc04g" bpmnElement="CHECK_DIRECTORS" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="1920" y="530" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ytvvp9_di" bpmnElement="GET_CREDIT_SCORE">
+        <dc:Bounds x="2050" y="530" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0an1cm5" bpmnElement="Activity_0y8bbnz" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
+        <dc:Bounds x="2110" y="320" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0wd4cc5_di" bpmnElement="Flow_0wd4cc5">
+        <di:waypoint x="1920" y="360" />
+        <di:waypoint x="1972" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_04ncd1z_di" bpmnElement="Flow_04ncd1z">
+        <di:waypoint x="2008" y="360" />
+        <di:waypoint x="2032" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0882nlv_di" bpmnElement="Flow_0882nlv">
+        <di:waypoint x="2290" y="570" />
+        <di:waypoint x="2332" y="570" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uvtrsp_di" bpmnElement="Flow_1uvtrsp">
+        <di:waypoint x="2068" y="360" />
+        <di:waypoint x="2110" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Gateway_00ldj35_di" bpmnElement="Gateway_00ldj35" isMarkerVisible="true">
+        <dc:Bounds x="1165" y="308" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1151" y="278" width="79" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_085jw6f" bpmnElement="Activity_11w2qbj" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="260" y="293" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0tyru61_di" bpmnElement="Activity_0tyru61">
+        <dc:Bounds x="1000" y="293" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0t5d2gr_di" bpmnElement="Gateway_0t5d2gr" isMarkerVisible="true">
+        <dc:Bounds x="445" y="308" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1smidjd" bpmnElement="TextAnnotation_101gi2l">
+        <dc:Bounds x="770" y="110" width="145" height="43" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_08dfntm" bpmnElement="TextAnnotation_1bcz39v">
+        <dc:Bounds x="857" y="430" width="151" height="43" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_01uxgys" bpmnElement="TextAnnotation_12z39qh">
+        <dc:Bounds x="1820" y="860" width="132" height="43" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Group_1g0cbwm_di" bpmnElement="Group_ApplicantCommunications">
+        <dc:Bounds x="1760" y="290" width="630" height="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1956" y="308" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Group_0u1di1i_di" bpmnElement="Group_RequestHumanIntervention">
+        <dc:Bounds x="1610" y="460" width="250" height="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1692" y="467" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Group_1n89ojj_di" bpmnElement="Group_ExternalSystems">
+        <dc:Bounds x="1880" y="460" width="510" height="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2094" y="467" width="84" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ttn4ex_di" bpmnElement="duplicate_id">
+        <dc:Bounds x="292" y="355" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="270" y="398" width="80" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1bggnel_di" bpmnElement="Flow_1bggnel">
+        <di:waypoint x="1370" y="475" />
+        <di:waypoint x="1370" y="200" />
+        <di:waypoint x="2670" y="200" />
+        <di:waypoint x="2670" y="315" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1369" y="206" width="69" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1kioi62" bpmnElement="Flow_0gl7yh5">
+        <di:waypoint x="2545" y="333" />
+        <di:waypoint x="2652" y="333" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2567" y="315" width="66" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0o6w8jy_di" bpmnElement="Flow_0o6w8jy">
+        <di:waypoint x="208" y="332" />
+        <di:waypoint x="234" y="332" />
+        <di:waypoint x="234" y="333" />
+        <di:waypoint x="260" y="333" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xs7gqs_di" bpmnElement="Flow_0xs7gqs">
+        <di:waypoint x="820" y="400" />
+        <di:waypoint x="930" y="400" />
+        <di:waypoint x="930" y="358" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_129t9vo_di" bpmnElement="Flow_129t9vo">
+        <di:waypoint x="820" y="270" />
+        <di:waypoint x="930" y="270" />
+        <di:waypoint x="930" y="308" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ar89vw_di" bpmnElement="Flow_1ar89vw">
+        <di:waypoint x="610" y="358" />
+        <di:waypoint x="610" y="400" />
+        <di:waypoint x="720" y="400" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1er4yqk_di" bpmnElement="Flow_1er4yqk">
+        <di:waypoint x="610" y="308" />
+        <di:waypoint x="610" y="270" />
+        <di:waypoint x="720" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1i0hqc6_di" bpmnElement="Flow_1i0hqc6">
+        <di:waypoint x="955" y="333" />
+        <di:waypoint x="1000" y="333" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1g50d2y" bpmnElement="Flow_10s5gwg">
+        <di:waypoint x="1395" y="500" />
+        <di:waypoint x="1580" y="500" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1470" y="506" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11a0qag_di" bpmnElement="Flow_11a0qag">
+        <di:waypoint x="2420" y="333" />
+        <di:waypoint x="2495" y="333" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2235" y="315" width="66" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rpzhyv_di" bpmnElement="Flow_1rpzhyv">
+        <di:waypoint x="1190" y="358" />
+        <di:waypoint x="1190" y="500" />
+        <di:waypoint x="1345" y="500" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1031" y="432" width="94" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1itfgc8_di" bpmnElement="Flow_1itfgc8">
+        <di:waypoint x="1100" y="333" />
+        <di:waypoint x="1165" y="333" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1colao6_di" bpmnElement="Flow_1colao6">
+        <di:waypoint x="2520" y="358" />
+        <di:waypoint x="2520" y="800" />
+        <di:waypoint x="1370" y="800" />
+        <di:waypoint x="1370" y="525" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0o5gnbw_di" bpmnElement="Flow_0o5gnbw">
+        <di:waypoint x="310" y="391" />
+        <di:waypoint x="310" y="460" />
+        <di:waypoint x="470" y="460" />
+        <di:waypoint x="470" y="358" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11l4de7_di" bpmnElement="Flow_11l4de7">
+        <di:waypoint x="360" y="333" />
+        <di:waypoint x="445" y="333" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_182sqt7_di" bpmnElement="Flow_182sqt7">
+        <di:waypoint x="495" y="333" />
+        <di:waypoint x="585" y="333" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0f6cmk9" bpmnElement="Association_1beb69v">
+        <di:waypoint x="790" y="230" />
+        <di:waypoint x="837" y="153" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1edc0ta" bpmnElement="Association_07gwe5o">
+        <di:waypoint x="820" y="424" />
+        <di:waypoint x="857" y="455" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0c0o1y4" bpmnElement="Association_11gf5qa">
+        <di:waypoint x="1936" y="610" />
+        <di:waypoint x="1909" y="860" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
