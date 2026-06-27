@@ -6,8 +6,46 @@ A hands-on, end-to-end workshop for building an **agentic business-loan onboardi
 
 ---
 
+## About this workshop
+
+This repository accompanies the code-along webinar **“Build a No Code AI Banking Agent.”**
+
+| | |
+|---|---|
+| **Session** | Build a No Code AI Banking Agent (free to join) |
+| **When** | Monday, June 29, 11 AM ET |
+| **Presenter** | **Anjali Jain** — Enterprise AI Architect at Metro Bank, CTO at Erdos Research, and Senior Tutor in AI & Machine Learning at the University of Oxford. Author of *AI-Assisted Programming for Web and Machine Learning* and the forthcoming *Enterprise Architecture in an Agentic World*. |
+
+**What you will take away**
+
+- How to build an AI agent using no-code tools for financial-services use cases.
+- Where AI agents add value in banking and other regulated environments.
+- How to architect agents that meet performance, compliance, and reliability requirements.
+
+AI agents are transforming financial services, but building them in a regulated environment requires careful design, strong controls, and knowing where no-code tools can safely accelerate delivery. This workshop combines speed with responsibility: the BPMN model keeps the AI agent inside explicit, auditable boundaries.
+
+---
+
+## Do I need the integrations?
+
+**No — not to learn.** You can complete the core learning with just a free Camunda account (and optionally Langflow):
+
+- Design and run **agentic process flows in Camunda**.
+- Build **AI agents in Langflow** (optional local track).
+
+The external integrations — **Companies House**, **Salesforce**, and **email** — are only required to run the **provided end-to-end example** exactly as shipped. If you do not set them up, you can still follow every concept and build your own agentic flows; you simply will not be able to exercise those specific integration steps.
+
+| Goal | What you need |
+|---|---|
+| Learn agentic flows and AI agents | A free Camunda account (Langflow optional) |
+| Run the full provided example | Camunda **plus** the integrations for your track |
+
+---
+
 ## Table of contents
 
+- [About this workshop](#about-this-workshop)
+- [Do I need the integrations?](#do-i-need-the-integrations)
 - [What you will build](#what-you-will-build)
 - [Learning objectives](#learning-objectives)
 - [Repository structure](#repository-structure)

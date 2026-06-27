@@ -14,12 +14,14 @@ Complete this checklist before you start. You only need the accounts for the int
 
 ## Required by integration
 
+> Integrations are **optional for learning**. You only need them to run the provided end-to-end example. You create each account yourself — none are provided.
+
 | Integration | Account / tool | Where to sign up |
 |---|---|---|
-| AI (OpenAI) | OpenAI Platform account with billing | [platform.openai.com](https://platform.openai.com/) |
-| Company registry | Companies House account (UK) | [Companies House Developer Hub](https://developer.company-information.service.gov.uk/) |
-| CRM | Salesforce org (Developer Edition is free) | [developer.salesforce.com/signup](https://developer.salesforce.com/signup) |
-| Email | Gmail account with 2-Step Verification | [myaccount.google.com/security](https://myaccount.google.com/security) |
+| AI (OpenAI) | Your own OpenAI Platform account with billing | [platform.openai.com](https://platform.openai.com/) |
+| Company registry | Your own Companies House account (UK) | [Companies House Developer Hub](https://developer.company-information.service.gov.uk/) |
+| CRM | Your own Salesforce Developer Edition org (free). Only the **Lead** object is used. | [developer.salesforce.com/signup](https://developer.salesforce.com/signup) |
+| Email | Your own Gmail account with 2-Step Verification | [myaccount.google.com/security](https://myaccount.google.com/security) |
 
 ## Optional local AI track
 

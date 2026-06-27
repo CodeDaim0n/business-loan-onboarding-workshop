@@ -10,15 +10,20 @@
 
 ## 1. What you need
 
+You create your **own** Salesforce account for this workshop — none is provided. A free **Developer Edition** org is sufficient and includes administrator access.
+
 | Item | Why |
 |---|---|
-| Salesforce Developer Edition, sandbox or production org | Hosts CRM objects and OAuth client |
-| Salesforce administrator permission | Creates the External Client App |
+| Your own Salesforce Developer Edition org | Free signup; hosts the Lead object and OAuth client. **You create this yourself.** |
+| Salesforce administrator permission | Comes with a Developer Edition org you create; needed to create the External Client App |
 | Dedicated Salesforce integration user | Defines the minimum CRM permissions Camunda receives |
 | Camunda cluster | Stores OAuth credentials as secrets |
 
+> This workshop only uses the **Lead** object. You do not need Accounts, Contacts, or custom objects.
+
 Useful official links:
 
+- [Sign up for a free Salesforce Developer Edition](https://developer.salesforce.com/signup)
 - [Salesforce External Client Apps](https://help.salesforce.com/s/articleView?id=xcloud.external_client_apps.htm&language=en_US&type=5)
 - [Create an External Client App](https://developer.salesforce.com/docs/platform/mobile-sdk/guide/eca-create.html)
 - [OAuth client credentials flow](https://help.salesforce.com/s/articleView?id=xcloud.remoteaccess_oauth_client_credentials_flow.htm&language=en_US&type=5)
@@ -34,14 +39,13 @@ Create or identify a Salesforce user for the integration, for example:
 camunda.integration@yourdomain.example
 ```
 
-Assign only the permissions needed for the demo. For a basic lending onboarding demo, this normally means access to:
+Assign only the permissions needed for this workshop. The process only uses the **Lead** object, so the integration user needs:
 
-- Lead
-- Account
-- Contact
-- Any custom objects used by your process
+- Read and create/update access to **Lead**
 
-The user should not be a Salesforce System Administrator unless there is no alternative for a short-lived development demo.
+You do not need Account, Contact, or custom-object permissions for this workshop.
+
+The user should not be a Salesforce System Administrator unless there is no alternative for a short-lived development setup.
 
 ---
 
@@ -119,20 +123,19 @@ For a sandbox, use the sandbox’s own domain/instance URL.
 
 ## 7. Store credentials in Camunda Secrets
 
-In Camunda Console, create these secrets:
+In Camunda Console, create these secrets (the names match the provided process and the [Camunda setup guide](../../camunda/docs/saas-setup-guide.md#4-create-connector-secrets)):
 
 ```text
-SALESFORCE_CLIENT_ID
-SALESFORCE_CLIENT_SECRET
+SFDC_DEMO_CONSUMER_KEY
+SFDC_DEMO_CONSUMER_SECRET
+SFDC_DEMO_BASE_URL
 ```
 
-Recommended optional secret:
+Use the exact values from Salesforce:
 
-```text
-SALESFORCE_BASE_URL
-```
-
-Use the exact Consumer Key and Consumer Secret values from Salesforce.
+- `SFDC_DEMO_CONSUMER_KEY` = Consumer Key (Client ID)
+- `SFDC_DEMO_CONSUMER_SECRET` = Consumer Secret (Client Secret)
+- `SFDC_DEMO_BASE_URL` = your My Domain URL
 
 ---
 
@@ -145,9 +148,9 @@ Add a **Salesforce Connector** task in your BPMN process.
 | Field | Value |
 |---|---|
 | Authentication type | OAuth 2.0 Client Credentials |
-| Client ID | `{{secrets.SALESFORCE_CLIENT_ID}}` |
-| Client Secret | `{{secrets.SALESFORCE_CLIENT_SECRET}}` |
-| Base URL | Your Salesforce My Domain URL |
+| Client ID | `{{secrets.SFDC_DEMO_CONSUMER_KEY}}` |
+| Client Secret | `{{secrets.SFDC_DEMO_CONSUMER_SECRET}}` |
+| Base URL | `{{secrets.SFDC_DEMO_BASE_URL}}` (your Salesforce My Domain URL) |
 | API version | Use the version supported by your org and connector |
 
 ### Typical first operation
@@ -236,7 +239,7 @@ Check that:
 
 The integration user may be missing object or field permissions. Check:
 
-- Object permissions for Lead, Account, Contact or custom object.
+- Object permissions for **Lead**.
 - Field-level security.
 - Record type access.
 - Validation rules.
