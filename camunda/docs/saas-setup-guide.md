@@ -55,7 +55,7 @@ Complete the following only when the corresponding integration is part of your w
 
 1. Open [Camunda Console](https://console.camunda.io/).
 2. Sign in with the account provided for the workshop.
-3. Select the organisation and project supplied by the instructor.
+3. Select the organisation and project for the workshop.
 
 You should see a navigation area containing services such as **Clusters**, **Web Modeler**, **Operate** and **Tasklist**.
 

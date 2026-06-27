@@ -1,16 +1,19 @@
 # Integrations
 
-Setup guides for external services used by the **Business Loan Onboarding & Verification** Camunda process.
+Setup guides for the external services used by the **Business Loan Onboarding & Verification** process. Complete only the integrations required by your track.
 
-| Integration | Guide | Camunda secret examples |
+| Integration | Guide | Camunda secrets |
 |---|---|---|
-| Companies House | [setup-guide.md](./companies-house/setup-guide.md) | `COMPANY_HOUSE_KEY` |
-| Salesforce | [setup-guide.md](./salesforce/setup-guide.md) | `SFDC_DEMO_BASE_URL`, `SFDC_DEMO_CONSUMER_KEY`, `SFDC_DEMO_CONSUMER_SECRET` |
-| Gmail SMTP | [smtp-app-password-setup.md](./email-gmail/smtp-app-password-setup.md) | `INBOUND_MAIL_*` |
+| Company registry (Companies House) | [setup-guide.md](./companies-house/setup-guide.md) | `COMPANY_HOUSE_KEY` |
+| CRM (Salesforce) | [setup-guide.md](./salesforce/setup-guide.md) | `SFDC_DEMO_BASE_URL`, `SFDC_DEMO_CONSUMER_KEY`, `SFDC_DEMO_CONSUMER_SECRET` |
+| Email (Gmail SMTP) | [smtp-app-password-setup.md](./email-gmail/smtp-app-password-setup.md) | `INBOUND_MAIL_USER`, `INBOUND_MAIL_PASSWORD`, `INBOUND_MAIL_SERVER`, `INBOUND_MAIL_ADDRESS` |
 
-Store all credentials in **Camunda Connector Secrets** — never in BPMN or Git.
+Store all credentials in **Camunda Connector Secrets** — never in BPMN XML or Git.
 
-## Related repositories
+## Regional notes
 
-- [Business Loan Onboarding workshop](https://github.com/CodeDaim0n/business-loan-onboarding-workshop) — Camunda process and flow guide
-- [Langflow local setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) — local AI flows and Cloudflare Tunnel
+Companies House is a UK registry. To run the verification step in another region, see the [regional notes](../docs/regional-notes.md).
+
+## Related repository
+
+- [Langflow local setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) — optional local AI flows, Ollama, and Cloudflare Tunnel

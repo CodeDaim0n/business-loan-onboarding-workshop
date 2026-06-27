@@ -1,78 +1,205 @@
 # Business Loan Onboarding & Verification — Workshop
 
-Hands-on materials for an agentic business-loan onboarding process with **Camunda 8**, integrations to **Companies House**, **Salesforce**, and **email**, plus optional **Langflow** AI (separate repo).
+A hands-on, end-to-end workshop for building an **agentic business-loan onboarding process** on [Camunda 8](https://camunda.com/platform/). You will orchestrate parallel verification checks, an AI Agent operating within defined process boundaries, a CRM update, and a customer outcome email — all driven by a BPMN model.
 
-> **Synthetic data only.** Learning demonstration — no real customer data or production credentials.
+> **Learning environment.** Use **synthetic test data only**. Do not enter real customer data, production credentials, or regulated information at any point in this workshop.
 
-**US audience?** See [US audience guide](./docs/us-audience.md) for what to use as-is and what to swap (Companies House → US alternative or mock).
+---
 
-## Repository layout
+## Table of contents
+
+- [What you will build](#what-you-will-build)
+- [Learning objectives](#learning-objectives)
+- [Repository structure](#repository-structure)
+- [Prerequisites](#prerequisites)
+- [Getting started](#getting-started)
+- [Learning path](#learning-path)
+- [Camunda Connector Secrets](#camunda-connector-secrets)
+- [Security and safe data](#security-and-safe-data)
+- [Troubleshooting and FAQ](#troubleshooting-and-faq)
+- [Regional notes](#regional-notes)
+- [Related repository](#related-repository)
+- [Reference documentation](#reference-documentation)
+- [License](#license)
+
+---
+
+## What you will build
+
+```text
+                Application received
+                        │
+                        ▼
+            Create or reuse CRM Lead (Salesforce)
+                        │
+                        ▼
+              Two checks run in parallel
+        ┌───────────────┴───────────────┐
+        ▼                               ▼
+ Company registry check        AI document analysis
+ (Companies House)             (Camunda AI Agent / Langflow)
+        └───────────────┬───────────────┘
+                        ▼
+            Set a controlled verification route
+        ┌───────────────┼───────────────────────────┐
+        ▼               ▼                           ▼
+   Hard fail       Passed / exception          AI Agent selects a
+        │          → AI Agent next action       permitted next action
+        │               │
+        ▼               ▼
+   Update CRM + send applicant outcome email + complete
+```
+
+The BPMN model controls the path at all times. The AI Agent can only recommend or trigger actions that are already defined in the process.
+
+**Process name:** `Business Loan Onboarding & Verification`
+**Process ID / BPMN file:** `business-loan-onboarding-verification.bpmn`
+
+---
+
+## Learning objectives
+
+By the end of this workshop you will be able to:
+
+1. Deploy and run a process on a Camunda 8 SaaS cluster.
+2. Configure Connector Secrets and reference them safely from a process.
+3. Run parallel service tasks and combine their results into a decision.
+4. Use a Camunda AI Agent within explicit, auditable process boundaries.
+5. Integrate a CRM (Salesforce) and an email channel.
+6. Test happy-path, exception, and escalation scenarios, and inspect them in Operate and Tasklist.
+
+---
+
+## Repository structure
 
 ```text
 business-loan-onboarding-workshop/
-├── README.md
+├── README.md                     # This guide
+├── LICENSE
 ├── docs/
-│   └── us-audience.md          ← US participants & instructors
+│   ├── prerequisites.md          # Accounts and tools you need before you start
+│   ├── troubleshooting.md        # Common errors and how to resolve them
+│   ├── glossary.md               # Key terms used in the workshop
+│   └── regional-notes.md         # Adapting data sources by region (e.g. US)
 ├── camunda/
-│   ├── docs/saas-setup-guide.md
-│   └── processes/              ← instructor-supplied BPMN
+│   ├── README.md
+│   ├── docs/saas-setup-guide.md  # Set up, deploy, and run on Camunda 8 SaaS
+│   └── processes/                # Place the provided BPMN file(s) here
 ├── integrations/
-│   ├── companies-house/
-│   ├── salesforce/
-│   └── email-gmail/
+│   ├── README.md
+│   ├── companies-house/setup-guide.md
+│   ├── salesforce/setup-guide.md
+│   └── email-gmail/smtp-app-password-setup.md
 └── workshop/
-    └── business-loan-flow-guide.md
+    ├── README.md
+    └── business-loan-flow-guide.md   # Full walkthrough and test scenarios
 ```
 
-## Related repository — Langflow
+---
 
-Local Langflow, Ollama, Cloudflare Tunnel, and Camunda REST integration are documented separately:
+## Prerequisites
 
-**[langflow-local-setup-workshop](https://github.com/CodeDaim0n/langflow-local-setup-workshop)**
+A short summary is below. See **[docs/prerequisites.md](./docs/prerequisites.md)** for the full checklist, supported versions, and account sign-up links.
 
-Clone that repo when your workshop track includes local AI flows on Windows or macOS.
+| Requirement | Why you need it |
+|---|---|
+| [Camunda 8 account](https://console.camunda.io/) | Deploy and run the process on a SaaS cluster |
+| Modern web browser | Use Console, Web Modeler, Operate, and Tasklist |
+| The workshop BPMN file | Provided with your workshop materials; placed in `camunda/processes/` |
+| Integration accounts | Only those required by your chosen track (OpenAI, Companies House, Salesforce, Gmail) |
+| Windows or macOS | Only if you run the optional local Langflow track |
 
-## Quick start
+> The Camunda process files (BPMN, and any forms or connector templates) are **provided with your workshop materials** and are not stored in this repository. Add them to [`camunda/processes/`](./camunda/processes/) before deploying.
+
+---
+
+## Getting started
 
 ```bash
 git clone https://github.com/CodeDaim0n/business-loan-onboarding-workshop.git
 cd business-loan-onboarding-workshop
 ```
 
-1. Add instructor BPMN files to [`camunda/processes/`](./camunda/processes/).
-2. Follow [Camunda SaaS setup](./camunda/docs/saas-setup-guide.md).
-3. Complete integration guides in [`integrations/`](./integrations/README.md) as needed.
-4. Read the [business loan flow guide](./workshop/business-loan-flow-guide.md).
-5. Optional: clone [Langflow local setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop).
+1. Confirm you meet the [prerequisites](./docs/prerequisites.md).
+2. Add the provided BPMN file(s) to [`camunda/processes/`](./camunda/processes/).
+3. Follow the [Camunda 8 SaaS setup guide](./camunda/docs/saas-setup-guide.md) to create a cluster, add secrets, and deploy.
+4. Complete the [integration guides](./integrations/README.md) required by your track.
+5. Work through the [business loan flow guide](./workshop/business-loan-flow-guide.md) and run the test scenarios.
+6. Optional: set up the [local AI track](https://github.com/CodeDaim0n/langflow-local-setup-workshop) with Langflow.
 
-## Recommended order
+---
 
-| Step | Location |
-|---|---|
-| Camunda platform | [camunda/docs/saas-setup-guide.md](./camunda/docs/saas-setup-guide.md) |
-| Companies House | [integrations/companies-house/](./integrations/companies-house/setup-guide.md) |
-| Salesforce | [integrations/salesforce/](./integrations/salesforce/setup-guide.md) |
-| Email (Gmail SMTP) | [integrations/email-gmail/](./integrations/email-gmail/smtp-app-password-setup.md) |
-| Process deep-dive | [workshop/business-loan-flow-guide.md](./workshop/business-loan-flow-guide.md) |
-| Local AI (optional) | [Langflow repo](https://github.com/CodeDaim0n/langflow-local-setup-workshop) |
+## Learning path
 
-## Typical Camunda secrets
+Follow the steps in order. Skip integrations that are not part of your track.
+
+| Step | Topic | Guide |
+|---|---|---|
+| 1 | Platform setup | [Camunda 8 SaaS setup](./camunda/docs/saas-setup-guide.md) |
+| 2 | Company registry check | [Companies House setup](./integrations/companies-house/setup-guide.md) |
+| 3 | CRM | [Salesforce setup](./integrations/salesforce/setup-guide.md) |
+| 4 | Email channel | [Gmail SMTP setup](./integrations/email-gmail/smtp-app-password-setup.md) |
+| 5 | Process walkthrough | [Business loan flow guide](./workshop/business-loan-flow-guide.md) |
+| 6 | Local AI (optional) | [Langflow local setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) |
+
+---
+
+## Camunda Connector Secrets
+
+Create only the secrets required by your track. Reference them in connector fields with `{{secrets.SECRET_NAME}}`.
 
 | Secret | Used for |
 |---|---|
-| `OPENAI_API_KEY` | AI document analysis / agent tasks |
-| `LANGFLOW_API_KEY` | Local Langflow REST calls (if using Langflow repo) |
-| `COMPANY_HOUSE_KEY` | Companies House lookups |
-| `SFDC_DEMO_*` | Salesforce OAuth |
-| `INBOUND_MAIL_*` | SMTP email |
+| `OPENAI_API_KEY` | AI document analysis and AI Agent tasks |
+| `LANGFLOW_API_KEY` | Local Langflow REST calls (optional local AI track) |
+| `COMPANY_HOUSE_KEY` | Companies House company and director checks |
+| `SFDC_DEMO_BASE_URL`, `SFDC_DEMO_CONSUMER_KEY`, `SFDC_DEMO_CONSUMER_SECRET` | Salesforce OAuth |
+| `INBOUND_MAIL_USER`, `INBOUND_MAIL_PASSWORD`, `INBOUND_MAIL_SERVER`, `INBOUND_MAIL_ADDRESS` | SMTP email |
 
-## Security
+Full details are in the [Camunda setup guide](./camunda/docs/saas-setup-guide.md#4-create-connector-secrets).
 
-- Credentials in **Camunda Connector Secrets** only (`{{secrets.NAME}}`).
-- Never commit `.env`, keys, or secrets to Git.
+---
 
-## Official references
+## Security and safe data
+
+- Store every credential in **Camunda Connector Secrets** — never in BPMN XML, process variables, form fields, screenshots, or shared documents.
+- Never commit `.env` files, API keys, passwords, or client secrets to Git.
+- Use **synthetic test data only**. The credit-score step in this process is **simulated** and is not a real credit-bureau integration.
+- Rotate any credential that is accidentally exposed.
+
+---
+
+## Troubleshooting and FAQ
+
+Most setup and runtime issues are covered in **[docs/troubleshooting.md](./docs/troubleshooting.md)**, including connector errors (401/403/404/422), secret resolution, deployment problems, and human-task visibility.
+
+---
+
+## Regional notes
+
+This workshop uses a UK company registry (Companies House) for the verification step. If you are running it in another region (for example, the US), see **[docs/regional-notes.md](./docs/regional-notes.md)** for what to use as-is and how to swap or mock the registry check.
+
+---
+
+## Related repository
+
+The optional local AI track — Langflow on Windows or macOS, Ollama/Qwen models, Cloudflare Tunnel, and the Camunda REST integration — lives in a separate repository:
+
+**[langflow-local-setup-workshop](https://github.com/CodeDaim0n/langflow-local-setup-workshop)**
+
+---
+
+## Reference documentation
 
 - [Camunda documentation](https://docs.camunda.io/)
+- [Camunda Console](https://console.camunda.io/)
+- [Camunda REST connector](https://docs.camunda.io/docs/components/connectors/protocol/rest/)
 - [Companies House Developer Hub](https://developer.company-information.service.gov.uk/)
+- [Salesforce External Client Apps](https://help.salesforce.com/s/articleView?id=xcloud.external_client_apps.htm&type=5)
 - [Langflow documentation](https://docs.langflow.org/) (optional track)
+
+---
+
+## License
+
+See [LICENSE](./LICENSE). These materials are provided for educational use as part of the workshop.
