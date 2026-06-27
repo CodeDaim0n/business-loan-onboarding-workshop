@@ -1,0 +1,26 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+
+# Langflow / Python local setup
+.venv/
+__pycache__/
+*.pyc
+langflow-config-dir/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Office lock files
+~$*
+*.tmp
+
+# Cloudflare local config (may contain tunnel credentials)
+.cloudflared/
