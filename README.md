@@ -2,6 +2,13 @@
 
 A hands-on, end-to-end workshop for building an **agentic business-loan onboarding process** on [Camunda 8](https://camunda.com/platform/). You will orchestrate parallel verification checks, an AI Agent operating within defined process boundaries, a CRM update, and a customer outcome email — all driven by a BPMN model.
 
+> **This workshop spans two repositories — each works on its own:**
+>
+> | Repository | What it teaches |
+> |---|---|
+> | **Camunda workflow — you are here** | Orchestrate an agentic business process on Camunda 8. |
+> | **[Langflow — no-code AI agent builder](https://github.com/CodeDaim0n/langflow-local-setup-workshop)** | Build no-code AI agents, independent of any workflow engine. |
+
 > **Learning environment.** Use **synthetic test data only**. Do not enter real customer data, production credentials, or regulated information at any point in this workshop.
 
 ---
