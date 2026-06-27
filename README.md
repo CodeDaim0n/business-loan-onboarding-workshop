@@ -28,16 +28,17 @@ AI agents are transforming financial services, but building them in a regulated 
 
 ## Do I need the integrations?
 
-**No — not to learn.** You can complete the core learning with just a free Camunda account (and optionally Langflow):
+**No — not to learn.** Two skills in this workshop stand entirely on their own:
 
-- Design and run **agentic process flows in Camunda**.
-- Build **AI agents in Langflow** (optional local track).
+- **Build no-code AI agents in [Langflow](https://github.com/CodeDaim0n/langflow-local-setup-workshop)** — a no-code agent builder that works independently of any workflow engine.
+- **Design and run agentic process flows in Camunda** — workflow orchestration with an AI Agent inside auditable boundaries.
 
-The external integrations — **Companies House**, **Salesforce**, and **email** — are only required to run the **provided end-to-end example** exactly as shipped. If you do not set them up, you can still follow every concept and build your own agentic flows; you simply will not be able to exercise those specific integration steps.
+The external integrations — **Companies House**, **Salesforce**, and **email** — are only required to run the **provided end-to-end example** exactly as shipped. Without them you can still follow every concept and build your own agents and flows; you simply will not exercise those specific integration steps.
 
 | Goal | What you need |
 |---|---|
-| Learn agentic flows and AI agents | A free Camunda account (Langflow optional) |
+| Learn a no-code AI agent builder | [Langflow](https://github.com/CodeDaim0n/langflow-local-setup-workshop) on its own — no workflow engine required |
+| Learn agentic process orchestration | A free Camunda account |
 | Run the full provided example | Camunda **plus** the integrations for your track |
 
 ---
@@ -56,7 +57,7 @@ The external integrations — **Companies House**, **Salesforce**, and **email**
 - [Security and safe data](#security-and-safe-data)
 - [Troubleshooting and FAQ](#troubleshooting-and-faq)
 - [Regional notes](#regional-notes)
-- [Related repository](#related-repository)
+- [Companion track — Langflow](#companion-track--langflow-no-code-agent-builder)
 - [Reference documentation](#reference-documentation)
 - [License](#license)
 
@@ -166,7 +167,7 @@ cd business-loan-onboarding-workshop
 3. Follow the [Camunda 8 SaaS setup guide](./camunda/docs/saas-setup-guide.md) to create your own cluster, add secrets, and deploy.
 4. Complete the [integration guides](./integrations/README.md) required by your track.
 5. Work through the [business loan flow guide](./workshop/business-loan-flow-guide.md) and run the test scenarios.
-6. Optional: set up the [local AI track](https://github.com/CodeDaim0n/langflow-local-setup-workshop) with Langflow.
+6. Build no-code AI agents in the standalone [Langflow track](https://github.com/CodeDaim0n/langflow-local-setup-workshop) — usable on its own or connected to this process.
 
 ---
 
@@ -181,7 +182,7 @@ Follow the steps in order. Skip integrations that are not part of your track.
 | 3 | CRM | [Salesforce setup](./integrations/salesforce/setup-guide.md) |
 | 4 | Email channel | [Gmail SMTP setup](./integrations/email-gmail/smtp-app-password-setup.md) |
 | 5 | Process walkthrough | [Business loan flow guide](./workshop/business-loan-flow-guide.md) |
-| 6 | Local AI (optional) | [Langflow local setup](https://github.com/CodeDaim0n/langflow-local-setup-workshop) |
+| — | No-code AI agent builder (standalone) | [Langflow track](https://github.com/CodeDaim0n/langflow-local-setup-workshop) |
 
 ---
 
@@ -222,9 +223,9 @@ This workshop uses a UK company registry (Companies House) for the verification 
 
 ---
 
-## Related repository
+## Companion track — Langflow (no-code agent builder)
 
-The optional local AI track — Langflow on Windows or macOS, Ollama/Qwen models, Cloudflare Tunnel, and the Camunda REST integration — lives in a separate repository:
+Want to learn a **no-code AI agent builder that is independent of any workflow engine**? Use the Langflow track. It stands on its own — build, run, and iterate on agents with just a model provider — and can optionally connect to this Camunda process through Cloudflare Tunnel and the REST connector.
 
 **[langflow-local-setup-workshop](https://github.com/CodeDaim0n/langflow-local-setup-workshop)**
 
@@ -237,7 +238,7 @@ The optional local AI track — Langflow on Windows or macOS, Ollama/Qwen models
 - [Camunda REST connector](https://docs.camunda.io/docs/components/connectors/protocol/rest/)
 - [Companies House Developer Hub](https://developer.company-information.service.gov.uk/)
 - [Salesforce External Client Apps](https://help.salesforce.com/s/articleView?id=xcloud.external_client_apps.htm&type=5)
-- [Langflow documentation](https://docs.langflow.org/) (optional track)
+- [Langflow documentation](https://docs.langflow.org/)
 
 ---
 
