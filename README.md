@@ -12,7 +12,7 @@ This repository accompanies the code-along webinar **“Build a No Code AI Banki
 
 | | |
 |---|---|
-| **Session** | Build a No Code AI Banking Agent (free to join) |
+| **Session** | [Build a No Code AI Banking Agent](https://www.datacamp.com/webinars/build-a-no-code-ai-banking-agent) (free to join) |
 | **When** | Monday, June 29, 11 AM ET |
 | **Presenter** | **Anjali Jain** — Enterprise AI Architect at Metro Bank, CTO at Erdos Research, and Senior Tutor in AI & Machine Learning at the University of Oxford. Author of *AI-Assisted Programming for Web and Machine Learning* and the forthcoming *Enterprise Architecture in an Agentic World*. |
 
