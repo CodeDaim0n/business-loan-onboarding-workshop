@@ -265,6 +265,14 @@ Want to learn a **no-code AI agent builder that is independent of any workflow e
 
 ---
 
+## Star and contribute
+
+If you like this repo, give it a star :) — it helps others find it.
+
+If you find issues, please help others by providing corrections :) — open an issue or a pull request.
+
+---
+
 ## License
 
 See [LICENSE](./LICENSE). These materials are provided for educational use as part of the workshop.
