@@ -31,11 +31,13 @@ You need:
 
 | Item | Why you need it |
 |---|---|
-| A Camunda account | To access Camunda Console and Modeler |
-| Access to a Camunda 8 SaaS cluster | To deploy and run the process |
-| The supplied BPMN file | The complete process to import |
+| Your own Camunda account | You create this yourself — no account is provided for you |
+| Your own Camunda 8 SaaS cluster | You create this yourself (a free trial cluster is sufficient) |
+| The provided BPMN and forms | Supplied with your workshop materials, to import |
 | A modern browser | To use Console, Web Modeler, Operate and Tasklist |
 | The companion setup guides | To create the keys used by the integrations |
+
+> You sign up for and create your **own** Camunda 8 SaaS account and cluster. A free trial (signup) cluster is enough for this workshop.
 
 ### Companion guides
 
@@ -51,21 +53,19 @@ Complete the following only when the corresponding integration is part of your w
 
 ---
 
-# 1. Access Camunda Console
+# 1. Create your Camunda account and access Console
 
-1. Open [Camunda Console](https://console.camunda.io/).
-2. Sign in with the account provided for the workshop.
-3. Select the organisation and project for the workshop.
+1. Open [Camunda Console](https://console.camunda.io/) and **sign up for your own account** if you do not already have one. No account is provided for you.
+2. Sign in to Camunda Console.
+3. Select (or accept) your default organisation.
 
 You should see a navigation area containing services such as **Clusters**, **Web Modeler**, **Operate** and **Tasklist**.
 
 ---
 
-# 2. Create or select a SaaS cluster
+# 2. Create your own SaaS cluster
 
-If your workshop organiser has already created a cluster, select it and continue to section 3.
-
-To create your own:
+Create your own cluster — one is not provided for you. The free trial cluster created at signup is sufficient.
 
 1. In Camunda Console, open **Clusters**.
 2. Select **Create cluster**.

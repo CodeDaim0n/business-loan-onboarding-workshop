@@ -14,12 +14,13 @@ camunda/
 
 ## Process files
 
-The Camunda process files are **provided with your workshop materials** and are not stored in this repository. Copy them into `processes/`:
+The Camunda process files are **provided with your workshop materials** and are not stored in this repository. Import them and copy them into `processes/`:
 
 | File | Purpose |
 |---|---|
 | `business-loan-onboarding-verification.bpmn` | Main onboarding and verification process |
-| Forms, DMN tables, or connector templates | Additional assets, when supplied with the workshop |
+| Forms | User-task forms imported alongside the process |
+| DMN tables or connector templates | Additional assets, when supplied with the workshop |
 
 ## Steps
 

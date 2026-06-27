@@ -103,13 +103,16 @@ A short summary is below. See **[docs/prerequisites.md](./docs/prerequisites.md)
 
 | Requirement | Why you need it |
 |---|---|
-| [Camunda 8 account](https://console.camunda.io/) | Deploy and run the process on a SaaS cluster |
+| Your own [Camunda 8 account](https://console.camunda.io/) | You sign up yourself — no account is provided. A free trial covers this workshop |
+| Your own Camunda 8 SaaS cluster | You create this yourself in Camunda Console |
 | Modern web browser | Use Console, Web Modeler, Operate, and Tasklist |
-| The workshop BPMN file | Provided with your workshop materials; placed in `camunda/processes/` |
+| The provided BPMN and forms | Supplied with your workshop materials; imported and placed in `camunda/processes/` |
 | Integration accounts | Only those required by your chosen track (OpenAI, Companies House, Salesforce, Gmail) |
 | Windows or macOS | Only if you run the optional local Langflow track |
 
-> The Camunda process files (BPMN, and any forms or connector templates) are **provided with your workshop materials** and are not stored in this repository. Add them to [`camunda/processes/`](./camunda/processes/) before deploying.
+> **You create your own Camunda account and cluster.** A free trial (signup) cluster is sufficient.
+>
+> The Camunda process files (BPMN, forms, and any connector templates) are **provided with your workshop materials** and are not stored in this repository. Import them and add them to [`camunda/processes/`](./camunda/processes/) before deploying.
 
 ---
 
@@ -120,9 +123,9 @@ git clone https://github.com/CodeDaim0n/business-loan-onboarding-workshop.git
 cd business-loan-onboarding-workshop
 ```
 
-1. Confirm you meet the [prerequisites](./docs/prerequisites.md).
-2. Add the provided BPMN file(s) to [`camunda/processes/`](./camunda/processes/).
-3. Follow the [Camunda 8 SaaS setup guide](./camunda/docs/saas-setup-guide.md) to create a cluster, add secrets, and deploy.
+1. Confirm you meet the [prerequisites](./docs/prerequisites.md), including your own Camunda account.
+2. Add the provided BPMN and forms to [`camunda/processes/`](./camunda/processes/).
+3. Follow the [Camunda 8 SaaS setup guide](./camunda/docs/saas-setup-guide.md) to create your own cluster, add secrets, and deploy.
 4. Complete the [integration guides](./integrations/README.md) required by your track.
 5. Work through the [business loan flow guide](./workshop/business-loan-flow-guide.md) and run the test scenarios.
 6. Optional: set up the [local AI track](https://github.com/CodeDaim0n/langflow-local-setup-workshop) with Langflow.

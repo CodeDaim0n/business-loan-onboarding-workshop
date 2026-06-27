@@ -6,9 +6,10 @@ Complete this checklist before you start. You only need the accounts for the int
 
 | Item | Details |
 |---|---|
-| Camunda 8 account | Sign up at [console.camunda.io](https://console.camunda.io/). A SaaS cluster is used to deploy and run the process. |
+| Your own Camunda 8 account | Sign up yourself at [console.camunda.io](https://console.camunda.io/). **No account is provided for you.** A free trial is enough for this workshop. |
+| Your own SaaS cluster | Create it yourself in Camunda Console (the free trial cluster works). |
 | Modern web browser | Latest Chrome, Edge, Firefox, or Safari. Used for Console, Web Modeler, Operate, and Tasklist. |
-| Workshop BPMN file | Provided with your workshop materials. Place it in [`../camunda/processes/`](../camunda/processes/). |
+| Provided BPMN and forms | Supplied with your workshop materials. Import them and place files in [`../camunda/processes/`](../camunda/processes/). |
 | Stable internet connection | Required for SaaS, model providers, and external APIs. |
 
 ## Required by integration
@@ -33,9 +34,9 @@ Full instructions: [langflow-local-setup-workshop](https://github.com/CodeDaim0n
 
 ## Before your first deploy
 
-- [ ] You can sign in to [Camunda Console](https://console.camunda.io/).
-- [ ] You have (or can create) a SaaS cluster.
-- [ ] The provided BPMN file is in `camunda/processes/`.
+- [ ] You created your own [Camunda Console](https://console.camunda.io/) account and can sign in.
+- [ ] You created your own SaaS cluster and it is ready.
+- [ ] The provided BPMN and forms are imported and in `camunda/processes/`.
 - [ ] You know which integrations your track requires.
 - [ ] You have created the matching [Connector Secrets](../camunda/docs/saas-setup-guide.md#4-create-connector-secrets).
 
