@@ -17,7 +17,7 @@ Common issues and how to resolve them. Work from the local component outward: co
 - The secret must exist in the **same cluster** you deployed to.
 - The secret **name** must exactly match the reference in the process.
 - The reference must use the form `{{secrets.SECRET_NAME}}`.
-- In a FEEL expression, the placeholder must be in double quotes, for example `"{{secrets.LANGFLOW_API_KEY}}"`.
+- In a FEEL expression, the placeholder must be in double quotes, for example `"{{secrets.OPENAI_API_KEY}}"`.
 - Check the stored value has no leading/trailing spaces or stray quotes.
 
 ## REST / HTTP connector errors

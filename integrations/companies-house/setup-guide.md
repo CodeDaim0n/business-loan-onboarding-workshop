@@ -122,7 +122,7 @@ In Camunda Console:
 3. Create a secret:
 
 ```text
-COMPANIES_HOUSE_API_KEY
+COMPANY_HOUSE_KEY
 ```
 
 4. Paste the API key as the secret value.
@@ -143,7 +143,7 @@ Add a **REST Connector** task to the BPMN process.
 | Method | `GET` |
 | URL | `https://api.company-information.service.gov.uk/company/{companyNumber}` |
 | Authentication | `Basic` |
-| Username | `{{secrets.COMPANIES_HOUSE_API_KEY}}` |
+| Username | `{{secrets.COMPANY_HOUSE_KEY}}` |
 | Password | Leave blank |
 
 For a dynamic Camunda variable called `companyNumber`, use:
@@ -190,7 +190,7 @@ Check that:
 - The API key is correct.
 - You used the key as the Basic Authentication username.
 - The password is blank.
-- The secret reference is exactly `{{secrets.COMPANIES_HOUSE_API_KEY}}`.
+- The secret reference is exactly `{{secrets.COMPANY_HOUSE_KEY}}`.
 
 ### 404 Not Found
 

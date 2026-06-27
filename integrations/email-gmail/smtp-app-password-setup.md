@@ -1,8 +1,22 @@
-# Personal Gmail SMTP Setup Guide — App Password
+# Personal Gmail Email Setup Guide — App Password (SMTP + IMAP)
 
-**Purpose:** Send demo emails from a personal Gmail account using SMTP and a Google App Password.
+**Purpose:** Send demo emails from a personal Gmail account using SMTP, and let the process listen for applicant replies using IMAP — both with a single Google App Password.
 
 **Use this guide for:** a controlled learning demo, prototype or personal test account.
+
+> **Secret names used by this workshop's process.** The provided BPMN reads these exact Connector Secret names. Create them with these names so the process resolves them without edits:
+>
+> | Secret name | Value | Used by |
+> |---|---|---|
+> | `INBOUND_MAIL_USER` | Your full Gmail address (e.g. `your.name@gmail.com`) | SMTP + IMAP login |
+> | `INBOUND_MAIL_PASSWORD` | The 16-character Google App Password | SMTP + IMAP login |
+> | `INBOUND_MAIL_SERVER` | `smtp.gmail.com` | Outgoing (SMTP) host |
+> | `INBOUND_MAIL_ADDRESS` | Your Gmail address (sender / "from") | Outgoing (SMTP) "from" |
+> | `INBOUND_MAIL_IMAP_SERVER` | `imap.gmail.com` | Incoming (IMAP) host |
+> | `INBOUND_MAIL_IMAP_PORT` | `993` | Incoming (IMAP) port |
+> | `INBOUND_MAIL_FOLDER` | `INBOX` | Mailbox folder the listener watches |
+>
+> Only needed for the **full** variant. The mocks variant simulates email and needs none of these.
 
 > This guide is for a personal Gmail account. Do not use a personal mailbox for production, bulk customer communications, regulated data or sensitive customer information.
 
@@ -14,8 +28,9 @@
 |---|---|
 | Personal Gmail account | Sender mailbox |
 | 2-Step Verification enabled | Required before Google will allow App Passwords |
-| Google App Password | Used instead of your normal Google password |
+| Google App Password | Used instead of your normal Google password (works for SMTP and IMAP) |
 | SMTP-capable email component or connector | Sends the email |
+| IMAP enabled in Gmail | Lets the process listen for applicant replies |
 | Camunda cluster, if calling from Camunda | Stores the App Password as a secret |
 
 Useful official links:
@@ -81,21 +96,35 @@ For a personal demo, use a personal Gmail account with standard 2-Step Verificat
 
 ---
 
-## 5. SMTP settings
+## 5. SMTP and IMAP settings
 
-Use these settings in your email connector or SMTP component.
+Use these settings in your email connector or mail component.
 
-| Field | Value |
-|---|---|
-| SMTP host | `smtp.gmail.com` |
-| Port — TLS / STARTTLS | `587` |
-| Port — SSL | `465` |
-| Username | Your full Gmail address, e.g. `your.name@gmail.com` |
-| Password | The Google App Password, not your normal Google password |
-| From address | Usually the same Gmail address |
-| Authentication | Enabled |
+### Outgoing — SMTP (send)
 
-Recommended first choice:
+| Field | Value | Workshop secret |
+|---|---|---|
+| SMTP host | `smtp.gmail.com` | `INBOUND_MAIL_SERVER` |
+| Port — TLS / STARTTLS | `587` | — |
+| Port — SSL | `465` | — |
+| Username | Your full Gmail address, e.g. `your.name@gmail.com` | `INBOUND_MAIL_USER` |
+| Password | The Google App Password, not your normal Google password | `INBOUND_MAIL_PASSWORD` |
+| From address | Usually the same Gmail address | `INBOUND_MAIL_ADDRESS` |
+| Authentication | Enabled | — |
+
+### Incoming — IMAP (listen for applicant replies)
+
+| Field | Value | Workshop secret |
+|---|---|---|
+| IMAP host | `imap.gmail.com` | `INBOUND_MAIL_IMAP_SERVER` |
+| IMAP port | `993` (SSL) | `INBOUND_MAIL_IMAP_PORT` |
+| Username | Your full Gmail address | `INBOUND_MAIL_USER` |
+| Password | The Google App Password | `INBOUND_MAIL_PASSWORD` |
+| Folder to listen | `INBOX` | `INBOUND_MAIL_FOLDER` |
+
+> **Enable IMAP in Gmail first.** In Gmail, open **Settings → See all settings → Forwarding and POP/IMAP → Enable IMAP → Save Changes**. See [Gmail IMAP setup](https://support.google.com/mail/answer/7126229).
+
+Recommended SMTP first choice:
 
 ```text
 Host: smtp.gmail.com
@@ -115,19 +144,19 @@ Security: SSL
 
 ## 6. Store credentials safely in Camunda
 
-In Camunda Console, create:
+In Camunda Console, create the secrets exactly as the process expects:
 
 ```text
-GMAIL_SMTP_USERNAME
-GMAIL_SMTP_APP_PASSWORD
+INBOUND_MAIL_USER          # your full Gmail address
+INBOUND_MAIL_PASSWORD      # the 16-character App Password
+INBOUND_MAIL_SERVER        # smtp.gmail.com
+INBOUND_MAIL_ADDRESS       # your Gmail address (sender)
+INBOUND_MAIL_IMAP_SERVER   # imap.gmail.com
+INBOUND_MAIL_IMAP_PORT     # 993
+INBOUND_MAIL_FOLDER        # INBOX
 ```
 
-Optional:
-
-```text
-GMAIL_SMTP_HOST
-GMAIL_SMTP_PORT
-```
+> Use these exact names. The supplied BPMN references them directly, so any other naming will fail to resolve.
 
 Never store the App Password in:
 
@@ -140,23 +169,33 @@ Never store the App Password in:
 
 ---
 
-## 7. Generic SMTP connector configuration
+## 7. Connector configuration
 
-Use the following values in the SMTP connector or mail component that you are using.
+### Outgoing — SMTP send
 
 | Connector field | Value |
 |---|---|
-| Host | `smtp.gmail.com` |
+| Host | `{{secrets.INBOUND_MAIL_SERVER}}` |
 | Port | `587` |
-| Username | `{{secrets.GMAIL_SMTP_USERNAME}}` |
-| Password | `{{secrets.GMAIL_SMTP_APP_PASSWORD}}` |
+| Username | `{{secrets.INBOUND_MAIL_USER}}` |
+| Password | `{{secrets.INBOUND_MAIL_PASSWORD}}` |
 | TLS / STARTTLS | Enabled |
-| From | Your Gmail address |
+| From | `{{secrets.INBOUND_MAIL_ADDRESS}}` |
 | To | A test recipient address |
 | Subject | `Camunda demo email test` |
 | Body | `This is a successful SMTP test from the Camunda demo.` |
 
-> Connector field labels vary. The principle does not: use Gmail SMTP, full Gmail address as username, App Password as password and encryption enabled.
+### Incoming — IMAP listener (applicant response)
+
+| Connector field | Value |
+|---|---|
+| Host | `{{secrets.INBOUND_MAIL_IMAP_SERVER}}` |
+| Port | `{{secrets.INBOUND_MAIL_IMAP_PORT}}` |
+| Username | `{{secrets.INBOUND_MAIL_USER}}` |
+| Password | `{{secrets.INBOUND_MAIL_PASSWORD}}` |
+| Folder to listen | `{{secrets.INBOUND_MAIL_FOLDER}}` |
+
+> Connector field labels vary. The principle does not: use Gmail SMTP/IMAP, your full Gmail address as username, the App Password as password, and encryption enabled. In the **mocks** variant this inbound listener is replaced by a simulated applicant response, so no IMAP setup is needed.
 
 ---
 
@@ -223,8 +262,9 @@ Use a simple subject and body, test with your own mailbox, and do not send high 
 ## 11. Final checklist
 
 - [ ] 2-Step Verification is enabled.
+- [ ] IMAP is enabled in Gmail settings.
 - [ ] A dedicated App Password has been created.
-- [ ] SMTP host and port are configured.
+- [ ] All seven `INBOUND_MAIL_*` secrets are created with the exact names above.
 - [ ] App Password is stored only in Camunda Secrets or a secure credential store.
 - [ ] A test email has been received.
 - [ ] The App Password will be revoked after the demo.
@@ -236,4 +276,5 @@ Use a simple subject and body, test with your own mailbox, and do not send high 
 - [Google App Passwords](https://support.google.com/accounts/answer/185833)
 - [Turn on 2-Step Verification](https://support.google.com/accounts/answer/185839)
 - [Gmail SMTP documentation](https://developers.google.com/workspace/gmail/imap/imap-smtp)
+- [Enable IMAP in Gmail](https://support.google.com/mail/answer/7126229)
 - [Camunda Secrets](https://docs.camunda.io/docs/components/console/manage-clusters/manage-secrets/)
